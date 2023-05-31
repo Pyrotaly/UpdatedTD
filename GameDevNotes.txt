@@ -1,0 +1,9 @@
+Goals: Art, Project development pipline structure (learning to reuse code, streamline things)
+-Manage camera resolution
+
+
+========
+5/31/2023
+--------
+
+Resolution management: https://www.youtube.com/watch?v=JRnNqQ2wbOU
