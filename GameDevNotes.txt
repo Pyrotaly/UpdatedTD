@@ -12,5 +12,23 @@ Resolution management: https://www.youtube.com/watch?v=JRnNqQ2wbOU
 ========
 6/5/2023
 --------
-Things to do: How to place object on top of tile, but only on certain tiles...
+Things to do: How to place object on top of tile, but only on certain tiles... (DONE)
 Shop
+
+NOTE: Make sure there is tile covering everywhere, I don't see how player could click on not a tile in game
+
+UI:
+Main UI
+---------
+Health, Currency, Fastfoward
+
+Tower UI
+---------
+Health, Damage, Sell Cost, Upgrade
+
+
+Tower Upgrade System
+Districts?: If certain towers are built together than bonuses can apply
+Support Towers
+
+How many towers in game? 35, but a lot of upgrades, 5 upgrades???
