@@ -7,3 +7,10 @@ Goals: Art, Project development pipline structure (learning to reuse code, strea
 --------
 
 Resolution management: https://www.youtube.com/watch?v=JRnNqQ2wbOU
+
+
+========
+6/5/2023
+--------
+Things to do: How to place object on top of tile, but only on certain tiles...
+Shop
