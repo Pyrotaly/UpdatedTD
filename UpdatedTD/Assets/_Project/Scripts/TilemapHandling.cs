@@ -7,13 +7,33 @@ using UnityEngine.EventSystems;
 
 namespace UpdatedTD
 {
+
     public class TilemapHandling : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler    
     {
-        [SerializeField] private Tilemap _tilemap;
+        private Grid grid;
 
+        [SerializeField] private Tilemap tilemap;
+        //[SerializeField] private Tilemap hightlightTilemap;
+
+        [SerializeField] private Tile hoverTile = null;
+
+        private Vector3Int previousMousePos = new Vector3Int();
         private void Start()
         {
-            _tilemap = GetComponent<Tilemap>();
+            grid = gameObject.GetComponent<Grid>();
+        }
+
+        private void Update()
+        {
+            Vector3Int mousePos = GetMousePos();
+            if (!mousePos.Equals(previousMousePos))
+            {
+                tilemap.SetTile(previousMousePos, null); // Remove old hoverTile
+                tilemap.SetTile(mousePos, hoverTile);
+                previousMousePos = mousePos;
+            }
+
+            Debug.Log(mousePos);
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -23,16 +43,26 @@ namespace UpdatedTD
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int cellPos = _tilemap.WorldToCell(mouseWorldPos);
-            TileBase tile = _tilemap.GetTile(cellPos);
+            //Vector3Int mousePos = GetMousePos();
+            //if (!mousePos.Equals(previousMousePos))
+            //{
+            //    hightlightTilemap.SetTile(previousMousePos, null); // Remove old hoverTile
+            //    hightlightTilemap.SetTile(mousePos, hoverTile);
+            //    previousMousePos = mousePos;
+            //}
 
-            Debug.Log("Hey");
+            //Debug.Log("Hey");
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             throw new System.NotImplementedException();
+        }
+
+        Vector3Int GetMousePos()
+        {
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            return grid.WorldToCell(mouseWorldPos);
         }
     }
 }
