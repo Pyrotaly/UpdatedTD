@@ -10,17 +10,12 @@ namespace UpdatedTD
     public class BuildableTile : TileBase
     {
         [SerializeField] private Sprite sprite;
-        [SerializeField] private bool isBuildable;
+        public bool IsBuildable;
 
         public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
         {
             base.GetTileData(location, tilemap, ref tileData);
             tileData.sprite = sprite;
-
-        }
-        public bool IsBuildable()
-        {
-            return isBuildable;
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class ShopManager : MonoBehaviour
+    public class TowerTile : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

@@ -1,6 +1,10 @@
 Goals: Art, Project development pipline structure (learning to reuse code, streamline things)
 -Manage camera resolution
 
+Goal: Release the 40 wave mode, in one area
+
+Links I think to look at:
+Saving tiles: https://www.youtube.com/watch?v=TeEWLC-QKjw
 
 ========
 5/31/2023
@@ -12,7 +16,7 @@ Resolution management: https://www.youtube.com/watch?v=JRnNqQ2wbOU
 ========
 6/5/2023
 --------
-Things to do: How to place object on top of tile, but only on certain tiles... (DONE)
+-Things to do: How to place object on top of tile, but only on certain tiles... (DONE)
 Shop
 
 NOTE: Make sure there is tile covering everywhere, I don't see how player could click on not a tile in game
@@ -26,9 +30,54 @@ Tower UI
 ---------
 Health, Damage, Sell Cost, Upgrade
 
-
 Tower Upgrade System
 Districts?: If certain towers are built together than bonuses can apply
 Support Towers
 
-How many towers in game? 35, but a lot of upgrades, 5 upgrades???
+How many towers in game? 35, but a lot of upgrades, 5 upgrades??? 
+
+========
+6/6/2023
+--------
+Will have one purchasing manager but the shops will be different when player moves to new area
+The create items function (just like in the 'ShopGame') will be used to add elements in, add tabs for new towers in specific areas (this for later)
+
+Need to have camera movement with mouse
+
+Conditions for new towers, add towers in through scripts, codemonkey way.  This will help with adding towers the scroll bar and spawning towers on grid
+
+Need to play that isometric tower defense game again, to see how they did it
+
+
+========
+6/7/2023
+--------
+need to add camera panning with mouse
+
+Thinking about how to add items to the ShopList and for Spawning.  How do i set up GameAssetsHolderManager, dictionary with SO?
+
+Will upgraded towers be their own SO?
+When will shop add new items?  Just based on player currency?  Wave number?
+
+Shop currently works
+
+!!Need to get CodeMonkey Utilities script thing
+
+
+What will enemies be like, simple tower that shoots one thing to closest player tower and another tower that is aoe
+This will be reusing methods for the player tower since they also shoot the same way
+EnemyAI Path will be a prefab with a script on it, just attach it to all enemies in the certain zone
+
+
+So enemy towers are like real gameobjects that can float along, have to test that.  They will have same stats as tower
+Player towers are just tiles, upgrades are new tiles or just replacing the sprite?  How does this relate to the SO?  I need SO for sure
+
+I am thinking, tile initially gets data from SO... all the data including sprites.  When the player clicks on that tile to upgrade and stuff =>
+=> then it will look at SO for the new upgraded sprite
+
+Enemy towers will just have gameobject sprite as their image, lets just give them an SO
+
+So all the basic info towers have will be struct.  The player tower will have additional information such as price buildspace and such
+
+
+))Scope creep?  Lanes that are 3x3 so enemies can have 3x3 towers? or just several 1x1 towers? 

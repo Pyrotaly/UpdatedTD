@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class UpgradeTowersManager : MonoBehaviour
+    interface IDamageable
     {
-        
+
     }
 }

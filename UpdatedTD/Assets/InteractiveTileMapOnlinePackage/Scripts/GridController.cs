@@ -22,7 +22,7 @@ namespace UpdatedTD
             if (!mousePos.Equals(previousMousePos))
             {
                 highlightLayerMap.SetTileFlags(mousePos, TileFlags.None);
-                highlightLayerMap.SetTile(previousMousePos, null); // Remove old hoverTile
+                highlightLayerMap.SetTile(previousMousePos, null); // Remove old hover tile
                 highlightLayerMap.SetTile(mousePos, hoverTile);
                 previousMousePos = mousePos;
             }
@@ -36,10 +36,14 @@ namespace UpdatedTD
 
                 if (clickedTerrainTile is BuildableTile buildableTile)
                 {
-                    towerLayerMap.SetTile(mousePos, hoverTile); //TODO : Replace hovertile with whatever tower player selected...and check if selected tower
-                    Debug.Log(buildableTile.IsBuildable());
+                    towerLayerMap.SetTile(mousePos, hoverTile); //TODO : Replace hovertile with whatever tower player selected...and check if selected tower (with an action with SO parameter?)
+                    Debug.Log(buildableTile.IsBuildable);
                 }
+
+                //TODO : Make tile unbuildable + make script know how many blocks tower placing should take up 
             }
+
+            //TODO: Remove tower
         }
 
         Vector3Int GetMousePos()
