@@ -81,3 +81,17 @@ So all the basic info towers have will be struct.  The player tower will have ad
 
 
 ))Scope creep?  Lanes that are 3x3 so enemies can have 3x3 towers? or just several 1x1 towers? 
+
+
+========
+6/8/2023
+--------
+Watched video to understand tilemap more: https://www.youtube.com/watch?v=_TY0F7Zm6Lc
+
+Will make 40 level wave prototype without URP.  Will work on upgrading later
+
+Going to add mouse panning and try to make tower functional with enemies too
+
+Tilemap Optimization: Put unity tiles in individual mode while editoring but put it back to chunk when buildilng...
+- ALSO put the tiles in a sprite atlas or something....
+
