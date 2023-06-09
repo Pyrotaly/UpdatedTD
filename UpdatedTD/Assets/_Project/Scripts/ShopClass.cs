@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using CodeMonkey.Utils;
 
 namespace UpdatedTD
 {
@@ -41,12 +42,16 @@ namespace UpdatedTD
             newButtonTransform.Find("Price").GetComponent<TextMeshProUGUI>().SetText(towerSO.TowerPrice.ToString());
             newButtonTransform.Find("TowerIcon").GetComponent<Image>().sprite = towerSO.TowerInfo.TowerSprite;
 
-            //buttonTemplate.GetComponent<Button>().onClick.AddListener(BuyItem(towerSO));
+            newButtonTransform.GetComponent<Button_UI>().ClickFunc = () =>
+            {
+                BuyItem(towerSO);
+            };
         }
 
         private void BuyItem(PlayerTowerInfoSO towerSO)
         {
             CurrencyHandler.Instance.AlterCurrencyValue(-towerSO.TowerPrice);
+            Debug.Log(towerSO.TowerPrice);
         }
     }
 }

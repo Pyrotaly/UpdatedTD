@@ -12,5 +12,6 @@ namespace UpdatedTD
         [Header("Additional Information")]
         public int TowerPrice;
         //TODO : Have area tower takes up
+        public string TowerDescription;
     }
 }
