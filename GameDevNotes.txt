@@ -99,4 +99,5 @@ Have shop glow new tower when player gets cetain amount of currency
 Have to manually set tiles to have to be on certain layer in order for blocks to look like they are behind or infront of a wall
 
 
+Made shop work...
 
