@@ -102,3 +102,15 @@ Made shop work and camera work...
 
 How is player gonna click on UI without the camera moving all over the place?  Maybe have player need to press a button that let games know okay, move camera?
 
+========
+6/9/2023
+--------
+make basic tower shoot, make placing tower work, make shop button work, make description work, make adding towers work (also adding the notification of a new tower), make wave system somewhere (including spawner and figure out how waves work...)
+
+Not sure if LevelHandler Scritp will be the best but can refactor later
+
+
+
+
+
+

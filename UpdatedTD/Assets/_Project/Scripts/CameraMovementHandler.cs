@@ -14,9 +14,9 @@ namespace UpdatedTD
         [SerializeField] private float zoomChangeSpeed = 10f;
         [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
 
-        public float targetOrthographicSize;
-        public float orthographicSizeMin;
-        public float orthographicSizeMax;
+        [SerializeField] private float targetOrthographicSize;
+        [SerializeField] private float orthographicSizeMin;
+        [SerializeField] private float orthographicSizeMax;
 
         private void Update()
         {
@@ -28,18 +28,22 @@ namespace UpdatedTD
         {
             Vector3 inputDir = new Vector3(0, 0, 0);
 
+            //Move right
             if (Input.mousePosition.x > Screen.width - edgeSize)
             {
                 inputDir.x = 1f;
             }
+            //Move left
             if (Input.mousePosition.x < edgeSize)
             {
                 inputDir.x = -1f;
             }
+            //Move up
             if (Input.mousePosition.y > Screen.height - edgeSize)
             {
                 inputDir.y = 1f;
             }
+            //Move down
             if (Input.mousePosition.y < edgeSize)
             {
                 inputDir.y = -1f;

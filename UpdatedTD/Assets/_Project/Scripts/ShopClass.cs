@@ -9,9 +9,8 @@ namespace UpdatedTD
 {
     public class ShopClass : MonoBehaviour
     {
-        //buttonTemplate is a prefab
+        //Get button template in scene
         [SerializeField] private Transform buttonTemplate;
-        //[SerializeField] private Button buttonTemplateButton;
         [SerializeField] private Transform newButtonParent;
         [SerializeField] private float itemHeight;
 
@@ -23,7 +22,7 @@ namespace UpdatedTD
 
         private void Start()
         {
-            //Testing Functions
+            //TEMP TESTING FUNCTIONS
             CreateItemButton(Tower1);
             CreateItemButton(Tower2);
 
@@ -33,7 +32,7 @@ namespace UpdatedTD
 
         private void CreateItemButton(PlayerTowerInfoSO towerSO)
         {
-            //Spawn template in menu
+            //Spawn template in scroll menu
             Transform newButtonTransform = Instantiate(buttonTemplate, newButtonParent);
             RectTransform newButtonRectTransform = newButtonTransform.GetComponent<RectTransform>();
             newButtonRectTransform.anchoredPosition = new Vector2(0, -itemHeight * positionIndex);
@@ -42,10 +41,7 @@ namespace UpdatedTD
             newButtonTransform.Find("Price").GetComponent<TextMeshProUGUI>().SetText(towerSO.TowerPrice.ToString());
             newButtonTransform.Find("TowerIcon").GetComponent<Image>().sprite = towerSO.TowerInfo.TowerSprite;
 
-            newButtonTransform.GetComponent<Button_UI>().ClickFunc = () =>
-            {
-                BuyItem(towerSO);
-            };
+            newButtonTransform.GetComponent<Button_UI>().ClickFunc = () => { BuyItem(towerSO); };
         }
 
         private void BuyItem(PlayerTowerInfoSO towerSO)
