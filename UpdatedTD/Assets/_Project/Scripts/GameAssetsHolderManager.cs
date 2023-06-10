@@ -6,22 +6,26 @@ namespace UpdatedTD
 {
     public class GameAssetsHolderManager : MonoBehaviour
     {
-        private static GameAssetsHolderManager instance;
 
-        public static GameAssetsHolderManager Instance
+        public static GameAssetsHolderManager Instance;
+
+        private void Awake()
         {
-            get { 
-                if (instance == null)
-                {
-                    instance = (Instantiate(Resources.Load("GameAssets")) as GameObject).GetComponent<GameAssetsHolderManager>();
-                }
-                return instance; 
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+                return;
             }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         //[Header("Towers")]
         #region Towers
 
         #endregion
+
+        public GameObject AttackRadiusSprite;
     }
 }

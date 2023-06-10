@@ -114,8 +114,22 @@ Not sure if LevelHandler Scritp will be the best but can refactor later
 ========
 6/10/2023
 --------
-Make tower show radius 
+Make tower show radius, do i have to manually tell game where the center of the tower is?
 
+I think I do, will have to have two towers, square and notsquare. 		
+
+Things to do:
+
+make tower radius with 1x1 tower
+make basic tower shoot, 
+make placing tower work (multiple tile take up),
+make tower radius with other tower sizes
+
+
+make shop button work, 
+make description work, 
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
 
 
 
