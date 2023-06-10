@@ -27,7 +27,7 @@ namespace UpdatedTD
                 previousMousePos = mousePos;
             }
 
-            //Lets player build on buildabletiles
+            //Handles left clicking on tiles
             if (Input.GetMouseButton(0))
             {
                 TileBase clickedTerrainTile = terrainLayerMap.GetTile(mousePos);

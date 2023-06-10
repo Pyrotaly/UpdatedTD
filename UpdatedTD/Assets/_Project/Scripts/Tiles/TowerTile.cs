@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace UpdatedTD
 {
-    public class TowerTile : MonoBehaviour
+    [CreateAssetMenu(fileName = "New Custom Tile", menuName = "Tiles/New Tower Tile")]
+    public class TowerTile : TileBase
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [SerializeField] private PlayerTowerInfoSO towerSO;
 
-        // Update is called once per frame
-        void Update()
+        public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
         {
-        
+            base.GetTileData(location, tilemap, ref tileData);
+            tileData.sprite = towerSO.TowerInfo.TowerSprite;
         }
     }
 }

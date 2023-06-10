@@ -18,4 +18,6 @@ MonoBehaviour:
     ItemID: 0
     Health: 100
     Damage: 100
+    AttackRange: 0.5
   TowerPrice: 100
+  TowerDescription: 

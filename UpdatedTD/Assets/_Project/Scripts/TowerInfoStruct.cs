@@ -15,6 +15,7 @@ namespace UpdatedTD
         [Header("Combat Information")]
         public int Health;
         public int Damage;
+        public float AttackRange;
 
         //TODO : Have projectile prefab here to spawn
     }

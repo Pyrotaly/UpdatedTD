@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 namespace UpdatedTD
 {
     [CreateAssetMenu(fileName = "New Custom Tile", menuName = "Tiles/Custom Tile")]
-    [System.Serializable]
     public class BuildableTile : TileBase
     {
         [SerializeField] private Sprite sprite;
