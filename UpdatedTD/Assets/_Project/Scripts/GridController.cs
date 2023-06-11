@@ -13,6 +13,8 @@ namespace UpdatedTD
         [SerializeField] private Tilemap terrainLayerMap;
         [SerializeField] private TowerTile TEMPhoverTile;
 
+        private TowerTile previousClickedTower = null;
+
         //[SerializeField] private GameObject towerAttackRadiusSprite;
 
         private Vector3Int mousePos = new Vector3Int();
@@ -61,32 +63,40 @@ namespace UpdatedTD
 
         private void HandleClickingOnTowers()
         {
-            TowerTile previousClickedTower = null;
             TileBase clickedTowerTile = towerLayerMap.GetTile(mousePos);
-
-            if (previousClickedTower != null)
-            {
-                previousClickedTower.DestroyAttackRadiusIndicator();
-            }
 
             if (clickedTowerTile == null) 
             {
-                previousClickedTower = null;
+                if (previousClickedTower != null)
+                {
+                    previousClickedTower.DestroyAttackRadiusIndicator();
+                }
+                else
+                {
+                    previousClickedTower = null;
+                }
                 return; 
             }
 
-            if (!(clickedTowerTile is TowerTile towerTile))
+            if (clickedTowerTile is not TowerTile towerTile)
             {
                 return;
             }
 
+            Debug.Log("Clicked tower: " + clickedTowerTile.name);
+
+            //if (clickedTowerTile != previousClickedTower && previousClickedTower != null)
+            //{
+            //    previousClickedTower.DestroyAttackRadiusIndicator();
+            //}
+
             if (clickedTowerTile != previousClickedTower)
             {
                 towerTile.SpawnAttackRadiusIndicator();
-
+                
                 previousClickedTower = towerTile;
+                Debug.Log("Previous tower: " + previousClickedTower.name);
             }
-
 
             //Show attack radius
             //Instantiate(towerAttackRadiusSprite, mousePos, Quaternion.identity);
