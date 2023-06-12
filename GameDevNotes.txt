@@ -138,4 +138,50 @@ Spawn only one ring, or figureout some kinda of system to handle that.  Need des
 Make a second tower because hover thing is making things complicated
 
 
+Tower ofo same time not working for some reason... I think i need tilebase reference, not if towertile is same
+
+
+========
+6/11/2023
+--------
+Things to do:
+
+make tower radius with 1x1 tower (DONE)
+make basic tower shoot, 
+make placing tower work (multiple tile take up),
+make tower radius with other tower sizes
+
+
+make shop button work, 
+make description work, 
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
+
+
+THINGS TO FOCUS ON:
+Spawn only one ring, or figureout some kinda of system to handle that.  Need deslect thing to work
+
+Make a second tower because hover thing is making things complicated
+
+Tower ofo same time not working for some reason... I think i need tilebase reference, not if towertile is same
+
+FINISHED THE THINGS TO FOCUS ON, used a helper function
+
+
+
+https://youtu.be/0x4EigFnWws?t=495 i think this will help me with adding tower thingy thingy or look up code monkey as well
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

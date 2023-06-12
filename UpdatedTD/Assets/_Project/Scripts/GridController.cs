@@ -15,10 +15,8 @@ namespace UpdatedTD
 
         private TowerTile previousClickedTower = null;
 
-        //[SerializeField] private GameObject towerAttackRadiusSprite;
-
-        private Vector3Int mousePos = new Vector3Int();
-        private Vector3Int previousMousePos = new Vector3Int();
+        private Vector3Int mousePos = new();
+        private Vector3Int previousMousePos = new();
 
         void Update()
         {
@@ -30,7 +28,7 @@ namespace UpdatedTD
             if (Input.GetMouseButton(0))
             {
                 HandleTowerPlacement();
-                HandleClickingOnTowers();
+                HandleSelectingTowers();
             }
 
             //TODO: Remove tower
@@ -41,7 +39,7 @@ namespace UpdatedTD
             if (!mousePos.Equals(previousMousePos))
             {
                 highlightLayerMap.SetTileFlags(mousePos, TileFlags.None);
-                highlightLayerMap.SetTile(previousMousePos, null); // Remove old hover tile
+                highlightLayerMap.SetTile(previousMousePos, null);  // Remove old hover tile
                 highlightLayerMap.SetTile(mousePos, TEMPhoverTile);
                 previousMousePos = mousePos;
             }
@@ -57,24 +55,24 @@ namespace UpdatedTD
             if (clickedTerrainTile is BuildableTile buildableTile && buildableTile == true)
             {
                 towerLayerMap.SetTile(mousePos, TEMPhoverTile); //TODO : Replace hovertile with whatever tower player selected (with an action with SO parameter?)
+
+                //if (previousClickedTower != null) { previousClickedTower.Deselected(); }
+                //TowerTile placedTowerTile = towerLayerMap.GetTile(mousePos) as TowerTile;
+                //placedTowerTile.Selected();
+
                 buildableTile.IsBuildable = false;
             }
+
+            //TODO : Develop system for towers that are greater than 1x1 tiles
         }
 
-        private void HandleClickingOnTowers()
+        private void HandleSelectingTowers()
         {
             TileBase clickedTowerTile = towerLayerMap.GetTile(mousePos);
 
             if (clickedTowerTile == null) 
             {
-                if (previousClickedTower != null)
-                {
-                    previousClickedTower.DestroyAttackRadiusIndicator();
-                }
-                else
-                {
-                    previousClickedTower = null;
-                }
+                if (previousClickedTower != null) { previousClickedTower.Deselected(); }
                 return; 
             }
 
@@ -83,25 +81,29 @@ namespace UpdatedTD
                 return;
             }
 
-            Debug.Log("Clicked tower: " + clickedTowerTile.name);
-
-            //if (clickedTowerTile != previousClickedTower && previousClickedTower != null)
-            //{
-            //    previousClickedTower.DestroyAttackRadiusIndicator();
-            //}
-
+            //TODO : Refactor this, the if statement part just checks if the tiles are differnt not if towers are different, replace with the else statement later
             if (clickedTowerTile != previousClickedTower)
             {
-                towerTile.SpawnAttackRadiusIndicator();
-                
+                if (previousClickedTower != null) { previousClickedTower.Deselected(); }
+
+                towerTile.Selected();
                 previousClickedTower = towerTile;
-                Debug.Log("Previous tower: " + previousClickedTower.name);
             }
+            else
+            {
+                // Compare the world positions of the clicked tiles
+                Vector3 clickedTileWorldPos = towerLayerMap.CellToWorld(towerLayerMap.WorldToCell(mousePos));
+                Vector3 previousTileWorldPos = previousClickedTower.GetTileCellToWorldPositiion();
 
-            //Show attack radius
-            //Instantiate(towerAttackRadiusSprite, mousePos, Quaternion.identity);
+                if (clickedTileWorldPos != previousTileWorldPos)
+                {
+                    // The clicked tile is at a different position, treat it as a new tower click
+                    if (previousClickedTower != null) { previousClickedTower.Deselected(); }
 
-            //store previous prefab point and then when clicking anywhere else destroy prefab if there is one to destroy
+                    towerTile.Selected();
+                    previousClickedTower = towerTile;
+                }
+            }
         }
 
         Vector3Int GetMousePos()

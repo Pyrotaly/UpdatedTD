@@ -10,29 +10,35 @@ namespace UpdatedTD
     public class TowerTile : TileBase
     {
         [SerializeField] private PlayerTowerInfoSO towerSO;
-        //[SerializeField] private GameObject towerAttackRadiusSprite;
         private GameObject attackRadiusIndicatorHolder;
-        private Vector3Int TEMPtowerCenter;
+        private Vector3Int tileGridLocation;
+        private Vector3 worldLocation;
 
         public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
         {
             base.GetTileData(location, tilemap, ref tileData);
-            TEMPtowerCenter = location;
+            tileGridLocation = location;
             tileData.sprite = towerSO.TowerInfo.TowerSprite;
         }
 
-        //TODO : Maybe this can be on tower selected, add in sound effects or play a little animation
-        public void SpawnAttackRadiusIndicator()
+        public Vector3 GetTileCellToWorldPositiion()
         {
-            Debug.Log("Spawn");
-            GameObject towerAttackRadiusSprite = GameAssetsHolderManager.Instance.AttackRadiusSprite;
-            attackRadiusIndicatorHolder = Instantiate(towerAttackRadiusSprite, TEMPtowerCenter, Quaternion.identity);
+            return worldLocation = HelperFunctions.CellToWorld(tileGridLocation);
         }
 
-        public void DestroyAttackRadiusIndicator()
+        //TODO : Add in sound effects or play a little animation
+        public void Selected()
         {
-            Debug.Log("Destroy");
+            Debug.Log(tileGridLocation);
+            Debug.Log("Spawn");
+            GameObject towerAttackRadiusSprite = GameAssetsHolderManager.Instance.AttackRadiusSprite;
 
+            GetTileCellToWorldPositiion();
+            attackRadiusIndicatorHolder = Instantiate(towerAttackRadiusSprite, worldLocation, Quaternion.identity);
+        }
+
+        public void Deselected()
+        {
             if (attackRadiusIndicatorHolder != null)
             {
                 Destroy(attackRadiusIndicatorHolder);
