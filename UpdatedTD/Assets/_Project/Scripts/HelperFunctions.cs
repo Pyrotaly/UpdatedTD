@@ -19,7 +19,6 @@ namespace UpdatedTD
         public static Vector3 CellToWorld(Vector3Int tilePosition)
         {
             Vector3 worldPosition = Gridlayout.CellToWorld(tilePosition);
-            Debug.Log(worldPosition);
             return worldPosition;
         }
     }

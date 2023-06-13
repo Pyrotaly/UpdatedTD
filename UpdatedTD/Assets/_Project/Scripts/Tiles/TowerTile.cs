@@ -10,9 +10,8 @@ namespace UpdatedTD
     public class TowerTile : TileBase
     {
         [SerializeField] private PlayerTowerInfoSO towerSO;
-        private GameObject attackRadiusIndicatorHolder;
+        private GameObject tileAttackHandler;
         private Vector3Int tileGridLocation;
-        private Vector3 worldLocation;
 
         public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
         {
@@ -23,27 +22,25 @@ namespace UpdatedTD
 
         public Vector3 GetTileCellToWorldPositiion()
         {
-            return worldLocation = HelperFunctions.CellToWorld(tileGridLocation);
+            return HelperFunctions.CellToWorld(tileGridLocation);
         }
 
-        //TODO : Add in sound effects or play a little animation
         public void Selected()
         {
-            Debug.Log(tileGridLocation);
-            Debug.Log("Spawn");
-            GameObject towerAttackRadiusSprite = GameAssetsHolderManager.Instance.AttackRadiusSprite;
-
-            GetTileCellToWorldPositiion();
-            attackRadiusIndicatorHolder = Instantiate(towerAttackRadiusSprite, worldLocation, Quaternion.identity);
+            //TODO : Add in sound effects or play a little animation
+            //tileAttackHandler.EnableAttackRadius();
+            if (tileAttackHandler == null)
+            {
+                tileAttackHandler = towerSO.TowerInfo.TowerAttackHandler;
+                tileAttackHandler = Instantiate(tileAttackHandler, GetTileCellToWorldPositiion(), Quaternion.identity);
+                tileAttackHandler.transform.rotation = Quaternion.Euler(-48.26f, -0.32f, 0f);
+                tileAttackHandler.GetComponent<TowerAttackingHandler>().Initialize(towerSO);
+            }
         }
 
         public void Deselected()
         {
-            if (attackRadiusIndicatorHolder != null)
-            {
-                Destroy(attackRadiusIndicatorHolder);
-                attackRadiusIndicatorHolder = null;
-            }
+            //towerSO.TowerInfo.TowerAttackHandler.DisableAttackRadius();
         }
     }
 }

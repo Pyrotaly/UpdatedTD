@@ -173,15 +173,29 @@ https://youtu.be/0x4EigFnWws?t=495 i think this will help me with adding tower t
 
 
 
+========
+6/12/2023
+--------
 
 
+make basic tower shoot, 
+make placing tower work (multiple tile take up),
+make tower radius with other tower sizes
 
 
+make shop button work, 
+make description work, 
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
 
 
+Wait how do i even make tower hit closest thing correctly in a 2d environment?  Okay having 2d sprite at angle is my solution kinda 
 
+Okay i have attackhandler on towerstruct but i think can refactor later for support towers
+Probably have abstract class of basic towerradiusmanager and then classes for attacking or supporting
+Base abstract class is just get things in radius?
 
+Need to change attack radius to be overlapping the actual circle. Spawn the circle with the attack handling sript on it.  Maybe play a little animation when building tower to give some time to spawn
 
-
-
+Okay so i fixed radius thing
 

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd549f6de371db4c84f8fb95276dd8e, type: 3}
   m_Name: TestTower2Tile
   m_EditorClassIdentifier: 
-  towerSO: {fileID: 11400000, guid: 40d7d81b781ad0940bcd02ebb50647bd, type: 2}
+  towerSO: {fileID: 11400000, guid: ef155805feeee634c91529c244592d16, type: 2}

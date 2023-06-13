@@ -16,7 +16,7 @@ namespace UpdatedTD
         public int Health;
         public int Damage;
         public float AttackRange;
-
-        //TODO : Have projectile prefab here to spawn
+        public GameObject TowerAttackHandler;
+        public GameObject TEMPProjectile;
     }
 }

@@ -18,6 +18,15 @@ MonoBehaviour:
     ItemID: 0
     Health: 100
     Damage: 100
-    AttackRange: 0.5
+    AttackRange: 10
+    TowerAttackHandler: {fileID: 6089007280373389033, guid: e012403e186433f4a93747e1b5155742, type: 3}
+    TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
   TowerPrice: 100
-  TowerDescription: 
+  TowerDescription: Lorem Ipsum is simply dummy text of the printing and typesetting
+    industry. Lorem Ipsum has been the industry's standard dummy text ever since
+    the 1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book. It has survived not only five centuries, but also
+    the leap into electronic typesetting, remaining essentially unchanged. It was
+    popularised in the 1960s with the release of Letraset sheets containing Lorem
+    Ipsum passages, and more recently with desktop publishing software like Aldus
+    PageMaker including versions of Lorem Ipsum.
