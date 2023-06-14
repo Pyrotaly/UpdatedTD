@@ -199,3 +199,42 @@ Need to change attack radius to be overlapping the actual circle. Spawn the circ
 
 Okay so i fixed radius thing
 
+
+========
+6/12/2023
+--------
+make basic tower shoot, also thinking about how to destroy tower
+make placing tower work (multiple tile take up),
+
+
+make shop button work, 
+make description work, 
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
+
+
+Maybe have a mechanic where player can send an airplane to uh send bombs to heal player towers or damage enemies
+Change camera size?
+
+Need to add spawn point of bullets.  Maybe cool for towers with multiple spawn points
+
+Gonna see if i can make towers preplaced in editor without casuing error, it annoying for testing and probably future feature
+
+Redo code: Turns out, tile, is not a good place to have logic in
+Tower and radius on the cursor when player buying will be a seperate object...
+
+Need to go on website called the Medium to see how i can make tiles store individual data...
+
+
+
+Okay. Maybe this, have grid handler handle sprites but spawn in the radius destroying thing there.
+Have to add custom hitbox to player towers that allow enemies to hit the player towers and allow player to destroy them
+
+I think spawning radius with other towers not issue since it all be custom
+
+Destroy tower should be a menu option actually, when clicking on it.
+Made helper function to destroy any tile at specific location, used in TowerLogicHandler and in destroying tower in the menu
+
+Need to work on shop so i can make mouse switch from buildng mode to just clicking mode...
+
+

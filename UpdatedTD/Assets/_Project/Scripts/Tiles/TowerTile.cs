@@ -34,7 +34,7 @@ namespace UpdatedTD
                 tileAttackHandler = towerSO.TowerInfo.TowerAttackHandler;
                 tileAttackHandler = Instantiate(tileAttackHandler, GetTileCellToWorldPositiion(), Quaternion.identity);
                 tileAttackHandler.transform.rotation = Quaternion.Euler(-48.26f, -0.32f, 0f);
-                tileAttackHandler.GetComponent<TowerAttackingHandler>().Initialize(towerSO);
+                tileAttackHandler.GetComponent<TowerLogicHandler>().Initialize(towerSO);
             }
         }
 

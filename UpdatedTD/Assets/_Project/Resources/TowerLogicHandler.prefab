@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3422088738192849202}
   - component: {fileID: 3162186049845855164}
   m_Layer: 0
-  m_Name: TowerRadiusPrefab
+  m_Name: TowerLogicHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6089007280373389033}
   m_LocalRotation: {x: -0.40880677, y: -0.0025484993, z: -0.0011416005, w: 0.9126167}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 4.204706, y: 4.204706, z: 8.409412}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb309c9fbf4de444859cc4d803c90dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 11400000, guid: c9d275fbc8ccf534cbddc90a81936205, type: 2}
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64

@@ -8,8 +8,14 @@ namespace UpdatedTD
     [CreateAssetMenu(fileName = "New Custom Tile", menuName = "Tiles/Custom Tile")]
     public class BuildableTile : TileBase
     {
-        [SerializeField] private Sprite sprite;
-        public bool IsBuildable;
+        public Sprite sprite;
+        [SerializeField] private bool isBuildable = true;
+
+        public bool IsBuildable
+        {
+            get { return isBuildable; }
+            set { isBuildable = value; }
+        }
 
         public override void GetTileData(Vector3Int location, ITilemap tilemap, ref TileData tileData)
         {

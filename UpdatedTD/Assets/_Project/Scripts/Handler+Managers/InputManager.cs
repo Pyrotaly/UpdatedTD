@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    interface IDamageable
+    public class InputManager : MonoBehaviour
     {
-
+        
     }
 }
