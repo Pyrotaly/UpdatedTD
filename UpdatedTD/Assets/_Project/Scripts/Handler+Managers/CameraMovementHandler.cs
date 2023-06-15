@@ -31,26 +31,26 @@ namespace UpdatedTD
             //Move right
             if (Input.mousePosition.x > Screen.width - edgeSize)
             {
-                inputDir.x = 1f;
+                inputDir.x = 1.2f;
             }
             //Move left
             if (Input.mousePosition.x < edgeSize)
             {
-                inputDir.x = -1f;
+                inputDir.x = -1.2f;
             }
             //Move up
             if (Input.mousePosition.y > Screen.height - edgeSize)
             {
-                inputDir.y = 1f;
+                inputDir.z = 1f;
             }
             //Move down
             if (Input.mousePosition.y < edgeSize)
             {
-                inputDir.y = -1f;
+                inputDir.z = -1f;
             }
 
 
-            Vector3 moveDir = transform.up * inputDir.y + transform.right * inputDir.x;
+            Vector3 moveDir = transform.up * inputDir.z + transform.right * inputDir.x;
 
             transform.position += moveDir * cameraMoveSpeed * Time.deltaTime;
         }

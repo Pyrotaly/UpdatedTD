@@ -11,7 +11,7 @@ namespace UpdatedTD
     {
         //Get button template in scene
         [SerializeField] private Transform buttonTemplate;
-        [SerializeField] private Transform newButtonParent;
+        [SerializeField] private Transform scrollBarContentHolder;
         [SerializeField] private float itemHeight;
 
         [Header("TEMP TESTING CREATE ITEMS")]
@@ -33,7 +33,7 @@ namespace UpdatedTD
         private void CreateItemButton(PlayerTowerInfoSO towerSO)
         {
             //Spawn template in scroll menu
-            Transform newButtonTransform = Instantiate(buttonTemplate, newButtonParent);
+            Transform newButtonTransform = Instantiate(buttonTemplate, scrollBarContentHolder);
             RectTransform newButtonRectTransform = newButtonTransform.GetComponent<RectTransform>();
             newButtonRectTransform.anchoredPosition = new Vector2(0, -itemHeight * positionIndex);
             positionIndex++;

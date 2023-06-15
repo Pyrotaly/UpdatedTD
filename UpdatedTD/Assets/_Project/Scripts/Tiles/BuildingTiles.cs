@@ -4,12 +4,16 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class Tile : MonoBehaviour
+    public class BuildingTiles : MonoBehaviour
     {
+        [Header("Material Management")]
         private Renderer cubeRenderer;
         private Color originalColor;
         [SerializeField] private Color hoverColor;
         [SerializeField] private Color clickColor;
+
+        [Header("Logic Management")]
+        private bool isBuildable = true;
 
         private void Start()
         {
@@ -17,6 +21,12 @@ namespace UpdatedTD
             originalColor = cubeRenderer.material.color;
         }
 
+        public void SetBuildable(bool boolValue)
+        {
+            isBuildable = boolValue;
+        }
+
+        #region MouseFunctions
         private void OnMouseEnter()
         {
             cubeRenderer.material.color = hoverColor;
@@ -36,5 +46,6 @@ namespace UpdatedTD
         {
             cubeRenderer.material.color = hoverColor;
         }
+        #endregion
     }
 }

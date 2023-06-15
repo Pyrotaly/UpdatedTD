@@ -12,7 +12,6 @@ namespace UpdatedTD
         [Header("Information for Player")]
         public int TowerPrice;
         //TODO : Have area tower takes up
-
         public string TowerDescription;
     }
 
@@ -28,7 +27,6 @@ namespace UpdatedTD
         public int Health;
         public int Damage;
         public float AttackRange;
-        public GameObject TowerAttackHandler;
         public GameObject TEMPProjectile;
     }
 }

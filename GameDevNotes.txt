@@ -258,13 +258,22 @@ Okay done...
 Try to do the new tile system with spawning gameobjects instead of the dumb map
 I wonder how I can do elevated layers but worry about that later, can just spawn tiles on their or put them there manually
 
+Okay need to learn more about optimizing rn, learn unity occulsion culling
+When player go to new area, it will have to be unity dots i guess
+
+Need to make every other tile a different color bvecause grahical bug, colliders touching each other or something...
 
 
+Things to do:
+
+make shop button work, 
+make description work, 
+Make placing tower work (along with radius management, showing it when placing and lcicking and stuff)
+
+make basic tower shoot, also thinking about how to destroy tower
+make placing tower work (multiple tile take up),
+radius on tower bigger than 1x1
 
 
-
-
-
-
-
-
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
