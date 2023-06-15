@@ -201,7 +201,7 @@ Okay so i fixed radius thing
 
 
 ========
-6/12/2023
+6/13/2023
 --------
 make basic tower shoot, also thinking about how to destroy tower
 make placing tower work (multiple tile take up),
@@ -236,5 +236,35 @@ Destroy tower should be a menu option actually, when clicking on it.
 Made helper function to destroy any tile at specific location, used in TowerLogicHandler and in destroying tower in the menu
 
 Need to work on shop so i can make mouse switch from buildng mode to just clicking mode...
+
+
+
+========
+6/14/2023
+--------
+
+REVAMP: Make game entergunegon 2d look but its actually 3d
+
+The camera will be rotated to look isometric and sprites will have to be isometric as well, not sure how it will look when tower 
+which will be issue at all angles
+
+
+Review what I have done: Camera, UI
+
+Implementing Old Systems back into this new revamp
+
+Okay done...
+
+Try to do the new tile system with spawning gameobjects instead of the dumb map
+I wonder how I can do elevated layers but worry about that later, can just spawn tiles on their or put them there manually
+
+
+
+
+
+
+
+
+
 
 

@@ -12,6 +12,23 @@ namespace UpdatedTD
         [Header("Information for Player")]
         public int TowerPrice;
         //TODO : Have area tower takes up
+
         public string TowerDescription;
+    }
+
+    [System.Serializable]
+    public struct TowerInfoStruct
+    {
+        [Header("Base Information")]
+        public Sprite TowerSprite;
+        public string TowerName;
+        public int ItemID;
+
+        [Header("Combat Information")]
+        public int Health;
+        public int Damage;
+        public float AttackRange;
+        public GameObject TowerAttackHandler;
+        public GameObject TEMPProjectile;
     }
 }

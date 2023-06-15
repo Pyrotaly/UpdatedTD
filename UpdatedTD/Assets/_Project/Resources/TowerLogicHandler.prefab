@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -48.26, y: -0.32, z: 0}
 --- !u!212 &6395393600703491247
 SpriteRenderer:
@@ -95,13 +95,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6089007280373389033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcb309c9fbf4de444859cc4d803c90dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6df2a49a61512d3448e63af9300f9c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerInfo: {fileID: 11400000, guid: c9d275fbc8ccf534cbddc90a81936205, type: 2}
-  enemyLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  spriteRenderer: {fileID: 0}
 --- !u!60 &3162186049845855164
 PolygonCollider2D:
   m_ObjectHideFlags: 0
