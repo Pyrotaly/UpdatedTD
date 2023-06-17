@@ -6,6 +6,8 @@ namespace UpdatedTD
 {
     public abstract class BaseTowerAttackHandler : MonoBehaviour
     {
+        [SerializeField] protected LayerMask enemyLayer;
+
         protected abstract void Fire();
 
         private void OnTriggerEnter2D(Collider2D collision)

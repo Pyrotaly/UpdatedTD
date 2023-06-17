@@ -19,7 +19,6 @@ namespace UpdatedTD
     public struct TowerInfoStruct
     {
         [Header("Base Information")]
-        public Sprite TowerSprite;
         public string TowerName;
         public int ItemID;
 

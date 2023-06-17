@@ -14,24 +14,29 @@ namespace UpdatedTD
         [SerializeField] private Transform scrollBarContentHolder;
         [SerializeField] private float itemHeight;
 
-        [Header("TEMP TESTING CREATE ITEMS")]
-        public PlayerTowerInfoSO Tower1;
-        public PlayerTowerInfoSO Tower2;
+        [SerializeField] private GameObject[] purchasableTowers;
 
         private int positionIndex;
 
         private void Start()
         {
-            //TEMP TESTING FUNCTIONS
-            CreateItemButton(Tower1);
-            CreateItemButton(Tower2);
-
+            InitializeList();
             buttonTemplate.gameObject.SetActive(false);
         }
 
-
-        private void CreateItemButton(PlayerTowerInfoSO towerSO)
+        private void InitializeList()
         {
+            for (int i = 0; i < purchasableTowers.Length; i++)
+            {
+                CreateItemButton(purchasableTowers[i]);
+            }
+        }
+        //Initialize list with few items.  When player reaches certain thresholds, update list with new items
+
+        private void CreateItemButton(GameObject towerPrefab)
+        {
+            PlayerTowerInfoSO towerSO = towerPrefab.GetComponent<TowerTile>().GetTowerInfo();
+
             //Spawn template in scroll menu
             Transform newButtonTransform = Instantiate(buttonTemplate, scrollBarContentHolder);
             RectTransform newButtonRectTransform = newButtonTransform.GetComponent<RectTransform>();
@@ -39,7 +44,7 @@ namespace UpdatedTD
             positionIndex++;
 
             newButtonTransform.Find("Price").GetComponent<TextMeshProUGUI>().SetText(towerSO.TowerPrice.ToString());
-            newButtonTransform.Find("TowerIcon").GetComponent<Image>().sprite = towerSO.TowerInfo.TowerSprite;
+            newButtonTransform.Find("TowerIcon").GetComponent<Image>().sprite = towerPrefab.GetComponent<SpriteRenderer>().sprite;
 
             newButtonTransform.GetComponent<Button_UI>().ClickFunc = () => { BuyItem(towerSO); };
         }

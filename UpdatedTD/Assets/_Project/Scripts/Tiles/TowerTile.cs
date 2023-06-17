@@ -8,6 +8,11 @@ namespace UpdatedTD
     {
         [SerializeField] private PlayerTowerInfoSO towerInfo;
 
+        public PlayerTowerInfoSO GetTowerInfo()
+        {
+            return towerInfo;
+        }
+
         public void Selected()
         {
             //Play sound effect
