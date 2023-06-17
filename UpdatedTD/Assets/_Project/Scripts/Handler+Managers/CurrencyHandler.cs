@@ -28,6 +28,7 @@ namespace UpdatedTD
 
         private void Start()
         {
+            currency = startingCurrency;
             text.text = startingCurrency.ToString();
         }
 
