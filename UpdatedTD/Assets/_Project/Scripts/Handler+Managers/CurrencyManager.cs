@@ -6,9 +6,9 @@ using TMPro;
 
 namespace UpdatedTD
 {
-    public class CurrencyHandler : MonoBehaviour
+    public class CurrencyManager : MonoBehaviour
     {
-        public static CurrencyHandler Instance;
+        public static CurrencyManager Instance;
         public static int currency { get; private set; }
 
         [SerializeField] private TMP_Text text;

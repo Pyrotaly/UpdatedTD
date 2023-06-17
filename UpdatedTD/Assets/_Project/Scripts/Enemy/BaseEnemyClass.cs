@@ -13,15 +13,15 @@ namespace UpdatedTD
 
         private void Update()
         {
-            if (pathIndex == LevelHander.Instance.GetPath.Length) 
+            if (pathIndex == WIPLevelManager.Instance.GetPath.Length) 
             { 
                 Destroy(gameObject);
                 return;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, LevelHander.Instance.GetPath[pathIndex].position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, moveSpeed * Time.deltaTime);
 
-            if (Vector2.Distance(transform.position, LevelHander.Instance.GetPath[pathIndex].position) < 0.1f)
+            if (Vector2.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.1f)
             {
                 pathIndex++;
             }

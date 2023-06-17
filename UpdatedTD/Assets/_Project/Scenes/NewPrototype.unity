@@ -153,6 +153,7 @@ Transform:
   m_Children:
   - {fileID: 1063438512}
   - {fileID: 1101077034}
+  - {fileID: 701329110}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -253,6 +254,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1245111408}
+--- !u!1 &701329109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701329110}
+  - component: {fileID: 701329111}
+  m_Layer: 0
+  m_Name: Singletons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &701329110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701329109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 25214736}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701329111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701329109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f25781ba3ffeab438a8806a31c4964d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1403962522575336287}
+  startingCurrency: 600000000
 --- !u!1 &703084922
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +812,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1063438512}
   - component: {fileID: 1063438511}
-  - component: {fileID: 1063438513}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -804,20 +850,6 @@ Transform:
   m_Father: {fileID: 25214736}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1063438513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063438510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51879a3d11e91dd4d8a7c056e4b31011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1403962522575336287}
-  startingCurrency: 600000000
 --- !u!1 &1101077033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,8 +1731,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonTemplate: {fileID: 3290662126215611634}
   scrollBarContentHolder: {fileID: 812953052}
-  moreInfoUI: {fileID: 1534400877829846529}
-  text: {fileID: 2602786586226892657}
   purchasableTowers:
   - {fileID: 3696656677640243432, guid: 103303af90fa34f4aa17dfaf7c575324, type: 3}
   - {fileID: 5732199487362033775, guid: c94538366393bbc47a364135302f78b6, type: 3}
@@ -1993,9 +2023,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2001743599}
-  - component: {fileID: 2001743600}
-  - component: {fileID: 2001743602}
-  - component: {fileID: 2001743601}
   m_Layer: 0
   m_Name: MoreInfoUI
   m_TagString: Untagged
@@ -2018,43 +2045,6 @@ Transform:
   m_Father: {fileID: 1101077034}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2001743600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001743598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6343defe9a497a4a9667e3022444d1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI: {fileID: 1534400877829846529}
---- !u!114 &2001743601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001743598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4250d06e509071c4189134ba0c55b509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2001743602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001743598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34b37e7748d0fb4f8ca4f526ca19741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &144758243746348542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4994,8 +4984,8 @@ GameObject:
   - component: {fileID: 3317099706079586392}
   - component: {fileID: 8987794106795922479}
   - component: {fileID: 8987794106795922481}
-  - component: {fileID: 8987794106795922480}
   - component: {fileID: 8987794106795922482}
+  - component: {fileID: 8987794106795922483}
   m_Layer: 0
   m_Name: InfoIconButton
   m_TagString: Untagged
@@ -5440,18 +5430,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &8987794106795922480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7323788649358274928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16340cc9f8e3b1e48ade053fe976e603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8987794106795922481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5496,9 +5474,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2001743600}
-        m_TargetAssemblyTypeName: UpdatedTD.TurnOffOnUI, Assembly-CSharp
-        m_MethodName: ToggleVisibility
+      - m_Target: {fileID: 8987794106795922483}
+        m_TargetAssemblyTypeName: UpdatedTD.MoreInfoButtonUI, Assembly-CSharp
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5529,6 +5507,19 @@ MonoBehaviour:
   hoverBehaviour_Move: 0
   hoverBehaviour_Move_Amount: {x: 0, y: 0}
   triggerMouseOutFuncOnClick: 0
+--- !u!114 &8987794106795922483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323788649358274928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad391c249804b6f49863ea392863fb1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 1534400877829846529}
 --- !u!114 &9047008995840991961
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,42 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 namespace UpdatedTD
 {
     public static class HelperFunctions
     {
-        private static Grid grid;
-        private static Tilemap towerTilemap;
+        private static TextMeshProUGUI text;
 
-        public static Grid Gridlayout
+        public static TextMeshProUGUI Text
         {
             get
             {
-                if (grid == null) grid = GameObject.Find("Grid").GetComponent<Grid>();
-                return grid;
+                if (text == null) text = GameObject.Find("Description").GetComponent<TextMeshProUGUI>();
+                return text;
             }
         }
 
-        public static Tilemap TowerTilemap
+        public static void SetDescriptionText(string DescriptionText)
         {
-            get
-            {
-                if (towerTilemap == null) towerTilemap = GameObject.Find("TowerLayer").GetComponent<Tilemap>();
-                return towerTilemap;
-            }
-        }
-
-        public static Vector3 CellToWorld(Vector3Int tilePosition)
-        {
-            Vector3 worldPosition = Gridlayout.CellToWorld(tilePosition);
-            return worldPosition;
-        }
-
-        public static void DestroyTowerOnCell(Vector3Int tilePosition)
-        {
-            towerTilemap.SetTileFlags(tilePosition, TileFlags.None);
-            towerTilemap.SetTile(tilePosition, null);
+            Debug.Log("haha");
+            Text.SetText(DescriptionText);
         }
     }
 }

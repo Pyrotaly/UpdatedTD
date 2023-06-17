@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class LevelHander : MonoBehaviour
+    public class WIPLevelManager : MonoBehaviour
     {
         public Transform startpoint { get; private set; }
 
         [SerializeField] private Transform[] path;
         public Transform[] GetPath { get { return path;  } }
 
-        public static LevelHander Instance;
+        public static WIPLevelManager Instance;
 
         private void Awake()
         {

@@ -13,10 +13,6 @@ namespace UpdatedTD
         [SerializeField] private Transform buttonTemplate;
         [SerializeField] private Transform scrollBarContentHolder;
 
-        [Header("More Info UI")] //Not sure if this is optimized
-        [SerializeField] private GameObject moreInfoUI;
-        [SerializeField] private TextMeshProUGUI text; // TODO : is this okay?
-
         [Header("Sellables")]
         [SerializeField] private GameObject[] purchasableTowers;
 
@@ -53,15 +49,12 @@ namespace UpdatedTD
 
         private void BuyItem(int price)
         {
-            CurrencyHandler.Instance.AlterCurrencyValue(-price);
+            CurrencyManager.Instance.AlterCurrencyValue(-price);
         }
 
         public void HandleMoreInfoUI(string description)
         {
-            if (moreInfoUI.activeSelf == true)
-            {
-                text.SetText(description);
-            }
+            HelperFunctions.SetDescriptionText(description);
         }
     }
 }
