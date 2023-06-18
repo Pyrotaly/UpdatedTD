@@ -318,4 +318,6 @@ make adding towers work (also adding the notification of a new tower),
 make wave system somewhere (including spawner and figure out how waves work...)
 
 
-Basically rn, working on gamemanager and game states
+Basically rn, working on gamemanager and game states, made the pause and speed up work, distracted from trying to fnish build mode in game
+
+Review codemonkey building tiles thing

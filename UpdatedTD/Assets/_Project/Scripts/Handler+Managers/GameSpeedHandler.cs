@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class GameTimeSpeedHandler : MonoBehaviour
+    public class GameSpeedHandler : MonoBehaviour
     {
         private enum GameSpeed
         {
@@ -25,6 +25,7 @@ namespace UpdatedTD
         public void PauseGame()
         {
             GameManager.Instance.UpdateGameState(GameManager.GameState.Pause);
+            Debug.Log("PPause");
             currentGameSpeed = GameSpeed.Pause;
             Time.timeScale = 0f;
         }
@@ -35,18 +36,22 @@ namespace UpdatedTD
             switch (currentGameSpeed)
             {
                 case GameSpeed.Pause:
+                    Debug.Log("Normal");
                     Time.timeScale = 1f;
                     currentGameSpeed = GameSpeed.Normal;
                     break;
                 case GameSpeed.Normal:
+                    Debug.Log("Fast");
                     Time.timeScale = 1.5f;
                     currentGameSpeed = GameSpeed.Fast;
                     break;
                 case GameSpeed.Fast:
+                    Debug.Log("Extreme");
                     Time.timeScale = 2f;
                     currentGameSpeed = GameSpeed.Extreme;
                     break;
                 case GameSpeed.Extreme:
+                    Debug.Log("Normal");
                     Time.timeScale = 1f;
                     currentGameSpeed = GameSpeed.Normal;
                     break;
