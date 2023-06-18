@@ -21,7 +21,6 @@ namespace UpdatedTD
 
         public static void SetDescriptionText(string DescriptionText)
         {
-            Debug.Log("haha");
             Text.SetText(DescriptionText);
         }
     }

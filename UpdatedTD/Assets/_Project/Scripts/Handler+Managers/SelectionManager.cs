@@ -1,27 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace UpdatedTD
 {
-    public static class SelectionManager<T> where T : ISelectable
+    public static class SelectionManager<T> where T : MonoBehaviour, ISelectable
     {
-        public static T selectedObject;
+        public static T previousSelectedObject;
 
-        public static void SelectObject(T selectable)
+        public static bool SelectedSameObject(T selectable)
         {
-            if (selectedObject != null)
+            //If player clicked on same object
+            if (previousSelectedObject != null && previousSelectedObject == selectable)
             {
-                selectedObject.Deselect();
+                return true;
             }
 
-            selectedObject = selectable;
-            selectedObject.Select();
+            //First click or clicked on different object
+            previousSelectedObject = selectable;
+            return false;
         }
 
-        public static void DeselectObject()
+        public static void CallDeslectOnPreviousObject()
         {
-            if (selectedObject != null) { selectedObject.Deselect(); }
+            if (previousSelectedObject != null) { previousSelectedObject.Deselect(); }
         }
     }
 }

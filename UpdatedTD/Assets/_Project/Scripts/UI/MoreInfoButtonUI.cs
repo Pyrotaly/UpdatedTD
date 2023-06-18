@@ -22,15 +22,25 @@ namespace UpdatedTD
 
         public void Select()
         {
-            //Clicked same button then toggle UI
-            if ((Object)SelectionManager<ISelectable>.selectedObject == this)
+            if (SelectionManager<MoreInfoButtonUI>.previousSelectedObject == null)
             {
-                ToggleVisibility();
-                return;
+                UI.SetActive(true);
             }
 
-            SelectionManager<ISelectable>.DeselectObject();
-            SelectionManager<ISelectable>.SelectObject(this);
+            if (SelectionManager<MoreInfoButtonUI>.SelectedSameObject(this))
+            {
+                if (UI.activeSelf)
+                { 
+                    UI.SetActive(false);
+                    return;
+                }
+
+                UI.SetActive(true);
+            }
+            else
+            {
+                UI.SetActive(true);
+            }
         }
 
         public void Deselect()
