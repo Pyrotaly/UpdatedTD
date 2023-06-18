@@ -55,6 +55,11 @@ namespace UpdatedTD
             OnGameStateChanged?.Invoke(newState);
         }
 
+        private void HandleBuildState()
+        {
+
+        }
+
         public enum GameState
         {
             Pause,
