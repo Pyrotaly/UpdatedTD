@@ -50,6 +50,7 @@ namespace UpdatedTD
         private void BuyItem(int price)
         {
             CurrencyManager.Instance.AlterCurrencyValue(-price);
+            //TODO : Set cursor to tower icon
         }
 
         public void HandleMoreInfoUI(string description)

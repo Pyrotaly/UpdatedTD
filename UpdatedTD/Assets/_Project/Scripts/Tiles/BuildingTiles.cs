@@ -40,6 +40,7 @@ namespace UpdatedTD
         private void OnMouseDown()
         {
             cubeRenderer.material.color = clickColor;
+            //TODO : Set cursor back to normal
         }
 
         private void OnMouseUp()

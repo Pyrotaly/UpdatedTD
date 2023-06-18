@@ -153,9 +153,8 @@ Transform:
   m_Children:
   - {fileID: 1063438512}
   - {fileID: 1101077034}
-  - {fileID: 701329110}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &325200262
 GameObject:
@@ -253,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6343defe9a497a4a9667e3022444d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 1245111408}
+  UI: {fileID: 4502776729767885123}
 --- !u!1 &701329109
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,13 +277,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701329109}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 37.142334, y: 0.69479764, z: 3880.722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 25214736}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &701329111
 MonoBehaviour:
@@ -812,6 +811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063438512}
   - component: {fileID: 1063438511}
+  - component: {fileID: 1063438513}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -850,6 +850,18 @@ Transform:
   m_Father: {fileID: 25214736}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063438513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063438510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02761b2dd153024b853a6371fc03625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1101077033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,7 +4577,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4394512991038882029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1063438513}
+        m_TargetAssemblyTypeName: UpdatedTD.GameTimeSpeedHandler, Assembly-CSharp
+        m_MethodName: ChangeGameSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6152952489654229170
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,7 +4864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8414800261582175575}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1063438513}
+        m_TargetAssemblyTypeName: UpdatedTD.GameTimeSpeedHandler, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6918793298635599841
 GameObject:
   m_ObjectHideFlags: 0
