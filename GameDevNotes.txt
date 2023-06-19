@@ -321,3 +321,28 @@ make wave system somewhere (including spawner and figure out how waves work...)
 Basically rn, working on gamemanager and game states, made the pause and speed up work, distracted from trying to fnish build mode in game
 
 Review codemonkey building tiles thing
+
+========
+6/18/2023
+--------
+So far the only input from player is just using the mouse, and then it will be R to rotate... and escape to escape things...
+
+Need to have multiple sprites for cursor and the prefab in the game in a tower. cursor sprite does not work with an ingame tower sprite
+
+Okay basically finsihed game states..., just some todos for the pause vicotry and gameover screen
+
+
+When player rotates camera, i guess i gotta just change the sprite to the next rotation versino cause they could have the truned sprite when they turn
+an object in the normal view angle
+
+
+
+
+
+
+
+
+
+
+
+

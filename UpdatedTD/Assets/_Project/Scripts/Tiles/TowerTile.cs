@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class TowerTile : MonoBehaviour
+    public class TowerTile : MonoBehaviour, ISelectable
     {
         [SerializeField] private PlayerTowerInfoSO towerInfo;
 
@@ -13,14 +13,14 @@ namespace UpdatedTD
             return towerInfo;
         }
 
-        public void Selected()
+        public void Select()
         {
             //Play sound effect
             //Turn on radius attack
             //Display description and stuff
         }
 
-        public void Deselected()
+        public void Deselect()
         {
 
         }

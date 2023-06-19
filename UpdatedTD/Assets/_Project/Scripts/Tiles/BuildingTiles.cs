@@ -40,7 +40,8 @@ namespace UpdatedTD
         private void OnMouseDown()
         {
             cubeRenderer.material.color = clickColor;
-            //TODO : Set cursor back to normal
+            //if in build mode, place tower and make this tile not buildable and exit build mode
+            GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
         }
 
         private void OnMouseUp()

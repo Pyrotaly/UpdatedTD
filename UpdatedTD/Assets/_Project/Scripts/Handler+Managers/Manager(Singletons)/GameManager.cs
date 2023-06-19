@@ -57,7 +57,13 @@ namespace UpdatedTD
 
         private void HandleBuildState()
         {
+            //Right mouse button
+            if (Input.GetMouseButtonDown(1))
+            {
+                //rotate building
+            }
 
+            //if press escape than resume back to play mode
         }
 
         public enum GameState

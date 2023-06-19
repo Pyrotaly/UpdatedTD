@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using CodeMonkey.Utils;
+using System;
 
 namespace UpdatedTD
 {
@@ -12,6 +13,7 @@ namespace UpdatedTD
         [Header("Button Template")]
         [SerializeField] private Transform buttonTemplate;
         [SerializeField] private Transform scrollBarContentHolder;
+        public Sprite cursorSpriteToCopy;
 
         [Header("Sellables")]
         [SerializeField] private GameObject[] purchasableTowers;
@@ -50,7 +52,16 @@ namespace UpdatedTD
         private void BuyItem(int price)
         {
             CurrencyManager.Instance.AlterCurrencyValue(-price);
-            //TODO : Set cursor to tower icon
+            GameManager.Instance.UpdateGameState(GameManager.GameState.Building);
+            SetCursorSprite(cursorSpriteToCopy);
+        }
+
+        private void SetCursorSprite(Sprite sprite)
+        {
+            Texture2D cursorTexture = sprite.texture;
+
+            // Set the cursor
+            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         }
 
         public void HandleMoreInfoUI(string description)

@@ -10,6 +10,7 @@ namespace UpdatedTD
         public TowerInfoStruct TowerInfo;
 
         [Header("Information for Player")]
+        public Sprite TowerCursorSprite;
         public int TowerPrice;
         //TODO : Have area tower takes up
         public string TowerDescription;
