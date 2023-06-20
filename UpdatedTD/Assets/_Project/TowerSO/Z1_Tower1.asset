@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Z1_Tower1
   m_EditorClassIdentifier: 
   TowerInfo:
-    TowerSprite: {fileID: 21300000, guid: bce467e332e761547afba29263d06bfc, type: 3}
     TowerName: Tower1
     ItemID: 0
     Health: 100
     Damage: 100
     AttackRange: 10
-    TowerAttackHandler: {fileID: 6089007280373389033, guid: e012403e186433f4a93747e1b5155742, type: 3}
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
+  TowerCursorSprite: {fileID: 21300000, guid: 2a9e19cb89a2aa444aca3a7031de6bf5, type: 3}
   TowerPrice: 100
   TowerDescription: Lorem Ipsum is simply dummy text of the printing and typesetting
     industry. Lorem Ipsum has been the industry's standard dummy text ever since

@@ -341,8 +341,9 @@ an object in the normal view angle
 
 
 
+6/20/2023
+Forgot to push at main pc so doing what i can
 
-
-
+Important to do: when making cursor spirte move it top left a bit so it line up with in game cursor placement
 
 
