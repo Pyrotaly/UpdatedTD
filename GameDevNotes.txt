@@ -201,10 +201,17 @@ Okay so i fixed radius thing
 
 
 ========
+<<<<<<< HEAD
 6/13/2023
 --------
 make basic tower shoot, also thinking about how to destroy tower
 make placing tower work (multiple tile take up),
+=======
+6/12/2023
+--------
+make basic tower shoot, 
+make placing tower work (multiple tile take up),
+make tower radius with other tower sizes
 
 
 make shop button work, 
@@ -224,7 +231,6 @@ Redo code: Turns out, tile, is not a good place to have logic in
 Tower and radius on the cursor when player buying will be a seperate object...
 
 Need to go on website called the Medium to see how i can make tiles store individual data...
-
 
 
 Okay. Maybe this, have grid handler handle sprites but spawn in the radius destroying thing there.
@@ -337,10 +343,6 @@ an object in the normal view angle
 
 
 
-
-
-
-
 6/20/2023
 Forgot to push at main pc so doing what i can
 
@@ -360,4 +362,47 @@ Should ask about having two calsses diffenet script or just one big ol scrip
 
 
 rotate camera with towers interacting how i want
+
+Makse base bvuilding handler use mousesystem to allow with the cursor and spawning prefab
+
+
+
+========
+6/21/2023
+--------
+Today also fixed up merged things... 
+
+TODO : 
+
+Make tower rotation work, make radius spawn (i know it spawns kinda wierd but thats okay)
+
+make basic tower shoot, also thinking about how to destroy tower
+make basic enemies (including them shoot back)
+game over and win condition (super basic level win managenemtn)
+schedule meeting with Henry AND COMPILE LIST OF QUESTIONS INCLUDING INTERNSHIP PSTUFF TOO JUST IN CASE
+
+figure out save system
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -13,7 +13,7 @@ namespace UpdatedTD
         [SerializeField] private Color clickColor;
 
         [Header("Logic Management")]
-        private bool isBuildable = true;
+        public bool isBuildable = true;
 
         private void Start()
         {
@@ -24,18 +24,19 @@ namespace UpdatedTD
         public void SetBuildable(bool boolValue)
         {
             isBuildable = boolValue;
+            cubeRenderer.material.color = hoverColor;
         }
 
         #region MouseFunctions
         private void OnMouseEnter()
         {
-            cubeRenderer.material.color = hoverColor;
+            if (isBuildable) { cubeRenderer.material.color = hoverColor; }
             BuildingStructureHandler.HighlightedTile = this.gameObject;
         }
 
         private void OnMouseExit()
         {
-            cubeRenderer.material.color = originalColor;
+            if (isBuildable) { cubeRenderer.material.color = originalColor; }
             BuildingStructureHandler.HighlightedTile = null;
         }
 

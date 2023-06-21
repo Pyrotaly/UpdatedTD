@@ -38,17 +38,43 @@ namespace UpdatedTD
             Debug.Log(TowerToBePlaced);
 
             PlayerTowerInfoSO towerSO = TowerToBePlaced.GetComponent<TowerTile>().GetTowerInfo();
-            /* 
-             * When player click on a tile, check if all tiles can be built on
-             * if can built then spawn prefab where player clicked, make all the tiles notbuildable and TowerToBePlaced = null;
-             */
+
             if (HighlightedTile != null && Input.GetMouseButtonDown(0))
             {
-                Debug.Log(new Vector3Int((int)HighlightedTile.transform.position.x, (int)HighlightedTile.transform.position.y, (int)HighlightedTile.transform.position.z));
+                bool canBuild = true;
+
                 List<Vector3Int> tileCoordinatesToCheck =
                     towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)HighlightedTile.transform.position.x, (int)HighlightedTile.transform.position.y, (int)HighlightedTile.transform.position.z));
 
-                GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
+                //Checking if can build in area
+                foreach (Vector3Int cooridnate in tileCoordinatesToCheck) 
+                {
+                    BuildingTiles buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+
+                    if (buildingTile.isBuildable == false) 
+                    {
+                        //TODO : Play error sign, send message saying cannot build
+                        canBuild = false;
+                        Debug.Log("Cannot build here");
+                        break;
+                    }
+                }
+
+                if (canBuild)
+                {
+                    foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
+                    {
+                        BuildingTiles buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+                        buildingTile.SetBuildable(false);
+                    }
+
+                    Instantiate(TowerToBePlaced, 
+                        new Vector3((int)HighlightedTile.transform.position.x, (int)HighlightedTile.transform.position.y, (int)HighlightedTile.transform.position.z), 
+                        Quaternion.identity); //TODO : Handle institiation in game rotation here
+
+                    TowerToBePlaced = null;
+                    GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
+                }
             }
         }
 
