@@ -7,15 +7,15 @@ namespace UpdatedTD
 {
     public class BuildingStructureHandler : MonoBehaviour
     {
-        //TODO : Add mouse feature
-
-
         //TODO : Right now I am super lazy on figuring out how to pass reference that is not static
         // if i do event with the multiple shops, i would need building structure handler to have component reference to all of them which i guess is fine...
         public static GameObject TowerToBePlaced;
-        public static GameObject HighlightedTile;
+        public static GameObject SelectedTile;
 
         [SerializeField] private GridHandler gridHandler;
+
+        PlayerTowerInfoSO.Directions towerDir = PlayerTowerInfoSO.Directions.Down;
+        private GameObject towerCursor;
         private bool inBuildState;
 
         private void Awake()
@@ -30,21 +30,30 @@ namespace UpdatedTD
 
         private void Update()
         {
-            if (inBuildState) { HandleBuilding(); }
+            if (inBuildState) 
+            {
+                towerCursor.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                HandleBuilding(); 
+            }
         }
 
         private void HandleBuilding()
         {
-            Debug.Log(TowerToBePlaced);
-
             PlayerTowerInfoSO towerSO = TowerToBePlaced.GetComponent<TowerTile>().GetTowerInfo();
 
-            if (HighlightedTile != null && Input.GetMouseButtonDown(0))
+            //Rotate structure
+            if (Input.GetMouseButtonDown(1))
+            {
+                towerDir = PlayerTowerInfoSO.GetNextDir(towerDir);
+                Debug.Log(towerDir);
+            }
+
+            if (SelectedTile != null && Input.GetMouseButtonDown(0))
             {
                 bool canBuild = true;
 
                 List<Vector3Int> tileCoordinatesToCheck =
-                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)HighlightedTile.transform.position.x, (int)HighlightedTile.transform.position.y, (int)HighlightedTile.transform.position.z));
+                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)SelectedTile.transform.position.x, (int)SelectedTile.transform.position.y, (int)SelectedTile.transform.position.z), towerDir);
 
                 //Checking if can build in area
                 foreach (Vector3Int cooridnate in tileCoordinatesToCheck) 
@@ -68,11 +77,14 @@ namespace UpdatedTD
                         buildingTile.SetBuildable(false);
                     }
 
-                    Instantiate(TowerToBePlaced, 
-                        new Vector3((int)HighlightedTile.transform.position.x, (int)HighlightedTile.transform.position.y, (int)HighlightedTile.transform.position.z), 
-                        Quaternion.identity); //TODO : Handle institiation in game rotation here
+                    Destroy(towerCursor);
+
+                    Instantiate(TowerToBePlaced,
+                        new Vector3((int)SelectedTile.transform.position.x, (int)SelectedTile.transform.position.y + 1, (int)SelectedTile.transform.position.z),
+                        Quaternion.identity);
 
                     TowerToBePlaced = null;
+                    towerDir = PlayerTowerInfoSO.Directions.Down;
                     GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
                 }
             }
@@ -81,6 +93,17 @@ namespace UpdatedTD
         private void GameManager_OnGameStateChanged(GameManager.GameState state)
         {
             inBuildState = (state == GameManager.GameState.Building);
+
+            if (state == GameManager.GameState.Building)
+            {
+                inBuildState = true;
+                towerCursor = Instantiate(TowerToBePlaced);
+            }
+            else
+            {
+                inBuildState = false;
+                towerCursor = null;
+            }
         }
     }
 }

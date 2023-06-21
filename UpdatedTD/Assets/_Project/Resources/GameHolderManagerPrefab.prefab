@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-6372646948814271694
 MonoBehaviour:
@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4ba46408b124846b718546608b2428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRadiusSprite: {fileID: 5178021242739705036, guid: 493418448a96a6c49b9689cb8a4b9de5, type: 3}
+  AttackRadius: {fileID: 5178021242739705036, guid: 493418448a96a6c49b9689cb8a4b9de5, type: 3}

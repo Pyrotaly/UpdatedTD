@@ -31,13 +31,13 @@ namespace UpdatedTD
         private void OnMouseEnter()
         {
             if (isBuildable) { cubeRenderer.material.color = hoverColor; }
-            BuildingStructureHandler.HighlightedTile = this.gameObject;
+            BuildingStructureHandler.SelectedTile = this.gameObject;
         }
 
         private void OnMouseExit()
         {
             if (isBuildable) { cubeRenderer.material.color = originalColor; }
-            BuildingStructureHandler.HighlightedTile = null;
+            BuildingStructureHandler.SelectedTile = null;
         }
 
         private void OnMouseDown()

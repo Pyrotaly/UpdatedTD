@@ -7,6 +7,7 @@ namespace UpdatedTD
     public abstract class BaseTowerAttackHandler : MonoBehaviour
     {
         [SerializeField] protected LayerMask enemyLayer;
+        protected List<GameObject> enemiesList = new List<GameObject>();
 
         protected abstract void Fire();
 

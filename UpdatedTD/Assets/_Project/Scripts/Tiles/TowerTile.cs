@@ -7,33 +7,37 @@ namespace UpdatedTD
     public class TowerTile : MonoBehaviour, ISelectable
     {
         [SerializeField] private PlayerTowerInfoSO towerInfo;
-        private GameObject towerAttackRadius;
+        private GameObject towerAttackRadiusGameObject;
 
         private void Awake()
         {
-            towerAttackRadius = GameAssetsHolderManager.Instance.AttackRadiusSprite;
+            towerAttackRadiusGameObject = GameAssetsHolderManager.Instance.AttackRadius;
         }
 
         private void Start()
         {
-            towerAttackRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
+            Debug.Log("Ha");
+            towerAttackRadiusGameObject.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
+            Instantiate(towerAttackRadiusGameObject, this.gameObject.transform);
         }
 
-        public PlayerTowerInfoSO GetTowerInfo()
+        private void Update()
         {
-            return towerInfo;
+            //TODO : Shoot
         }
+
+        public PlayerTowerInfoSO GetTowerInfo() { return towerInfo; }
 
         public void Select()
         {
             //Play sound effect
             //Display description and stuff
-            towerAttackRadius.SetActive(true);
+            towerAttackRadiusGameObject.SetActive(true);
         }
 
         public void Deselect()
         {
-            towerAttackRadius.SetActive(false);
+            towerAttackRadiusGameObject.SetActive(false);
         }
     }
 }

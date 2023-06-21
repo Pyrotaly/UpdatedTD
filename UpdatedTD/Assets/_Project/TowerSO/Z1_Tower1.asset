@@ -17,7 +17,7 @@ MonoBehaviour:
     ItemID: 0
     Health: 100
     Damage: 100
-    AttackRange: 10
+    AttackRange: 0.5
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
   TowerCursorSprite: {fileID: 21300000, guid: 2a9e19cb89a2aa444aca3a7031de6bf5, type: 3}
   TowerPrice: 100
@@ -29,3 +29,5 @@ MonoBehaviour:
     popularised in the 1960s with the release of Letraset sheets containing Lorem
     Ipsum passages, and more recently with desktop publishing software like Aldus
     PageMaker including versions of Lorem Ipsum.
+  Height: 3
+  Width: 1

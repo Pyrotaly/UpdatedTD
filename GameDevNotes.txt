@@ -374,10 +374,9 @@ Today also fixed up merged things...
 
 TODO : 
 
-Make tower rotation work, make radius spawn (i know it spawns kinda wierd but thats okay)
-
 make basic tower shoot, also thinking about how to destroy tower
 make basic enemies (including them shoot back)
+
 game over and win condition (super basic level win managenemtn)
 schedule meeting with Henry AND COMPILE LIST OF QUESTIONS INCLUDING INTERNSHIP PSTUFF TOO JUST IN CASE
 
@@ -385,9 +384,12 @@ figure out save system
 make adding towers work (also adding the notification of a new tower), 
 make wave system somewhere (including spawner and figure out how waves work...)
 
+Quality Of Life: Make camera center on tower when clicked on?
 
-
-
+Future: 
+make moving camera require click so can click stuff near edge, 
+make cooler towers (with multiple attack radiuses, how to customize where radius spawns...)
+Make that use of basic polymoprohsm or whaetver
 
 
 
