@@ -12,7 +12,7 @@ namespace UpdatedTD
         [SerializeField] private BuildingTiles tilePrefab;
         [SerializeField] private GameObject tileFolder;
 
-        private Dictionary<Vector3, BuildingTiles> tiles = new Dictionary<Vector3, BuildingTiles>();
+        public Dictionary<Vector3, BuildingTiles> tiles = new Dictionary<Vector3, BuildingTiles>();
 
         private void Start()
         {
@@ -36,7 +36,7 @@ namespace UpdatedTD
             }
         }
 
-        public BuildingTiles GetTileAtPosition(Vector2 position)
+        public BuildingTiles GetTileAtPosition(Vector3 position)
         {
             if (tiles.TryGetValue(position, out BuildingTiles tile))
             {

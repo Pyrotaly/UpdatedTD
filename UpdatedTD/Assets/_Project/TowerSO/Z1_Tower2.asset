@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Z1_Tower2
   m_EditorClassIdentifier: 
   TowerInfo:
-    TowerSprite: {fileID: 21300000, guid: b2a5db7b8a261074697bcab223994745, type: 3}
     TowerName: Tower2
     ItemID: 1
     Health: 200
     Damage: 200
     AttackRange: 10
-    TowerAttackHandler: {fileID: 6089007280373389033, guid: e012403e186433f4a93747e1b5155742, type: 3}
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
+  TowerCursorSprite: {fileID: 21300000, guid: bce467e332e761547afba29263d06bfc, type: 3}
   TowerPrice: 200
   TowerDescription: It is a long established fact that a reader will be distracted
     by the readable content of a page when looking at its layout. The point of using

@@ -13,7 +13,6 @@ namespace UpdatedTD
         [Header("Button Template")]
         [SerializeField] private Transform buttonTemplate;
         [SerializeField] private Transform scrollBarContentHolder;
-        public Sprite cursorSpriteToCopy;
 
         [Header("Sellables")]
         [SerializeField] private GameObject[] purchasableTowers;
@@ -43,24 +42,27 @@ namespace UpdatedTD
 
             newButtonTransform.Find("Price").GetComponent<TextMeshProUGUI>().SetText(towerSO.TowerPrice.ToString());
             newButtonTransform.Find("TowerIcon").GetComponent<Image>().sprite = towerPrefab.GetComponent<SpriteRenderer>().sprite;
-            newButtonTransform.GetComponent<Button_UI>().ClickFunc = () => { BuyItem(towerSO.TowerPrice); };
+            newButtonTransform.GetComponent<Button_UI>().ClickFunc = () => { BuyItem(towerPrefab, towerSO.TowerPrice, towerSO.TowerCursorSprite); };
 
             Transform moreInfoButton = newButtonTransform.Find("InfoIconButton");
             moreInfoButton.GetComponent<Button_UI>().ClickFunc = () => { HandleMoreInfoUI(towerSO.TowerDescription); };
         }
 
-        private void BuyItem(int price)
+        private void BuyItem(GameObject tower, int price, Sprite cursorImage)
         {
+            //TODO : ASK HOW LIKE MAKE SURE INSTANCES ARE IN PLACE WHAT IF THERE IS NO BUILDING STRUCTURE HANDLER
+            //Make this an event?
+            BuildingStructureHandler.TowerToBePlaced = tower;
             CurrencyManager.Instance.AlterCurrencyValue(-price);
             GameManager.Instance.UpdateGameState(GameManager.GameState.Building);
-            SetCursorSprite(cursorSpriteToCopy);
+            SetCursorSprite(cursorImage);
         }
 
         private void SetCursorSprite(Sprite sprite)
         {
             Texture2D cursorTexture = sprite.texture;
+            //TODO : NEED TO MAKE NEW SPRITE FOR CURSOR TO BE UP TO THE LEFT MORE TO LINE UP WITH Actual cursor pointing and cursor sprite.
 
-            // Set the cursor
             Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         }
 
