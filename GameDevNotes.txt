@@ -346,4 +346,18 @@ Forgot to push at main pc so doing what i can
 
 Important to do: when making cursor spirte move it top left a bit so it line up with in game cursor placement
 
+Should ask about having two calsses diffenet script or just one big ol scrip
+
+
+- Make placing tower work (along with radius management, showing it when placing and lcicking and stuff) along with wierd dimension and radius in center
+- Make destroying tower work...
+
+- make basic tower shoot, 
+- make wave system somewhere (including spawner and figure out how waves work...)
+- make basic enemies
+- make enemies shoot...
+- make adding towers work (also adding the notification of a new tower), 
+
+
+rotate camera with towers interacting how i want
 

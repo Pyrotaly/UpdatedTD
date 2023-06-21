@@ -30,11 +30,13 @@ namespace UpdatedTD
         private void OnMouseEnter()
         {
             cubeRenderer.material.color = hoverColor;
+            BuildingStructureHandler.HighlightedTile = this.gameObject;
         }
 
         private void OnMouseExit()
         {
             cubeRenderer.material.color = originalColor;
+            BuildingStructureHandler.HighlightedTile = null;
         }
 
         private void OnMouseDown()

@@ -718,6 +718,7 @@ GameObject:
   - component: {fileID: 1063438511}
   - component: {fileID: 1063438513}
   - component: {fileID: 1063438514}
+  - component: {fileID: 1063438515}
   m_Layer: 0
   m_Name: Handlers
   m_TagString: Untagged
@@ -789,6 +790,19 @@ MonoBehaviour:
   miniMapUI: {fileID: 4424614391255721044}
   victoryScreen: {fileID: 0}
   defeatScreen: {fileID: 0}
+--- !u!114 &1063438515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063438510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ff0280a6e68d24889711729f9135d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridHandler: {fileID: 1063438511}
 --- !u!1 &1125167875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,7 +1617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonTemplate: {fileID: 3290662126215611634}
   scrollBarContentHolder: {fileID: 812953052}
-  cursorSpriteToCopy: {fileID: 21300000, guid: 2a9e19cb89a2aa444aca3a7031de6bf5, type: 3}
   purchasableTowers:
   - {fileID: 3696656677640243432, guid: 103303af90fa34f4aa17dfaf7c575324, type: 3}
   - {fileID: 5732199487362033775, guid: c94538366393bbc47a364135302f78b6, type: 3}

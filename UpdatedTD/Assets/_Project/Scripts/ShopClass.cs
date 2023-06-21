@@ -50,7 +50,8 @@ namespace UpdatedTD
 
         private void BuyItem(GameObject tower, int price, Sprite cursorImage)
         {
-            //TODO : ASK HOW LIKE MAKE SURE INSTANCES ARE IN PLACE< WHAT IF THERE IS NO BUILDING STRUCTURE HANDLER
+            //TODO : ASK HOW LIKE MAKE SURE INSTANCES ARE IN PLACE WHAT IF THERE IS NO BUILDING STRUCTURE HANDLER
+            //Make this an event?
             BuildingStructureHandler.TowerToBePlaced = tower;
             CurrencyManager.Instance.AlterCurrencyValue(-price);
             GameManager.Instance.UpdateGameState(GameManager.GameState.Building);
