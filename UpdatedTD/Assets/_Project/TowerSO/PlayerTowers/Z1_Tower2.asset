@@ -21,9 +21,7 @@ MonoBehaviour:
     AttackRange: 10
     AttackCooldown: 5
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
-    targetLayer:
-      serializedVersion: 2
-      m_Bits: 64
+    targetTag: Enemy
   TowerPrice: 200
   TowerDescription: It is a long established fact that a reader will be distracted
     by the readable content of a page when looking at its layout. The point of using

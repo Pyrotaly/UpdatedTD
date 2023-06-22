@@ -444,6 +444,20 @@ Could refactor base tower and enemy tower but do that later.
 
 Instead of layers used tags isnteadf....
 
+
+Going to refactor now...
+
+
+
+
+
+
+
+
+
+
+
+
 :To do List:
 Make basic tower shoot, also thinking about how to destroy tower (think about shooting patterns later)
 make basic enemies (including them shoot back)
