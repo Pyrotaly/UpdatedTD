@@ -9,7 +9,9 @@ namespace UpdatedTD
         [SerializeField] protected LayerMask targetLayer;
         protected List<GameObject> targetList = new List<GameObject>();
 
-        protected abstract void Attack();
+
+        //TODO : GameObject parameter might not be ideal in future
+        public abstract void Attack(GameObject projectile);
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

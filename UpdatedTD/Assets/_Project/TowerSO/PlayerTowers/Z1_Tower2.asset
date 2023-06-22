@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10696028e8d74864ea90ce9edfcfb9bb, type: 3}
-  m_Name: Z1_Tower3
+  m_Name: Z1_Tower2
   m_EditorClassIdentifier: 
   TowerInfo:
-    TowerName: Tower3
-    ItemID: 2
-    Health: 300
-    Damage: 300
+    TowerName: Tower2
+    ItemID: 1
+    Health: 200
+    Damage: 200
+    ProjectileSpeed: 5
     AttackRange: 10
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
-  TowerCursorSprite: {fileID: 21300000, guid: ebb0426a345bf0c48a7439d99a296e06, type: 3}
-  TowerPrice: 300
+  TowerPrice: 200
   TowerDescription: It is a long established fact that a reader will be distracted
     by the readable content of a page when looking at its layout. The point of using
     Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
@@ -29,5 +29,5 @@ MonoBehaviour:
     their default model text, and a search for 'lorem ipsum' will uncover many web
     sites still in their infancy. Various versions have evolved over the years, sometimes
     by accident, sometimes on purpose (injected humour and the like).
-  Height: 2
-  Width: 2
+  Height: 1
+  Width: 1

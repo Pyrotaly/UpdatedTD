@@ -99,6 +99,7 @@ namespace UpdatedTD
         [Header("Combat Information")]
         public int Health;
         public int Damage;
+        public float ProjectileSpeed;
         public float AttackRange;
         public GameObject TEMPProjectile;
     }

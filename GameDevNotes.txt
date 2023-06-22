@@ -3,8 +3,17 @@ Goals: Art, Project development pipline structure (learning to reuse code, strea
 
 Goal: Release the 40 wave mode, in one area
 
-Links I think to look at:
-Saving tiles: https://www.youtube.com/watch?v=TeEWLC-QKjw
+Questions:
+-Is towerInfo.TowerInfo.whatever expensive?
+-BuildingStructureHandler, is using static being bad?
+-Shopclass abusing singelton with BuyItme? should use event,
+-Shopclass how to like check if static instance exist like with exceptions or something...
+-try get? debug error, never use debugger tbh
+-Going to do this system atm, have bullet prefab with emptpy variables, when i spawn one it will get data and get reference to it is this expensive? I don't think it a big deal in my game since object pooling but 
+
+-Learn design patterns more?
+-Devops vs software engineer...
+
 
 ========
 5/31/2023
@@ -374,7 +383,7 @@ Today also fixed up merged things...
 
 TODO : 
 
-make basic tower shoot, also thinking about how to destroy tower
+make basic tower shoot, also thinking about how to destroy tower (think about shooting patterns later)
 make basic enemies (including them shoot back)
 
 game over and win condition (super basic level win managenemtn)
@@ -389,17 +398,57 @@ Quality Of Life: Make camera center on tower when clicked on?
 Future: 
 make moving camera require click so can click stuff near edge, 
 make cooler towers (with multiple attack radiuses, how to customize where radius spawns...)
+-If multiple attack radiuses, just have two BaseTowerAttackHandler
 Make that use of basic polymoprohsm or whaetver
 
+Tower should have a little preview of where it can be placed at... but probably need to work on tower sprites before working on it
+
+ATM can select both player and enemy towers... maybe have it in some encylcaedia or something
+
+Handle bullet travel behavior in tower and damage in tower
+Handle bullet sounds explosion animations on bullet
+
+Could i make the bullets be in 3d space to handle the isometric perspective? I think i should
+
+Unity apparently spawning and destryoing item expensive, learn to pool...
+
+Would my projectiles be 3d or 2d, i think 2d cause i can only draw that... but can give 3d collider.....
+
+Reason why layer can be flexible is that enemy towers can support other enemy towers... just like player support player
+
+
+
+Tower shooting ideas: hit whatever it touch first, hit specific target no matter what it touches
+
+
+Make tower shooting async i guess
+
+========
+6/22/2023
+--------
+Tower attack behavior requires me to drag and drop the script into each SO which is fine i guess
 
 
 
 
 
+Make basic tower shoot, also thinking about how to destroy tower (think about shooting patterns later)
+make basic enemies (including them shoot back)
 
+game over and win condition (super basic level win managenemtn)
+schedule meeting with Henry AND COMPILE LIST OF QUESTIONS INCLUDING INTERNSHIP PSTUFF TOO JUST IN CASE
 
+figure out save system
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
 
+Quality Of Life: Make camera center on tower when clicked on?
 
+Future: 
+make moving camera require click so can click stuff near edge, 
+make cooler towers (with multiple attack radiuses, how to customize where radius spawns...)
+-If multiple attack radiuses, just have two BaseTowerAttackHandler
+Make that use of basic polymoprohsm or whaetver
 
 
 

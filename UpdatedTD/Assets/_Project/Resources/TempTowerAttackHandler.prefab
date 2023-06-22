@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3888846316005304152}
   - component: {fileID: 4524083785924424589}
   m_Layer: 0
-  m_Name: TempTowerAttackRadius
+  m_Name: TempTowerAttackHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

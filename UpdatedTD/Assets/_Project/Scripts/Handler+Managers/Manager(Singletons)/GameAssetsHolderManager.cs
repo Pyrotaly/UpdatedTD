@@ -26,6 +26,6 @@ namespace UpdatedTD
 
         #endregion
 
-        public GameObject AttackRadius;
+        public GameObject TowerAttackHandler;
     }
 }

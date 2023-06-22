@@ -17,9 +17,9 @@ MonoBehaviour:
     ItemID: 0
     Health: 100
     Damage: 100
+    ProjectileSpeed: 5
     AttackRange: 0.5
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
-  TowerCursorSprite: {fileID: 21300000, guid: 2a9e19cb89a2aa444aca3a7031de6bf5, type: 3}
   TowerPrice: 100
   TowerDescription: Lorem Ipsum is simply dummy text of the printing and typesetting
     industry. Lorem Ipsum has been the industry's standard dummy text ever since
