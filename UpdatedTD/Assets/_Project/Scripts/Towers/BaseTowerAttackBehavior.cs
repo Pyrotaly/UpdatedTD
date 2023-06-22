@@ -12,7 +12,7 @@ namespace UpdatedTD
         protected float projectileSpeed;
         protected float attackCooldown;
         protected GameObject TEMPProjectile;
-        private LayerMask targetLayer;
+        private string targetTag;
 
         protected float lastShotTime = 0f;
 
@@ -22,8 +22,8 @@ namespace UpdatedTD
             projectileSpeed = towerStruct.ProjectileSpeed;
             attackCooldown = towerStruct.AttackCooldown;
             TEMPProjectile = towerStruct.TEMPProjectile;
-            targetLayer = towerStruct.targetLayer;
-            TEMPProjectile.GetComponent<Projectile>().SetUp(damage, targetLayer);
+            targetTag = towerStruct.targetTag;
+            TEMPProjectile.GetComponent<Projectile>().SetUp(damage, targetTag);
             targetList = list;
         }
 

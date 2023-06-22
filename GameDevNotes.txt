@@ -440,7 +440,9 @@ had to make tirggerenter2d into 3d cause cannot rotate 2d like that...
 Should really set up error log messaging... like cause lot of things could go wrong because i forgot ot set up something
 
 Making another script so the attack ariuds handles getting the components and stuff...
+Could refactor base tower and enemy tower but do that later.
 
+Instead of layers used tags isnteadf....
 
 :To do List:
 Make basic tower shoot, also thinking about how to destroy tower (think about shooting patterns later)

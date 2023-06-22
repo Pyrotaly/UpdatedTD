@@ -6,19 +6,19 @@ namespace UpdatedTD
 {
     public class Projectile : MonoBehaviour
     {
-        private LayerMask targetLayer;
+        private string targetTag;
         private int damageAmount;
 
-        public void SetUp(int damageSetUp, LayerMask targetSetUp)
+        public void SetUp(int damageSetUp, string targetSetUp)
         {
-            targetLayer = targetSetUp;
+            targetTag = targetSetUp;
             damageAmount = damageSetUp;
         }
 
         //2d sprite but 3d collider
         private void OnTriggerEnter(Collider collision)
         {
-            if (collision.gameObject.layer == targetLayer)
+            if (collision.gameObject.tag == targetTag)
             {
                 collision.GetComponent<IDamageable>().AlterHealth(damageAmount);
                 Destroy(this.gameObject);

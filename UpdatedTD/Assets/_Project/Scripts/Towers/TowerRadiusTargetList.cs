@@ -8,18 +8,18 @@ namespace UpdatedTD
     {
         public List<GameObject> targetList = new List<GameObject>();
 
-        private LayerMask targetLayer;
+        public string TargetTag;
 
-        public void SetUp(LayerMask layerSetup)
+        public void SetUp(string tagSetup)
         {
-            targetLayer = layerSetup;
+            TargetTag = tagSetup;
+            Debug.Log(TargetTag);
         }
 
         private void OnTriggerEnter(Collider collision)
         {
-            Debug.Log(targetLayer);
-            Debug.Log(collision.gameObject.layer);
-            if (collision.gameObject.layer == targetLayer)
+            Debug.Log(TargetTag);
+            if (collision.gameObject.tag == TargetTag)
             {
                 targetList.Add(collision.gameObject);
             }
@@ -28,7 +28,7 @@ namespace UpdatedTD
         private void OnTriggerExit(Collider collision)
         {
             //TODO : Do i need to compare on exit?
-            if (collision.gameObject.layer == targetLayer)
+            if (collision.gameObject.tag == TargetTag)
             {
                 targetList.Remove(collision.gameObject);
             }

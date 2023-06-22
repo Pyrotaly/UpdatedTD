@@ -103,6 +103,6 @@ namespace UpdatedTD
         public float AttackRange;
         public float AttackCooldown;
         public GameObject TEMPProjectile;
-        public LayerMask targetLayer;
+        public string targetTag;
     }
 }
