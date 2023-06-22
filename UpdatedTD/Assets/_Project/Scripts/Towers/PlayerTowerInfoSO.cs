@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    [CreateAssetMenu(fileName = "New Tower", menuName = "Tower/New Tower")]
+    [CreateAssetMenu(fileName = "New Tower", menuName = "Tower/New Player Tower")]
     public class PlayerTowerInfoSO : ScriptableObject
     {
         public TowerInfoStruct TowerInfo;

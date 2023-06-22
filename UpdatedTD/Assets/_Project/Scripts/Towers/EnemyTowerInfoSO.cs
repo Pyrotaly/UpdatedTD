@@ -4,18 +4,9 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class EnemyTowerInfoSO : MonoBehaviour
+    [CreateAssetMenu(fileName = "New Tower", menuName = "Tower/New Enemy Tower")]
+    public class EnemyTowerInfoSO : ScriptableObject
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        public TowerInfoStruct TowerInfo;
     }
 }
