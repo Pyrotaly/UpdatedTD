@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class TestEnemy1x1TowerBehavior : BaseTowerAttackHandler
+    public class TestEnemy1x1TowerBehavior : BaseTowerAttackBehavior
     {
-        public override void Attack(GameObject projectile)
+        public override void Attack()
         {
             if (targetList.Count != 0)
             {

@@ -8,7 +8,9 @@ Questions:
 -BuildingStructureHandler, is using static being bad?
 -Shopclass abusing singelton with BuyItme? should use event,
 -Shopclass how to like check if static instance exist like with exceptions or something...
--try get? debug error, never use debugger tbh
+--try get? debug error, never use debugger tbh
+-Lot of my system involves me not forgetting cvertain things. i just get errors? just 
+
 -Going to do this system atm, have bullet prefab with emptpy variables, when i spawn one it will get data and get reference to it is this expensive? I don't think it a big deal in my game since object pooling but 
 
 -Learn design patterns more?
@@ -428,10 +430,19 @@ Make tower shooting async i guess
 --------
 Tower attack behavior requires me to drag and drop the script into each SO which is fine i guess
 
+So prefabs will need to have their behavior attached along with their tile management thing
+Customizing behavior on the individual TowerBehaviorScript
+
+Reserach little more on interfaces...
+
+had to make tirggerenter2d into 3d cause cannot rotate 2d like that...
+
+Should really set up error log messaging... like cause lot of things could go wrong because i forgot ot set up something
+
+Making another script so the attack ariuds handles getting the components and stuff...
 
 
-
-
+:To do List:
 Make basic tower shoot, also thinking about how to destroy tower (think about shooting patterns later)
 make basic enemies (including them shoot back)
 

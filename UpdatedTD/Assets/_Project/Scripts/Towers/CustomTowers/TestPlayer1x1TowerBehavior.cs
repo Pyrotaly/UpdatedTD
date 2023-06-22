@@ -4,13 +4,16 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class TestPlayer1x1TowerBehavior : BaseTowerAttackHandler
+    public class TestPlayer1x1TowerBehavior : BaseTowerAttackBehavior
     {
-        public override void Attack(GameObject projectile)
+        public override void Attack()
         {
             if (targetList.Count != 0)
             {
-                ShootProjectile(projectile);
+                if (Time.time - lastShotTime >= attackCooldown)
+                {
+                    ShootProjectile(TEMPProjectile);
+                }
             }
         }
 

@@ -101,6 +101,8 @@ namespace UpdatedTD
         public int Damage;
         public float ProjectileSpeed;
         public float AttackRange;
+        public float AttackCooldown;
         public GameObject TEMPProjectile;
+        public LayerMask targetLayer;
     }
 }

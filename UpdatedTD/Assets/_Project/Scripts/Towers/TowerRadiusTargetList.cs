@@ -4,24 +4,28 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public abstract class BaseTowerAttackHandler : MonoBehaviour
+    public class TowerRadiusTargetList : MonoBehaviour
     {
-        [SerializeField] protected LayerMask targetLayer;
-        protected List<GameObject> targetList = new List<GameObject>();
+        public List<GameObject> targetList = new List<GameObject>();
 
+        private LayerMask targetLayer;
 
-        //TODO : GameObject parameter might not be ideal in future
-        public abstract void Attack(GameObject projectile);
-
-        private void OnTriggerEnter2D(Collider2D collision)
+        public void SetUp(LayerMask layerSetup)
         {
+            targetLayer = layerSetup;
+        }
+
+        private void OnTriggerEnter(Collider collision)
+        {
+            Debug.Log(targetLayer);
+            Debug.Log(collision.gameObject.layer);
             if (collision.gameObject.layer == targetLayer)
             {
                 targetList.Add(collision.gameObject);
             }
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+        private void OnTriggerExit(Collider collision)
         {
             //TODO : Do i need to compare on exit?
             if (collision.gameObject.layer == targetLayer)
