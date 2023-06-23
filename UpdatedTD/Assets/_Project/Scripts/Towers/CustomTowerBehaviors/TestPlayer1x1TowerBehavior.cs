@@ -28,7 +28,7 @@ namespace UpdatedTD
             if (rb != null)
             {
                 Vector3 direction = (targetList[0].transform.position - transform.position).normalized;
-                //rb.AddForce(direction * shootingForce, ForceMode.Impulse);
+                rb.AddForce(direction * projectileSpeed, ForceMode.Impulse);
             }
         }
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1076850612212578087}
   - component: {fileID: 5390674671773098743}
   - component: {fileID: -2417196139554213187}
+  - component: {fileID: 7732424410118318518}
   m_Layer: 8
   m_Name: 1x3
   m_TagString: Player
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1076850612212578087
 SpriteRenderer:
@@ -95,10 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5732199487362033775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 102ded765d9463a479e3d587b44d6fc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 05d8c3bd7b399e448a94b2176681a6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerInfo: {fileID: 11400000, guid: c9d275fbc8ccf534cbddc90a81936205, type: 2}
+  towerInfo: {fileID: 11400000, guid: 7c5e28d6d95b9434a8fa1bad8cfa086d, type: 2}
 --- !u!65 &-2417196139554213187
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120,3 +121,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7732424410118318518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732199487362033775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21fb3844d32bc446906d4d20c4a3bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

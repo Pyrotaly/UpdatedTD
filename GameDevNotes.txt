@@ -13,6 +13,8 @@ Questions:
 
 -Going to do this system atm, have bullet prefab with emptpy variables, when i spawn one it will get data and get reference to it is this expensive? I don't think it a big deal in my game since object pooling but 
 
+-Is i using virtual wrong, like requring the default implentation as well? 
+
 -Learn design patterns more?
 -Devops vs software engineer...
 
@@ -445,7 +447,7 @@ Could refactor base tower and enemy tower but do that later.
 Instead of layers used tags isnteadf....
 
 
-Going to refactor now...
+Going to refactor now, enemy tower dnot have all things needed cause I tired when copy pasting and not thinking
 
 
 
@@ -480,7 +482,11 @@ Make that use of basic polymoprohsm or whaetver
 
 
 
+========
+6/23/2023
+--------
+Need to add an initalize function to creating towers bvecausae making them a cursor will cause it to shoot while on cursor
 
-
+Testing make tower shoot
 
 

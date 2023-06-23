@@ -5,8 +5,9 @@ using UnityEngine;
 namespace UpdatedTD
 {
     [CreateAssetMenu(fileName = "New Tower", menuName = "Tower/New Enemy Tower")]
-    public class EnemyTowerInfoSO : ScriptableObject
+    public class EnemyTowerInfoSO : BaseTowerSO
     {
-        public TowerInfoStruct TowerInfo;
+        [Header("Enemy Information")]
+        public float moveSpeed;
     }
 }

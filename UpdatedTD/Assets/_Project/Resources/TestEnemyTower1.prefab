@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5441717071978767114}
   - component: {fileID: 8293450246396627478}
   - component: {fileID: 3069446668551234864}
+  - component: {fileID: 225024616677909294}
   m_Layer: 6
   m_Name: TestEnemyTower1
   m_TagString: Enemy
@@ -148,6 +149,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81c128f36e36ad46b3d4b1f920f6165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &225024616677909294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679590720515609019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe770a7c647458349af2132019a6c0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
 --- !u!1001 &5391821123937098585
 PrefabInstance:
   m_ObjectHideFlags: 0

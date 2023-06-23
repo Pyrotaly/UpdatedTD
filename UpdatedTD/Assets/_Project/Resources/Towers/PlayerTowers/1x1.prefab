@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6266246631485781009
 SpriteRenderer:
@@ -96,10 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6656932432745029969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 102ded765d9463a479e3d587b44d6fc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 05d8c3bd7b399e448a94b2176681a6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerInfo: {fileID: 11400000, guid: ef155805feeee634c91529c244592d16, type: 2}
+  towerInfo: {fileID: 11400000, guid: 78a126db6d0631c46b231d7b33a75e1f, type: 2}
 --- !u!114 &-1210093686700127491
 MonoBehaviour:
   m_ObjectHideFlags: 0

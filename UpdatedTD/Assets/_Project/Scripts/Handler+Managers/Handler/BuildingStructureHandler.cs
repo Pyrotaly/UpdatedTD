@@ -14,7 +14,7 @@ namespace UpdatedTD
 
         [SerializeField] private GridHandler gridHandler;
 
-        PlayerTowerInfoSO.Directions towerDir = PlayerTowerInfoSO.Directions.Down;
+        PlayerTowerSO.Directions towerDir = PlayerTowerSO.Directions.Down;
         private GameObject towerCursor;
         private bool inBuildState;
 
@@ -39,12 +39,12 @@ namespace UpdatedTD
 
         private void HandleBuilding()
         {
-            PlayerTowerInfoSO towerSO = TowerToBePlaced.GetComponent<PlayerTowerTIle>().GetTowerInfo();
+            PlayerTowerSO towerSO = TowerToBePlaced.GetComponent<PlayerTowerUserLogic>().GetTowerInfo();
 
             //Rotate structure
             if (Input.GetMouseButtonDown(1))
             {
-                towerDir = PlayerTowerInfoSO.GetNextDir(towerDir);
+                towerDir = PlayerTowerSO.GetNextDir(towerDir);
                 Debug.Log(towerDir);
             }
 
@@ -84,7 +84,7 @@ namespace UpdatedTD
                         Quaternion.identity);
 
                     TowerToBePlaced = null;
-                    towerDir = PlayerTowerInfoSO.Directions.Down;
+                    towerDir = PlayerTowerSO.Directions.Down;
                     GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
                 }
             }

@@ -5,10 +5,8 @@ using UnityEngine;
 namespace UpdatedTD
 {
     [CreateAssetMenu(fileName = "New Tower", menuName = "Tower/New Player Tower")]
-    public class PlayerTowerInfoSO : ScriptableObject
+    public class PlayerTowerSO : BaseTowerSO
     {
-        public TowerInfoStruct TowerInfo;
-
         [Header("Information for Player")]
         public int TowerPrice;
         public string TowerDescription;
@@ -87,22 +85,5 @@ namespace UpdatedTD
             Up,
             Right
         }
-    }
-
-    [System.Serializable]
-    public struct TowerInfoStruct
-    {
-        [Header("Base Information")]
-        public string TowerName;
-        public int ItemID;
-
-        [Header("Combat Information")]
-        public int Health;
-        public int Damage;
-        public float ProjectileSpeed;
-        public float AttackRange;
-        public float AttackCooldown;
-        public GameObject TEMPProjectile;
-        public string targetTag;
     }
 }

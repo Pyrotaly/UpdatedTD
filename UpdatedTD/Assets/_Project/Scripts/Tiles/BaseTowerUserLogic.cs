@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class PlayerTowerTIle : MonoBehaviour, ISelectable, IDamageable
+    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable, IDamageable
     {
-        [SerializeField] private PlayerTowerInfoSO towerInfo;
+        [SerializeField] protected BaseTowerSO towerInfo;
         private GameObject towerRadius;
         private BaseTowerAttackBehavior towerAttackBehavior;
 
@@ -27,21 +27,17 @@ namespace UpdatedTD
             towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadius.GetComponent<TowerRadiusTargetList>().targetList);
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             towerAttackBehavior.Attack();
         }
 
-        public PlayerTowerInfoSO GetTowerInfo() { return towerInfo; }
-
-        public void Select()
+        public virtual void Select()
         {
-            //Play sound effect
-            //Display description and stuff
             towerRadius.SetActive(true);
         }
 
-        public void Deselect()
+        public virtual void Deselect()
         {
             towerRadius.SetActive(false);
         }

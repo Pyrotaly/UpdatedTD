@@ -18,7 +18,6 @@ namespace UpdatedTD
 
         private void OnTriggerEnter(Collider collision)
         {
-            Debug.Log(TargetTag);
             if (collision.gameObject.tag == TargetTag)
             {
                 targetList.Add(collision.gameObject);
