@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 701329111}
   - component: {fileID: 701329112}
   - component: {fileID: 701329113}
+  - component: {fileID: 701329114}
   m_Layer: 0
   m_Name: Singletons
   m_TagString: Untagged
@@ -310,6 +311,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerAttackHandler: {fileID: 5178021242739705036, guid: 493418448a96a6c49b9689cb8a4b9de5, type: 3}
+--- !u!114 &701329114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701329109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd9958963373d7499ef24a96b3888f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: []
 --- !u!1 &703084922
 GameObject:
   m_ObjectHideFlags: 0

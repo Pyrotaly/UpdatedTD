@@ -8,13 +8,13 @@ namespace UpdatedTD
     {
         public override void Attack()
         {
-            if (targetList.Count != 0)
-            {
-                if (Time.time - lastShotTime >= attackCooldown)
-                {
-                    ShootProjectile(TEMPProjectile);
-                }
-            }
+            //if (targetList.Count != 0)
+            //{
+            //    if (Time.time - lastShotTime >= attackCooldown)
+            //    {
+            //        ShootProjectile(TEMPProjectile);
+            //    }
+            //}
         }
 
         private void ShootProjectile(GameObject prefab)
