@@ -6,15 +6,24 @@ namespace UpdatedTD
 {
     public class TestEnemy1x1TowerBehavior : BaseTowerAttackBehavior
     {
+        //TODO : Need to setup tower becuase rn the targestlist is nothing on enemy since it not get reference to the child object list
         public override void Attack()
         {
-            //if (targetList.Count != 0)
-            //{
-            //    if (Time.time - lastShotTime >= attackCooldown)
-            //    {
-            //        ShootProjectile(TEMPProjectile);
-            //    }
-            //}
+            Debug.Log("HAHAH ATTACKING");
+
+            foreach (GameObject i in targetList)
+            {
+                Debug.Log(i);
+            }
+
+            if (targetList.Count != 0)
+            {
+                if (Time.time - lastShotTime >= attackCooldown)
+                {
+                    Debug.Log("DIE FROM ENEMY");
+                    ShootProjectile(TEMPProjectile);
+                }
+            }
         }
 
         private void ShootProjectile(GameObject prefab)

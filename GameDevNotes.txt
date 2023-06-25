@@ -493,3 +493,6 @@ Testing make tower shoot
 ========
 6/24/2023
 --------
+Testing enemy and it now it work
+
+//TODO : Need to setup tower becuase rn the targestlist is nothing on enemy since it not get reference to the child object list

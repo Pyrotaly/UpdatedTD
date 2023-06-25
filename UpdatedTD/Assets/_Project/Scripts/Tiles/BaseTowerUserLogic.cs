@@ -14,8 +14,15 @@ namespace UpdatedTD
 
         private void Awake()
         {
-            towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;
+            Debug.Log("hehe");
+            towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;  
             towerAttackBehavior = GetComponent<BaseTowerAttackBehavior>();
+        }
+
+        //TESTING, used on Test Spawn Enemy to test 
+        public void CallStart()
+        {
+            Start();
         }
 
         private void Start()

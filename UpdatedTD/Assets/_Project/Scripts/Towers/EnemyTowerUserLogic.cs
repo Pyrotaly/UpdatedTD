@@ -18,18 +18,18 @@ namespace UpdatedTD
         {
             base.Update();
 
-            if (pathIndex == WIPLevelManager.Instance.GetPath.Length)
-            {
-                Destroy(gameObject);
-                return;
-            }
+            //if (pathIndex == WIPLevelManager.Instance.GetPath.Length)
+            //{
+            //    Destroy(gameObject);
+            //    return;
+            //}
 
-            transform.position = Vector2.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
 
-            if (Vector2.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.1f)
-            {
-                pathIndex++;
-            }
+            //if (Vector2.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.1f)
+            //{
+            //    pathIndex++;
+            //}
         }
 
         public override void Deselect()
