@@ -8,20 +8,34 @@ namespace UpdatedTD
 {
     public static class HelperFunctions
     {
-        private static TextMeshProUGUI text;
+        private static TextMeshProUGUI descriptionText1;
+        private static GameObject moreInfoUI;
 
-        public static TextMeshProUGUI Text
+        public static TextMeshProUGUI DescriptionText1
         {
             get
             {
-                if (text == null) text = GameObject.Find("Description").GetComponent<TextMeshProUGUI>();
-                return text;
+                if (descriptionText1 == null) descriptionText1 = GameObject.Find("Description").GetComponent<TextMeshProUGUI>();
+                return descriptionText1;
+            }
+        }
+
+        public static GameObject MoreInfoUI
+        {
+            get
+            {
+                if (moreInfoUI == null) moreInfoUI = GameObject.Find("MoreInfoUI");
+                return moreInfoUI;
             }
         }
 
         public static void SetDescriptionText(string DescriptionText)
         {
-            Text.SetText(DescriptionText);
+            DescriptionText1.SetText(DescriptionText);
         }
+
+        public static void EnableMoreInfoUI() { MoreInfoUI.SetActive(true); }
+        public static void DisableMoreInfoUI() { MoreInfoUI.SetActive(false); }
+
     }
 }

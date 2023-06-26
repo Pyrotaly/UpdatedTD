@@ -496,3 +496,37 @@ Testing make tower shoot
 Testing enemy and it now it work
 
 //TODO : Need to setup tower becuase rn the targestlist is nothing on enemy since it not get reference to the child object list
+
+========
+6/25/2023
+--------
+Okay so issue is that the list in SetUpTower gets everything in the list when the cube initialized at first, 
+it does not get updated as the list keeps getting updated
+
+Got to learn object pooling and making the grid script run during eidtor time...
+
+To destroy tower, have to work on more descirption info spawn a button that allows player to delete towers
+Also figure out how the upgrade system works....
+
+make enemy move through the points
+
+The description info should show the towers health, for enemies, and damage
+
+For now, no mini map
+
+Going to make getting reference to description helper function as all towers gonna just get it and maybe in future other things need description
+
+
+
+
+
+
+
+game over and win condition (super basic level win managenemtn)
+schedule meeting with Henry AND COMPILE LIST OF QUESTIONS INCLUDING INTERNSHIP PSTUFF TOO JUST IN CASE
+
+figure out save system
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
+
+Quality Of Life: Make camera center on tower when clicked on?

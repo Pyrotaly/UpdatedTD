@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,12 +14,11 @@ namespace UpdatedTD
 
         private void Awake()
         {
-            Debug.Log("hehe");
             towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;  
             towerAttackBehavior = GetComponent<BaseTowerAttackBehavior>();
         }
 
-        //TESTING, used on Test Spawn Enemy to test 
+        //TODO : TESTING FUNCTION CallStart, used on Test Spawn Enemy to test 
         public void CallStart()
         {
             Start();
@@ -27,12 +26,11 @@ namespace UpdatedTD
 
         private void Start()
         {
-            Debug.Log("HAH");
             towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
             towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
-            Instantiate(towerRadius, this.gameObject.transform);
+            var towerRadiusHandler = Instantiate(towerRadius, this.gameObject.transform);
 
-            towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadius.GetComponent<TowerRadiusTargetList>().targetList);
+            towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadiusHandler);
         }
 
         protected virtual void Update()

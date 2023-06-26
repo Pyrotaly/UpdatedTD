@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,19 @@ namespace UpdatedTD
     public class TowerRadiusTargetList : MonoBehaviour
     {
         public List<GameObject> targetList = new List<GameObject>();
+        public event Action<List<GameObject>> ListUpdated;
 
         public string TargetTag;
 
         public void SetUp(string tagSetup)
         {
             TargetTag = tagSetup;
-            Debug.Log(TargetTag);
+        }
+
+        public void UpdateList(List<GameObject> newList)
+        {
+            targetList = newList;
+            ListUpdated?.Invoke(targetList);
         }
 
         private void OnTriggerEnter(Collider collision)
@@ -21,6 +28,7 @@ namespace UpdatedTD
             if (collision.gameObject.tag == TargetTag)
             {
                 targetList.Add(collision.gameObject);
+                UpdateList(targetList);
             }
         }
 
@@ -30,6 +38,7 @@ namespace UpdatedTD
             if (collision.gameObject.tag == TargetTag)
             {
                 targetList.Remove(collision.gameObject);
+                UpdateList(targetList);
             }
         }
     }

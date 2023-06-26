@@ -6,7 +6,8 @@ namespace UpdatedTD
 {
     public abstract class BaseTowerAttackBehavior : MonoBehaviour
     {
-        protected List<GameObject> targetList;
+        protected List<GameObject> targetList = new List<GameObject>();
+        private GameObject towerRadius;
 
         private int damage;
         protected float projectileSpeed;
@@ -16,7 +17,7 @@ namespace UpdatedTD
 
         protected float lastShotTime = 0f;
 
-        public void SetUpTowerAttackParameters(TowerInfoStruct towerStruct, List<GameObject> list)
+        public void SetUpTowerAttackParameters(TowerInfoStruct towerStruct, GameObject towerRadiusReference)
         {
             damage = towerStruct.Damage;
             projectileSpeed = towerStruct.ProjectileSpeed;
@@ -24,10 +25,18 @@ namespace UpdatedTD
             TEMPProjectile = towerStruct.TEMPProjectile;
             targetTag = towerStruct.targetTag;
             TEMPProjectile.GetComponent<Projectile>().SetUp(damage, targetTag);
-            targetList = list;
+            towerRadius = towerRadiusReference;
+
+            towerRadius.GetComponent<TowerRadiusTargetList>().ListUpdated += OnListUpdated;
         }
 
-        //TODO : GameObject parameter might not be ideal in future
+        private void OnListUpdated(List<GameObject> updatedList) { targetList = updatedList; }
+
+        private void OnDestroy()
+        {
+            towerRadius.GetComponent<TowerRadiusTargetList>().ListUpdated -= OnListUpdated;
+        }
+
         public abstract void Attack();
     }
 }

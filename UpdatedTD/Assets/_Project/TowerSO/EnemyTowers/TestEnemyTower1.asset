@@ -19,7 +19,7 @@ MonoBehaviour:
     Damage: 10
     ProjectileSpeed: 3
     AttackRange: 5
-    AttackCooldown: 5
+    AttackCooldown: 10
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
     targetTag: Player
   moveSpeed: 6

@@ -9,19 +9,18 @@ namespace UpdatedTD
         //TODO : Need to setup tower becuase rn the targestlist is nothing on enemy since it not get reference to the child object list
         public override void Attack()
         {
-            Debug.Log("HAHAH ATTACKING");
-
-            foreach (GameObject i in targetList)
-            {
-                Debug.Log(i);
-            }
-
             if (targetList.Count != 0)
             {
+                foreach (GameObject i in targetList)
+                {
+                    Debug.Log(i + " Enemy Haha");
+                }
+
                 if (Time.time - lastShotTime >= attackCooldown)
                 {
                     Debug.Log("DIE FROM ENEMY");
                     ShootProjectile(TEMPProjectile);
+                    lastShotTime = Time.time;
                 }
             }
         }
