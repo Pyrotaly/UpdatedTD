@@ -10,7 +10,6 @@ namespace UpdatedTD
         [SerializeField] private GameObject pauseScreen; //TODO : Pause UI need to have button to get back to play or just never hide pause button
         [SerializeField] private GameObject shopUI;
         [SerializeField] private GameObject[] otherNotPauseButtonsUI;
-        [SerializeField] private GameObject miniMapUI;
 
         [Header("End Game UI")]
         [SerializeField] private GameObject victoryScreen;
@@ -35,14 +34,12 @@ namespace UpdatedTD
             {
                 shopUI.SetActive(true); //TODO : Should enable shop again or no?
                 foreach (GameObject buttonUI in otherNotPauseButtonsUI) { buttonUI.SetActive(true); }
-                miniMapUI.SetActive(true);
             }
 
             if (state == GameManager.GameState.Building)
             {
                 shopUI.SetActive(false);
                 foreach (GameObject buttonUI in otherNotPauseButtonsUI) { buttonUI.SetActive(false); }
-                miniMapUI.SetActive(false);
             }
 
             //victoryScreen.SetActive(state == GameManager.GameState.Victory);

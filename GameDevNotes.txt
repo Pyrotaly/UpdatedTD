@@ -11,6 +11,8 @@ Questions:
 --try get? debug error, never use debugger tbh
 -Lot of my system involves me not forgetting cvertain things. i just get errors? just 
 
+--My player tower script userlogic i think has script that returns its SO but how could i check it?
+
 -Going to do this system atm, have bullet prefab with emptpy variables, when i spawn one it will get data and get reference to it is this expensive? I don't think it a big deal in my game since object pooling but 
 
 -Is i using virtual wrong, like requring the default implentation as well? 
@@ -530,3 +532,21 @@ make adding towers work (also adding the notification of a new tower),
 make wave system somewhere (including spawner and figure out how waves work...)
 
 Quality Of Life: Make camera center on tower when clicked on?
+
+========
+6/26/2023
+--------
+
+Making description can overflow vertically so have to be careful with my descriptions
+Will work on UI design later... kinda hard
+
+Learning c# out reference thing...
+-----------------
+TODO:
+Make tower destroy itself, get some currency back?
+Got to learn object pooling and making the grid script run during eidtor time...
+
+make enemy move through the points
+game over and win condition (super basic level win managenemtn)
+schedule meeting with Henry AND COMPILE LIST OF QUESTIONS INCLUDING INTERNSHIP PSTUFF TOO JUST IN CASE
+
