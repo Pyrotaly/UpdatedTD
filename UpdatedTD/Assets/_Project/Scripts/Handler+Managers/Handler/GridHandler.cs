@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 namespace UpdatedTD
 {
+    [ExecuteInEditMode]
     public class GridHandler : MonoBehaviour
     {
         [SerializeField] private int width, height;

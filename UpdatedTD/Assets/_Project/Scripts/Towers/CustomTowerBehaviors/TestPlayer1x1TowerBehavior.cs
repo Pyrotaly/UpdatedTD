@@ -10,14 +10,12 @@ namespace UpdatedTD
         {
             if (targetList.Count != 0)
             {
-                foreach (GameObject i in targetList)
-                {
-                    Debug.Log(i + " Player haha");
-                }
 
                 if (Time.time - lastShotTime >= attackCooldown)
                 {
+                    Debug.Log("Die from Player");
                     ShootProjectile(TEMPProjectile);
+                    lastShotTime = Time.time;
                 }
             }
         }

@@ -41,12 +41,54 @@ namespace UpdatedTD
         //TODO : Make selectionManager usage here
         public virtual void Select()
         {
-            towerRadius.SetActive(true);
+            if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject == null)
+            {
+                towerRadius.SetActive(true);
+                return;
+            }
+
+            if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
+            {
+                //If clicked on same tower
+                //Do nothing or can disable ui...
+            }
+            else
+            {
+                //If this new tower player clicked on is not same then do then enable the description
+                towerRadius.SetActive(true);
+            }
+
         }
 
         public virtual void Deselect()
         {
             towerRadius.SetActive(false);
+            Debug.Log("Deselected " + SelectionManager<BaseTowerUserLogic>.previousSelectedObject.name);
         }
+
+        public void DestroyTower() 
+        {
+            //TODO : Make some currency back? how would this change if player upgrade the tower?
+            Destroy(gameObject); 
+        }
+
+        #region MouseFunctions
+        private void OnMouseEnter()
+        {
+        }
+
+        private void OnMouseExit()
+        {
+        }
+
+        private void OnMouseDown()
+        {
+            Select();
+        }
+
+        private void OnMouseUp()
+        {
+        }
+        #endregion
     }
 }

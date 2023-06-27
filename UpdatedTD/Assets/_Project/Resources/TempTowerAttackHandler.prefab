@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4524083785924424589}
   - component: {fileID: 4837013207992528886}
   - component: {fileID: 578145787147053164}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TempTowerAttackHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}

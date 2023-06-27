@@ -90,6 +90,20 @@ namespace UpdatedTD
             }
         }
 
+        public void DestroyTower(GameObject towerToBeDestroyed)
+        {
+            PlayerTowerSO towerSO = towerToBeDestroyed.GetComponent<PlayerTowerUserLogic>().GetTowerInfo();
+
+            List<Vector3Int> tileCoordinatesToCheck =
+                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)towerToBeDestroyed.transform.position.x, (int)towerToBeDestroyed.transform.position.y - 1, (int)towerToBeDestroyed.transform.position.z), towerDir);
+
+            foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
+            {
+                BuildingTiles buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+                buildingTile.SetBuildable(true);
+            }
+        }
+
         private void GameManager_OnGameStateChanged(GameManager.GameState state)
         {
             inBuildState = (state == GameManager.GameState.Building);

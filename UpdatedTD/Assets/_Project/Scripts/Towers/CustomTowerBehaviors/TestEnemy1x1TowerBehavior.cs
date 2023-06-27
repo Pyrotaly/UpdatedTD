@@ -11,11 +11,6 @@ namespace UpdatedTD
         {
             if (targetList.Count != 0)
             {
-                foreach (GameObject i in targetList)
-                {
-                    Debug.Log(i + " Enemy Haha");
-                }
-
                 if (Time.time - lastShotTime >= attackCooldown)
                 {
                     Debug.Log("DIE FROM ENEMY");

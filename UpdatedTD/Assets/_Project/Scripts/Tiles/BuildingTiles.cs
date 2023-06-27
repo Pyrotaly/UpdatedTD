@@ -24,7 +24,16 @@ namespace UpdatedTD
         public void SetBuildable(bool boolValue)
         {
             isBuildable = boolValue;
-            cubeRenderer.material.color = hoverColor;
+
+            if (isBuildable)
+            {
+                Debug.Log("AHA");
+                cubeRenderer.material.color = originalColor;
+            }
+            else
+            {
+                cubeRenderer.material.color = hoverColor;
+            }
         }
 
         #region MouseFunctions

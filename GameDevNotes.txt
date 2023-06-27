@@ -13,6 +13,7 @@ Questions:
 
 --My player tower script userlogic i think has script that returns its SO but how could i check it?
 
+--My tower detruction call multiple other object kidna like shopclass using many singletons...
 -Going to do this system atm, have bullet prefab with emptpy variables, when i spawn one it will get data and get reference to it is this expensive? I don't think it a big deal in my game since object pooling but 
 
 -Is i using virtual wrong, like requring the default implentation as well? 
@@ -543,10 +544,40 @@ Will work on UI design later... kinda hard
 Learning c# out reference thing...
 -----------------
 TODO:
-Make tower destroy itself, get some currency back?
-Got to learn object pooling and making the grid script run during eidtor time...
+make tower make the selected objects buildable again... 
+- idea: static set the object toweerselected in buildingsturcutrehandler, then with tower information, call the destroybuilding or whatever
+method in buildingstructurehandler... tower is spawned on top of tile but only y is added with one so can check easily based on tower
+location
+
+
+make clicking tower spawn more info UI correclty...
 
 make enemy move through the points
 game over and win condition (super basic level win managenemtn)
 schedule meeting with Henry AND COMPILE LIST OF QUESTIONS INCLUDING INTERNSHIP PSTUFF TOO JUST IN CASE
 
+
+Got to learn object pooling and making the grid script run during eidtor time...
+
+
+========
+6/27/2023	
+--------
+Change helper function to some whatever not static make it monohbeavior so i can just access...
+Just made open the thing via menu manager thing...
+Kinda of janky design but i cannot figure something out
+
+TODO : The 'Kinda of janky...'
+
+schedule meeting with Henry
+
+figure out save system
+
+but not shooting, make art...
+Got to learn object pooling 
+game over and win condition (super basic level win managenemtn)
+
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
+
+Quality Of Life: Make camera center on tower when clicked on?
