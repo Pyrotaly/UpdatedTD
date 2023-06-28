@@ -7,7 +7,7 @@ namespace UpdatedTD
     public class EnemyTowerUserLogic : BaseTowerUserLogic
     {
         private EnemyTowerInfoSO towerSO;
-        private int pathIndex = 0;
+        public int pathIndex = 0;
 
         private void Start()
         {
@@ -24,10 +24,11 @@ namespace UpdatedTD
                 return;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, towerSO.moveSpeed*5 * Time.deltaTime);
 
-            if (Vector2.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.1f)
+            if (Vector2.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.01f)
             {
+                Debug.Log(pathIndex);
                 pathIndex++;
             }
         }

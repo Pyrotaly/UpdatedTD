@@ -10,7 +10,7 @@ namespace UpdatedTD
 
         public void Start()
         {
-            var temp = Instantiate(TestNemy);
+            var temp = Instantiate(TestNemy, new Vector3(-49, 166, -95), Quaternion.identity);
             temp.GetComponent<BaseTowerUserLogic>().CallStart();
         }
     }
