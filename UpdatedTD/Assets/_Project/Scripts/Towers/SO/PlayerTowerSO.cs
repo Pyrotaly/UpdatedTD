@@ -9,9 +9,11 @@ namespace UpdatedTD
     {
         [Header("Information for Player")]
         public int TowerPrice;
-        public string TowerDescription;
         public int Height = 1;
         public int Width = 1;
+
+        [TextArea(5, 10)]
+        public string TowerDescription;
 
         public List<Vector3Int> CoordinatesTowerTakesUp(Vector3Int tileCooridnatePlayerClicked, Directions dir)
         {

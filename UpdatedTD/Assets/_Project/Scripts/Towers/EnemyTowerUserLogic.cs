@@ -24,10 +24,11 @@ namespace UpdatedTD
                 return;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
 
-            if (Vector2.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.1f)
+            if (Vector3.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.01f)
             {
+                Debug.Log(pathIndex);
                 pathIndex++;
             }
         }

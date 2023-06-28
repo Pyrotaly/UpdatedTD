@@ -560,9 +560,6 @@ schedule meeting with Henry AND COMPILE LIST OF QUESTIONS INCLUDING INTERNSHIP P
 Got to learn object pooling and making the grid script run during eidtor time...
 
 
-========
-6/27/2023	
---------
 Change helper function to some whatever not static make it monohbeavior so i can just access...
 Just made open the thing via menu manager thing...
 Kinda of janky design but i cannot figure something out
@@ -581,3 +578,45 @@ make adding towers work (also adding the notification of a new tower),
 make wave system somewhere (including spawner and figure out how waves work...)
 
 Quality Of Life: Make camera center on tower when clicked on?
+
+
+========
+6/28/2023	
+--------
+Had grid duplicating somehow
+
+figure out save system, how to make certain tiles buildable, like how can i design maps... learning about unity editor scripting
+how do i limit scripts or like prevent certain things from happening...
+
+Save system what i need to save:
+What tiles are not buildable, what towers are on each block, each tower's health and upgrades?, currency, wave level... (just sounds like a lot of dictionaries)
+	I was thinking that upgraded towers are their own scriptable objects, their own instance...
+
+but not shooting, make art... BUT UPGRADE TO NEW URP FIRST
+Got to learn object pooling 
+game over and win condition (super basic level win managenemtn)
+
+//Based on wave levels...
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
+
+Upgrade system, just realized that if click on more info for tower, there should be a tab to see the tower upgrades as well, so the UI i have now
+is pretty good actually
+
+Quality Of Life: Make camera center on tower when clicked on?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
