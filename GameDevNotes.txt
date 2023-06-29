@@ -591,22 +591,25 @@ how do i limit scripts or like prevent certain things from happening...
 Save system what i need to save:
 What tiles are not buildable, what towers are on each block, each tower's health and upgrades?, currency, wave level... (just sounds like a lot of dictionaries)
 	I was thinking that upgraded towers are their own scriptable objects, their own instance...
+	The new towers are different prefabs, every upgrade just have unique upgrades...
 
-but not shooting, make art... BUT UPGRADE TO NEW URP FIRST
+but not shooting, make art... BUT UPGRADE TO NEW URP FIRST, just literal cubes
 Got to learn object pooling 
 game over and win condition (super basic level win managenemtn)
 
 //Based on wave levels...
 make adding towers work (also adding the notification of a new tower), 
-make wave system somewhere (including spawner and figure out how waves work...)
+make wave system somewhere (including spawner and figure out how waves work...) (saw video on using points so spawning enemy costs
+points and the game just randomly spawn enemies and uses the points)
 
 Upgrade system, just realized that if click on more info for tower, there should be a tab to see the tower upgrades as well, so the UI i have now
 is pretty good actually
 
 Quality Of Life: Make camera center on tower when clicked on?
 
-
-
+think about how saving will work because the systems is going to need to work with it...
+Object pooling, save system, unity editor
+ what is bitmasking...
 
 
 
