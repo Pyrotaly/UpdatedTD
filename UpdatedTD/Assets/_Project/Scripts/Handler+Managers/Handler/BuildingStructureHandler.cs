@@ -73,6 +73,7 @@ namespace UpdatedTD
                 {
                     foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
                     {
+                        Debug.Log(cooridnate);
                         BuildingTiles buildingTile = gridHandler.GetTileAtPosition(cooridnate);
                         buildingTile.SetBuildable(false);
                     }

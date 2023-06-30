@@ -28,7 +28,6 @@ namespace UpdatedTD
 
             if (Vector3.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.01f)
             {
-                Debug.Log(pathIndex);
                 pathIndex++;
             }
         }

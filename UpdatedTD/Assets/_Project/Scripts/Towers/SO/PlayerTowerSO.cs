@@ -44,7 +44,7 @@ namespace UpdatedTD
                     {
                         for (int z = 0; z < Height; z++)
                         {
-                            coordinatesTowerTakesUp.Add(tileCooridnatePlayerClicked + new Vector3Int(x, 0, -z));
+                            coordinatesTowerTakesUp.Add(tileCooridnatePlayerClicked - new Vector3Int(x, 0, -z));
                         }
                     }
                     break;
@@ -53,7 +53,7 @@ namespace UpdatedTD
                     {
                         for (int z = 0; z < Width; z++)
                         {
-                            coordinatesTowerTakesUp.Add(tileCooridnatePlayerClicked + new Vector3Int(-x, 0, z));
+                            coordinatesTowerTakesUp.Add(tileCooridnatePlayerClicked - new Vector3Int(-x, 0, z));
                         }
                     }
                     break;

@@ -614,7 +614,16 @@ Object pooling, save system, unity editor
 
 
 
+========
+6/29/2023	
+--------
+Figured out object pooling
 
+Fixed rotation bug
+
+Unity
+
+saving is just if have certain tower, store the values in each tower, so dictionary with towers, towers some how store upgrades
 
 
 
