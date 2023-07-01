@@ -9,15 +9,10 @@ namespace UpdatedTD
     {
         private GameObject cubePrefab;
         private bool enablePainting = false;
-        private Transform parentObject;
-
-        [Tooltip("If this is enabled, use spawn drag, if disabled, then single spawning will occur")]
         private bool useDragSpawn = true; // Toggle option for drag spawn or single click spawn
-
         private int restrictedY = 0;
         private Vector3 startDragPosition;
         private Vector3 endDragPosition;
-        private Collider[] cachedColliders;
 
         [MenuItem("Window/Cube Painter")]
         public static void ShowWindow()
@@ -30,8 +25,6 @@ namespace UpdatedTD
             GUILayout.Label("Cube Painter", EditorStyles.boldLabel);
             cubePrefab = EditorGUILayout.ObjectField("Cube Prefab", cubePrefab, typeof(GameObject), false) as GameObject;
             restrictedY = EditorGUILayout.IntField("Restricted Y", restrictedY);
-
-            parentObject = EditorGUILayout.ObjectField("Parent Object", parentObject, typeof(Transform), true) as Transform;
 
             enablePainting = GUILayout.Toggle(enablePainting, "Enable Painting");
             useDragSpawn = GUILayout.Toggle(useDragSpawn, "Use Drag Spawn");
@@ -105,7 +98,6 @@ namespace UpdatedTD
                         {
                             GameObject cube = PrefabUtility.InstantiatePrefab(cubePrefab) as GameObject;
                             cube.transform.position = RoundPositionToNearestInt(position);
-                            cube.transform.SetParent(parentObject);
                             Undo.RegisterCreatedObjectUndo(cube, "Paint Cube");
                             Debug.Log("Cube spawned at position: " + cube.transform.position);
                         }
@@ -127,9 +119,12 @@ namespace UpdatedTD
         private Vector3 GetMouseWorldPosition(Vector2 mousePosition)
         {
             Ray ray = HandleUtility.GUIPointToWorldRay(mousePosition);
+
             float distance = Mathf.Abs((restrictedY - ray.origin.y) / ray.direction.y);
             Vector3 intersectionPoint = ray.origin + ray.direction * distance;
+
             intersectionPoint = RoundPositionToNearestInt(intersectionPoint);
+
             return intersectionPoint;
         }
 
@@ -140,12 +135,9 @@ namespace UpdatedTD
 
         private bool IsPositionOccupied(Vector3 position)
         {
-            if (cachedColliders == null)
-                cachedColliders = new Collider[0];
+            Collider[] colliders = Physics.OverlapBox(position, Vector3.one * 0.4f);
 
-            Physics.OverlapBoxNonAlloc(position, Vector3.one * 0.4f, cachedColliders);
-
-            foreach (var collider in cachedColliders)
+            foreach (var collider in colliders)
             {
                 if (collider.gameObject != null && collider.gameObject.CompareTag("Cube"))
                 {
@@ -198,8 +190,6 @@ namespace UpdatedTD
             Vector3 min = new Vector3(Mathf.Min(startPosition.x, endPosition.x), Mathf.Min(startPosition.y, endPosition.y), Mathf.Min(startPosition.z, endPosition.z));
             Vector3 max = new Vector3(Mathf.Max(startPosition.x, endPosition.x), Mathf.Max(startPosition.y, endPosition.y), Mathf.Max(startPosition.z, endPosition.z));
 
-            List<GameObject> cubes = new List<GameObject>();
-
             for (int x = Mathf.RoundToInt(min.x); x <= Mathf.RoundToInt(max.x); x++)
             {
                 for (int y = Mathf.RoundToInt(min.y); y <= Mathf.RoundToInt(max.y); y++)
@@ -212,8 +202,10 @@ namespace UpdatedTD
                         {
                             if (cubePrefab != null)
                             {
-                                GameObject cube = Instantiate(cubePrefab, position, Quaternion.identity, parentObject);
-                                cubes.Add(cube);
+                                GameObject cube = PrefabUtility.InstantiatePrefab(cubePrefab) as GameObject;
+                                cube.transform.position = position;
+                                Undo.RegisterCreatedObjectUndo(cube, "Paint Cube");
+                                Debug.Log("Cube spawned at position: " + cube.transform.position);
                             }
                             else
                             {
@@ -225,15 +217,6 @@ namespace UpdatedTD
                             Debug.Log("Position is occupied.");
                         }
                     }
-                }
-            }
-
-            if (cubes.Count > 0)
-            {
-                foreach (var cube in cubes)
-                {
-                    Undo.RegisterCreatedObjectUndo(cube, "Paint Cube");
-                    Debug.Log("Cube spawned at position: " + cube.transform.position);
                 }
             }
         }

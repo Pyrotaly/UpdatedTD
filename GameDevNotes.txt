@@ -677,6 +677,27 @@ Object pooling, save syste
 
 
 ChatGPT the unity editor, got building editor script working...
+Bug is that it not added to grid handler so can't get the exact tile there... so if fix then can spawn tiles on it...
+
+
+========
+7/1/2023	
+--------
+
+Object Pooling
+Save system
+
+Upgrade System (with points somehow)
+
+
+
+
+
+
+
+
+
+
 
 
 
