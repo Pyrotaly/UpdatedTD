@@ -96,7 +96,7 @@ namespace UpdatedTD
             PlayerTowerSO towerSO = towerToBeDestroyed.GetComponent<PlayerTowerUserLogic>().GetTowerInfo();
 
             List<Vector3Int> tileCoordinatesToCheck =
-                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)towerToBeDestroyed.transform.position.x, (int)towerToBeDestroyed.transform.position.y - 1, (int)towerToBeDestroyed.transform.position.z), towerDir);
+                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)towerToBeDestroyed.transform.position.x, (int)towerToBeDestroyed.transform.position.y - 1, (int)towerToBeDestroyed.transform.position.z), towerSO.localDir);
 
             foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
             {

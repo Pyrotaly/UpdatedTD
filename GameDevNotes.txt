@@ -628,6 +628,55 @@ saving is just if have certain tower, store the values in each tower, so diction
 
 
 
+========
+6/29/2023	
+--------
+
+Object pooling, save system, unity editor
+
+Object pooling, each tower will each have their own small pool of bullets, of around like 3 or 4.  I can't imagine why they would need more than that, maybe the really long range towers and projectile is slow...
+
+What is my upgrade system gonna be, like just each upgprade is its own prefab? that can't be right...
+Need to use some kind of hashmap or something to store all the upgrades a tower has
+- upgrades like BTD6, i guess it depends on what the upgrades do
+- if the upgrades fundamentally change the tower then yea it a new tower...
+
+
+
+
+
+What kind of towers to have in my demo
+Player: Basic tower, that can be upgpraded a lot?
+	Long range tower
+	Artilary tower, chooses where it shoots
+
+Enemies:
+	Tower that shoot in straight light
+	Shoot in a circle
+	Tower that spawns more towers
+	Flying tower?
+	Underground tower
+	Big health tower is like skyscraper that break down into layers
+	Fast towers
+	
+Upgrades for the moment
+
+
+========
+6/30/2023	
+--------
+2 towers
+1 enemy
+
+
+End goal
+12 Towers
+5 enemies 
+
+
+
+Object pooling, save system, unity editor
+
 
 
 
