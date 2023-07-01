@@ -673,11 +673,10 @@ End goal
 12 Towers
 5 enemies 
 
+Object pooling, save syste
 
 
-Object pooling, save system, unity editor
-
-
+ChatGPT the unity editor, got building editor script working...
 
 
 

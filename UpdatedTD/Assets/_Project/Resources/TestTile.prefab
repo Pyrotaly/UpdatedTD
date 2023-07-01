@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 764106364994292693}
   m_Layer: 0
   m_Name: TestTile
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7377411367276218926
 MeshFilter:
@@ -120,3 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.2264151, g: 0.13114987, b: 0.13114987, a: 0}
   clickColor: {r: 0, g: 0, b: 0, a: 0}
+  isBuildable: 1
