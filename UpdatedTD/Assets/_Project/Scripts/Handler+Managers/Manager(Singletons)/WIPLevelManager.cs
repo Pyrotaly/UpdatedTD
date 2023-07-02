@@ -24,5 +24,7 @@ namespace UpdatedTD
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        //TODO : If finished final wave then game manaer set gamestate to victory
     }
 }

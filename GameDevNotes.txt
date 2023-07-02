@@ -3,6 +3,9 @@ Goals: Art, Project development pipline structure (learning to reuse code, strea
 
 Goal: Release the 40 wave mode, in one area
 
+Important notes: 7/1 for optimizing
+idea: remove collider on tiles and replace with a ray cast function to not need colliders?... but right now fps is fine
+
 Questions:
 -Is towerInfo.TowerInfo.whatever expensive?
 -BuildingStructureHandler, is using static being bad?
@@ -683,6 +686,7 @@ Bug is that it not added to grid handler so can't get the exact tile there... so
 ========
 7/1/2023	
 --------
+Learning how to read profiler, learn how to upgrade to new URP I guess..., make things performant...
 
 Object Pooling
 Save system
@@ -691,12 +695,51 @@ Upgrade System (with points somehow)
 
 
 
+Just realized that i should have enemies be object pooled... 
 
 
+Notes on profiling... https://www.youtube.com/watch?v=uXRURWwabF4 
+-------------------------------
+}Budget formula of game fps is 1000ms / target frames per second
+60 fps : 16ms
+30fps: 32ms
+
+}Profiling in editor can be misleading as editor will consume a lot of budge
+Best thing to do is build game and profile in the build
+- Make sure development build is checked and autoconnect profiler (as soon build start profiler is connected)
+
+!!! In project settings (under 'Player' but this video from 2020), make sure 'Run in Background' is unchecked
+
+Set frame rate in Unity?
+if i do not set it, it is as high as possible in desktop but capped at 30 on mobile
 
 
+Profiling is time consuming so should be done at certain points of game.  Make sure when profiling to save what i have profiled so i can compare 
+in future profiling.  Do not wait till last minute
+Profile in sustained mode? 
+Smart loading strategy
+
+https://www.youtube.com/watch?v=IrYPkSIvpIw this video is about draw calls, making untiy perform better with models or something
+- combine meshes? static meshing, so i can use that on my tiles since they will not be moved
+- GPU instancing?
 
 
+https://www.youtube.com/watch?v=cJEmmvDQx5M this video is with 2d stuff, i think i have to learn Unity Job System
+
+Sprite atlas...
+Sprite Sheet Animation...
+==========================================
+
+
+========
+7/1/2023	
+--------
+Towers will consist of 2 game objects, one is tower image with the collider that allows player to click on them and other is the attack behavior
+the attack behavior is where the radius will spawn, this is how i can place where the tower radius will spawn... by moving where the
+attack behavior is since the radius attack will spawn as child of attack behavior
+
+
+Make basic game over things...
 
 
 
