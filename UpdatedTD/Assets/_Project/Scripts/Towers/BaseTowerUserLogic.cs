@@ -7,19 +7,19 @@ namespace UpdatedTD
     public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable, IDamageable
     {
         [SerializeField] protected BaseTowerSO towerInfo;
+        public float Health { get { return towerInfo.TowerInfo.Health; } set { } }
+
         private GameObject towerRadius;
         private BaseTowerAttackBehavior towerAttackBehavior;
 
-        public float Health { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
         private void Awake()
         {
-            towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;  
+            towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;   
             towerAttackBehavior = GetComponent<BaseTowerAttackBehavior>();
         }
 
         //TODO : TESTING FUNCTION CallStart, used on Test Spawn Enemy to test 
-        public void CallStart()
+        public void TEMPCallStart()
         {
             Start();
         }
@@ -38,7 +38,6 @@ namespace UpdatedTD
             towerAttackBehavior.Attack();
         }
 
-        //TODO : Make selectionManager usage here
         public virtual void Select()
         {
             if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject == null)

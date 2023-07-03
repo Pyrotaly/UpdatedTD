@@ -732,7 +732,7 @@ Sprite Sheet Animation...
 
 
 ========
-7/1/2023	
+7/2/2023	
 --------
 Towers will consist of 2 game objects, one is tower image with the collider that allows player to click on them and other is the attack behavior
 the attack behavior is where the radius will spawn, this is how i can place where the tower radius will spawn... by moving where the
@@ -740,6 +740,27 @@ attack behavior is since the radius attack will spawn as child of attack behavio
 
 
 Make basic game over things...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

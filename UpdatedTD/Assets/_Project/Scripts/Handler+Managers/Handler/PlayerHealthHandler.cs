@@ -6,7 +6,7 @@ namespace UpdatedTD
 {
     public class PlayerHealthHandler : MonoBehaviour, IDamageable
     {
-        public float Health { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public float Health { get; set; }
 
         private void OnTriggerEnter(Collider collision)
         {
