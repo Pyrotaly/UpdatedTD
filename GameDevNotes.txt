@@ -770,6 +770,32 @@ https://www.youtube.com/shorts/KXahbH6d1V0
 https://www.youtube.com/shorts/DE_WSF1H-Ks light performance...
 
 
+========
+7/6/2023	
+--------
+Just realized that rotating the 1x3 will be annoying, but other ones can be just "symmetrical"
+
+Enemies will be symmetrical...
+
+To copy the don't starve style, everything should be bill boarded, so head on
+
+Everything front on, if change camera rotation then just change to the towers to the side view...
+IRotatable...?
 
 
+Okay, finished learning enough for visuals and some optimizing, going back to goals...
+--------------------------
+figure out save system
 
+but not shooting, 
+make art for tower 
+tiles : https://www.youtube.com/watch?v=Y-fDGOqHQZA this video gonna do...
+bill boarding
+upgrade system
+Got to learn object pooling 
+game over and win condition (super basic level win managenemtn)
+
+make adding towers work (also adding the notification of a new tower), 
+make wave system somewhere (including spawner and figure out how waves work...)
+
+Quality Of Life: Make camera center on tower when clicked on?

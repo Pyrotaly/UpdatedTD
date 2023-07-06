@@ -36,6 +36,7 @@ namespace UpdatedTD
             else
             {
                 SceneView.duringSceneGui -= OnSceneGUI;
+                return;
             }
         }
 
