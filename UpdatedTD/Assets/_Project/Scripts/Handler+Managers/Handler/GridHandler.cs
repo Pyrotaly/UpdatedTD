@@ -12,35 +12,26 @@ namespace UpdatedTD
         [SerializeField] private BuildingTiles tilePrefab;
         [SerializeField] private GameObject tileFolder;
 
-        public Dictionary<Vector3, BuildingTiles> tiles = new Dictionary<Vector3, BuildingTiles>();
+        public Dictionary<Vector3, GameObject> tiles;
 
         private void Start()
         {
-            GenerateGrid();
-        }
+            tiles = FindGame
 
-        private void GenerateGrid()
-        {
-            for (int x = 1; x < width; x++)
+            foreach (KeyValuePair<Vector3, GameObject> kvp in TileDictionary.tilesDictionary)
             {
-                for (int z = 1; z < height; z++)
-                {
-                    BuildingTiles spawnedTile = Instantiate(tilePrefab, new Vector3(x, 0, z), Quaternion.identity);
-                    spawnedTile.name = $"Tile{x}{0}{z}";
+                Vector3 position = kvp.Key;
+                GameObject cube = kvp.Value;
 
-                    //bool isOffset = (x % 2 == 0 && z % 2 != 0) || (x % 2 != 0 && z % 2 == 0);
-                    spawnedTile.transform.SetParent(tileFolder.transform);
-
-                    tiles[new Vector3(x, 0, z)] = spawnedTile;
-                }
+                Debug.Log("Key: " + position + ", Value: " + cube.name);
             }
         }
 
         public BuildingTiles GetTileAtPosition(Vector3 position)
         {
-            if (tiles.TryGetValue(position, out BuildingTiles tile))
+            if (TileDictionary.tilesDictionary.TryGetValue(position, out GameObject tile))
             {
-                return tile;
+                return tile.GetComponent<BuildingTiles>();
             }
 
             return null;
