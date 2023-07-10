@@ -9,5 +9,6 @@ namespace UpdatedTD
     {
         [Header("Enemy Information")]
         public float moveSpeed;
+        public float PlayerHealthDamage = 1;
     }
 }

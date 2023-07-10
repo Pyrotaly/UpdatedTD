@@ -58,7 +58,13 @@ namespace UpdatedTD
                 //Checking if can build in area
                 foreach (Vector3Int cooridnate in tileCoordinatesToCheck) 
                 {
-                    BuildingTiles buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+                    BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+
+                    if (buildingTile == null) 
+                    { 
+                        Debug.Log("Cannot build here"); 
+                        return; 
+                    }
 
                     if (buildingTile.isBuildable == false) 
                     {
@@ -74,7 +80,7 @@ namespace UpdatedTD
                     foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
                     {
                         Debug.Log(cooridnate);
-                        BuildingTiles buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+                        BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
                         buildingTile.SetBuildable(false);
                     }
 
@@ -100,7 +106,7 @@ namespace UpdatedTD
 
             foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
             {
-                BuildingTiles buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+                BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
                 buildingTile.SetBuildable(true);
             }
         }

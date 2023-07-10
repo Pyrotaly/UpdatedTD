@@ -8,9 +8,6 @@ namespace UpdatedTD
     {
         public float Health { get; set; }
 
-        public void AlterHealth(float healthAlterAmount)
-        {
-            Health += healthAlterAmount;
-        }
+        public void AlterHealth(float healthAlterAmount);
     }
 }

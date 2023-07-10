@@ -47,6 +47,7 @@ namespace UpdatedTD
                 case GameState.Victory:
                     break;
                 case GameState.GameOver:
+                    Debug.Log("loss");
                     break;
                 default:
                     break;

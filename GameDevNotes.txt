@@ -799,3 +799,15 @@ make adding towers work (also adding the notification of a new tower),
 make wave system somewhere (including spawner and figure out how waves work...)
 
 Quality Of Life: Make camera center on tower when clicked on?
+
+========
+7/7-9/2023	
+--------
+Worked on trying to make a system to have tiles added in spector tool to be in a dictionary to work with tile building...
+Too a while but it worked
+
+Okay, now try to make game an actual game, all systems should be in place, then work on upgrade and save system 
+
+I have it so alter health is always adding health, so to subtracti the alteramount musr be negtaive
+
+

@@ -21,7 +21,7 @@ namespace UpdatedTD
             if (collision.gameObject.tag == targetTag)
             {
                 Debug.Log("AGH");
-                collision.GetComponent<IDamageable>().AlterHealth(damageAmount);
+                collision.GetComponent<IDamageable>().AlterHealth(-damageAmount);
                 Destroy(this.gameObject);
             }
         }

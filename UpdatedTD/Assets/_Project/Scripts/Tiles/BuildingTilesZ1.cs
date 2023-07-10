@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class BuildingTiles : MonoBehaviour
+    public class BuildingTilesZ1 : MonoBehaviour
     {
         [Header("Material Management")]
         private Renderer cubeRenderer;
@@ -16,7 +16,7 @@ namespace UpdatedTD
         public bool isBuildable = true;
 
         private void Start()
-        {
+        { 
             cubeRenderer = GetComponent<Renderer>();
             originalColor = cubeRenderer.material.color;
         }

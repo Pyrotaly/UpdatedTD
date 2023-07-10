@@ -71,6 +71,11 @@ namespace UpdatedTD
             Destroy(gameObject); 
         }
 
+        public void AlterHealth(float healthAlterAmount)
+        {
+            Health += healthAlterAmount;
+        }
+
         #region MouseFunctions
         private void OnMouseEnter()
         {

@@ -6,11 +6,12 @@ namespace UpdatedTD
 {
     public class PlayerHealthHandler : MonoBehaviour, IDamageable
     {
-        public float Health { get; set; }
+        //TODO : SAVE SYSTEM FOR PLAYER HEALTH
+        public float Health { get; set; } = 100;
 
-        private void OnTriggerEnter(Collider collision)
+        public void AlterHealth(float healthAlterAmount)
         {
-            //Take damage
+            Health += healthAlterAmount;
 
             if (Health <= 0)
             {

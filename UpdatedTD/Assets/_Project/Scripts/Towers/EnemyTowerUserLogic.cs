@@ -32,6 +32,16 @@ namespace UpdatedTD
             }
         }
 
+        private void OnTriggerEnter(Collider collision)
+        {
+            if (collision.tag == "PlayerHealth")
+            {
+                Debug.Log("HAH");
+                collision.GetComponent<IDamageable>().AlterHealth(towerSO.PlayerHealthDamage);
+                Debug.Log(towerSO.PlayerHealthDamage);
+            }
+        }
+
         public override void Deselect()
         {
             base.Deselect();

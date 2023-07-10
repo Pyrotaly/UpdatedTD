@@ -9,32 +9,19 @@ namespace UpdatedTD
     public class GridHandler : MonoBehaviour
     {
         [SerializeField] private int width, height;
-        [SerializeField] private BuildingTiles tilePrefab;
+        [SerializeField] private BuildingTilesZ1 tilePrefab;
         [SerializeField] private GameObject tileFolder;
+        [SerializeField] private TileDictionary cubeDictionary;
 
-        public Dictionary<Vector3, GameObject> tiles;
-
-        private void Start()
+        public BuildingTilesZ1 GetTileAtPosition(Vector3 position)
         {
-            tiles = FindGame
-
-            foreach (KeyValuePair<Vector3, GameObject> kvp in TileDictionary.tilesDictionary)
+            if (cubeDictionary.tilesDictionary.TryGetValue(position, out GameObject tile))
             {
-                Vector3 position = kvp.Key;
-                GameObject cube = kvp.Value;
-
-                Debug.Log("Key: " + position + ", Value: " + cube.name);
-            }
-        }
-
-        public BuildingTiles GetTileAtPosition(Vector3 position)
-        {
-            if (TileDictionary.tilesDictionary.TryGetValue(position, out GameObject tile))
-            {
-                return tile.GetComponent<BuildingTiles>();
+                return tile.GetComponent<BuildingTilesZ1>();
             }
 
             return null;
         }
+        
     }
 }

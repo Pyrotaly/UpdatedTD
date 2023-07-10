@@ -99,7 +99,6 @@ namespace UpdatedTD
                         {
                             GameObject cube = PrefabUtility.InstantiatePrefab(cubePrefab) as GameObject;
                             cube.transform.position = RoundPositionToNearestInt(position);
-                            TileDictionary.tilesDictionary.Add(cube.transform.position, cube);
                             Undo.RegisterCreatedObjectUndo(cube, "Paint Cube");
                             Debug.Log("Cube spawned at position: " + cube.transform.position);
                         }
@@ -206,7 +205,6 @@ namespace UpdatedTD
                             {
                                 GameObject cube = PrefabUtility.InstantiatePrefab(cubePrefab) as GameObject;
                                 cube.transform.position = position;
-                                TileDictionary.tilesDictionary.Add(cube.transform.position, cube);  // Add to dictionary
                                 Undo.RegisterCreatedObjectUndo(cube, "Paint Cube");
                                 Debug.Log("Cube spawned at position: " + cube.transform.position);
                             }
