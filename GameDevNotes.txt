@@ -816,9 +816,12 @@ I have it so alter health is always adding health, so to subtracti the alteramou
 --------
 K so need to object pool now, cause setting up projectile pointl4ess cause spawninv in prefab not gonna work caue set up function will not carry to qa prefab, its a prefab...
 
+
+==Doing object pooling now... DDOONNEE
+this pool system might just have all bullet types in their own folders so spawning new towers can just reuse that bullet, not each tower needs their own pool
+
 Things to do:
 ---------------
-Got to learn object pooling cause current porjeiclte setup not work...
 upgrade system, bloons td5 which is just two linear upgrade paths...
 
 Figure out save system
