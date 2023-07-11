@@ -21,11 +21,10 @@ namespace UpdatedTD
             DontDestroyOnLoad(gameObject);
         }
 
-        //[Header("Towers")]
-        #region Towers
-
-        #endregion
-
+        [Header("Towers")]
         public GameObject TowerAttackHandler;
+
+        [Header("UI")]
+        public GameObject TestTowerSkillTreeUI;
     }
 }

@@ -24,7 +24,7 @@ Questions:
 -Learn design patterns more?
 -Devops vs software engineer...
 
-
+applying more boundaries
 ========
 5/31/2023
 --------
@@ -839,3 +839,36 @@ Below is for sequal...
 --------
 add camera rotation
 bill boarding
+
+
+========
+7/11/2023	
+--------
+Working on skill tree...
+
+Each tower should have their own skills...
+
+So following code monkey way:
+-------------------------------
+Each tower has their own skill tree class
+There will be one unique canvas for every type of class, (just use game asset holdler?)..., but the UI will read based on the clicked on tower
+Maybe it is just a prefab that can have a single instance somehow...
+
+Menu manager or whatever can handle UI upgrade tree, it will just spawn in the skill tree thing 
+-Can do composition for these skill trees
+
+Working on making basic UI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
