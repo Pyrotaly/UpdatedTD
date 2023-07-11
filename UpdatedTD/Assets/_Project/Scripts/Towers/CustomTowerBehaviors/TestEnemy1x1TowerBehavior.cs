@@ -11,11 +11,11 @@ namespace UpdatedTD
         {
             if (targetList.Count != 0)
             {
-                if (Time.time - lastShotTime >= attackCooldown)
+                if (Time.time - nextAttackTime >= attackCooldown)
                 {
                     Debug.Log("DIE FROM ENEMY");
                     ShootProjectile(TEMPProjectile);
-                    lastShotTime = Time.time;
+                    nextAttackTime = Time.time;
                 }
             }
         }

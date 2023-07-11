@@ -15,7 +15,8 @@ namespace UpdatedTD
         protected GameObject TEMPProjectile;
         private string targetTag;
 
-        protected float lastShotTime = 0f;
+
+        protected float nextAttackTime = 0f;
 
         public void SetUpTowerAttackParameters(TowerInfoStruct towerStruct, GameObject towerRadiusReference)
         {

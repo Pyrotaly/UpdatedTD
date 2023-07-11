@@ -811,3 +811,28 @@ Okay, now try to make game an actual game, all systems should be in place, then 
 I have it so alter health is always adding health, so to subtracti the alteramount musr be negtaive
 
 
+========
+7/10/2023	
+--------
+K so need to object pool now, cause setting up projectile pointl4ess cause spawninv in prefab not gonna work caue set up function will not carry to qa prefab, its a prefab...
+
+Things to do:
+---------------
+Got to learn object pooling cause current porjeiclte setup not work...
+upgrade system, bloons td5 which is just two linear upgrade paths...
+
+Figure out save system
+
+make wave system somewhere (including spawner and figure out how waves work...)
+win condition (super basic level win managenemtn), reach round whatever and u win
+object pooling for enemies
+make unlocking towers work (also adding the notification of a new tower), 
+
+tiles texturing: https://www.youtube.com/watch?v=Y-fDGOqHQZA this video gonna do...
+Make different levels
+
+
+Below is for sequal...
+--------
+add camera rotation
+bill boarding

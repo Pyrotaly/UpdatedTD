@@ -10,12 +10,10 @@ namespace UpdatedTD
         {
             if (targetList.Count != 0)
             {
-
-                if (Time.time - lastShotTime >= attackCooldown)
+                if (Time.time > nextAttackTime)
                 {
-                    Debug.Log("Die from Player");
+                    nextAttackTime = Time.time + attackCooldown;
                     ShootProjectile(TEMPProjectile);
-                    lastShotTime = Time.time;
                 }
             }
         }

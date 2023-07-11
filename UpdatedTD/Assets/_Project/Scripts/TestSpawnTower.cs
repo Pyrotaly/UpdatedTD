@@ -11,7 +11,7 @@ namespace UpdatedTD
 
         public void Start()
         {
-            var temp = Instantiate(TestTower, new Vector3(7.1f, 1f, 26.6f), Quaternion.identity);
+            var temp = Instantiate(TestTower, TestTowerStartingPoint.position, Quaternion.identity);
             temp.GetComponent<BaseTowerUserLogic>().TEMPCallStart();
         }
     }

@@ -18,11 +18,12 @@ namespace UpdatedTD
         //2d sprite but 3d collider
         private void OnTriggerEnter(Collider collision)
         {
+            //TODO : VS telling me there is a more efficient way to compare tag but it lead to errors...
             if (collision.gameObject.tag == targetTag)
             {
                 Debug.Log("AGH");
                 collision.GetComponent<IDamageable>().AlterHealth(-damageAmount);
-                Destroy(this.gameObject);
+                Destroy(gameObject);
             }
         }
     }
