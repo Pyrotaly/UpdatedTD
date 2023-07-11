@@ -6,7 +6,7 @@ namespace UpdatedTD
 {
     public class PlayerTowerUserLogic : BaseTowerUserLogic
     {
-        //TODO : Check if it is PlayerTowerSO...
+        //TODO : Check if it i put in a PlayerTowerSO or tell me if i messed up
         public PlayerTowerSO GetTowerInfo()
         {
             return (PlayerTowerSO)towerInfo; 
@@ -17,37 +17,22 @@ namespace UpdatedTD
             base.Deselect();
         }
 
+        //TODO : This select function might not need to be overriden as it will probably function the same for all towers, put functionality into the base class
         public override void Select()
         {
             base.Select();
 
-            if (SelectionManager<PlayerTowerUserLogic>.previousSelectedObject == null)
+            //If clicked on same object
+            if (SelectionManager<PlayerTowerUserLogic>.SelectedSameObject(this))
             {
-                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject = this;
-
-                //TODO : This is not the most bueatufil thing i guess...
                 GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
-                HelperFunctions.SetDescriptionText("HAHAHAHAHHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-                Debug.Log("Selected " + gameObject.name);
-                return;
+                HelperFunctions.SetDescriptionText("Clicked on me again");
             }
-
-            if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
-            {
-                //If clicked on same tower
-                //Do nothing or can disable ui...
-                GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
-                HelperFunctions.SetDescriptionText("jjjjjjjjjjjjjjjjjjjjjjjjjjj");
-                Debug.Log("Selected again " + gameObject.name);
-            }
+            //First time selecting or this is new selection
             else
             {
-                //If this new tower player clicked on is not same 
-                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject = this;
-                Debug.Log("New selection " + gameObject.name);
                 GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
-                HelperFunctions.SetDescriptionText("HAHAHAHAHHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-                SelectionManager<BaseTowerUserLogic>.CallDeslectOnPreviousObject();
+                HelperFunctions.SetDescriptionText("First clicked");
             }
         }
     }

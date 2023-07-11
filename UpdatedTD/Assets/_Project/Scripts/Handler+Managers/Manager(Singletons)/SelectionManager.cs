@@ -14,11 +14,14 @@ namespace UpdatedTD
             //If player clicked on same object
             if (previousSelectedObject != null && previousSelectedObject == selectable)
             {
+                Debug.Log("Select same thing");
                 return true;
             }
 
             //First click or clicked on different object
             previousSelectedObject = selectable;
+            CallDeslectOnPreviousObject();
+            Debug.Log("Different selection: " + previousSelectedObject.name);
             return false;
         }
 

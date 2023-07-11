@@ -22,21 +22,12 @@ namespace UpdatedTD
 
         public void Select()
         {
-            if (SelectionManager<MoreInfoButtonUI>.previousSelectedObject == null)
-            {
-                UI.SetActive(true);
-            }
-
+            //If clicked on same object
             if (SelectionManager<MoreInfoButtonUI>.SelectedSameObject(this))
             {
-                if (UI.activeSelf)
-                { 
-                    UI.SetActive(false);
-                    return;
-                }
-
-                UI.SetActive(true);
+                UI.SetActive(!UI.activeSelf);
             }
+            //First time selecting or this is new selection
             else
             {
                 UI.SetActive(true);

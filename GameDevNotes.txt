@@ -847,6 +847,12 @@ bill boarding
 Working on skill tree...
 
 Each tower should have their own skills...
+Fixed selectionmanager bug (more like understanding my own code that I actually made myself)
+
+
+
+
+
 
 So following code monkey way:
 -------------------------------
@@ -857,8 +863,22 @@ Maybe it is just a prefab that can have a single instance somehow...
 Menu manager or whatever can handle UI upgrade tree, it will just spawn in the skill tree thing 
 -Can do composition for these skill trees
 
-Working on making basic UI
+Working on making basic UI for skill tree
 
+Have to think what kind of upgrades so i know how the code is architectured a bit
+-----------------
+Early game path:
+Increase stats, change projectile speed
+
+Late game path
+Change Tower from one shooters to two shooters, make shooters stronger
+-----------------
+
+
+Need to polish game, like attack ranges are not visually correct at all
+
+Work in sequal...
+How to make unity UI scale for project scope, make it into its own scene??
 
 
 
