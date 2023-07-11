@@ -849,10 +849,38 @@ Working on skill tree...
 Each tower should have their own skills...
 Fixed selectionmanager bug (more like understanding my own code that I actually made myself)
 
+Might refactor my stats to follow OneWheelStudio idea, NVM
+
+Going to try my way with array tries kinda of system
+----------------------------------------------------
+Right now just do array kinda of system but in future use tries
+
+Tower prefab will have component based script (skills component script) that holds all the possible upgrades they could have
+-In future the skills component script will be a trie structure and somehow the UI will have to read that, it probably not expensive, like 
+its a computer, it can do things fast...
+-Also skills component script can be comprised of other smaller classes I guess
+skillUI is own class, it will spawn in UI and read the selected tower's skills component script
+
+saving should be easy since it is just how many points in what array i guess...
+
+
+Have to think what kind of upgrades so i know how the code is architectured a bit
+-----------------
+Early game path:
+Increase stats, change projectile speed
+
+Late game path
+Change Tower from one shooters to two shooters, make shooters stronger
+-----------------
 
 
 
 
+
+
+
+
+(Below is just the other reserach throughout the day)
 
 So following code monkey way:
 -------------------------------
@@ -865,14 +893,10 @@ Menu manager or whatever can handle UI upgrade tree, it will just spawn in the s
 
 Working on making basic UI for skill tree
 
-Have to think what kind of upgrades so i know how the code is architectured a bit
------------------
-Early game path:
-Increase stats, change projectile speed
 
-Late game path
-Change Tower from one shooters to two shooters, make shooters stronger
------------------
+To save game, all i need is each tower current health at the start of a wave and location
+
+Here is old note: 'saving is just if have certain tower, store the values in each tower, so dictionary with towers, towers some how store upgrades'
 
 
 Need to polish game, like attack ranges are not visually correct at all

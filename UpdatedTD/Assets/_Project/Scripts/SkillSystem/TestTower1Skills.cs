@@ -8,7 +8,10 @@ namespace UpdatedTD
     {
         public enum SkillType
         {
-            Upgrade1
+            IncreaseHealthANDDamage,
+            IncreaseProjectileSpeed,
+            ChangeTowerFunction,
+            ChangedTowerImproveProjectile
         }
 
         private List<SkillType> unlockedSkillTypeList;

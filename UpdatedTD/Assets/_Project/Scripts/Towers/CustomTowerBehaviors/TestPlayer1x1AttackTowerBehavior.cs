@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class TestPlayer1x1TowerBehavior : BaseTowerAttackBehavior
+    public class TestPlayer1x1AttackTowerBehavior : BaseTowerAttackBehavior
     {
         public override void Attack()
         {
