@@ -73,6 +73,7 @@ namespace UpdatedTD
 
         public void AlterHealth(float healthAlterAmount)
         {
+            Debug.Log(gameObject.name + " has taken damage");
             Health += healthAlterAmount;
         }
 
