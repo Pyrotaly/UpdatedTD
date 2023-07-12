@@ -9,7 +9,6 @@ namespace UpdatedTD
         protected List<GameObject> targetList = new List<GameObject>();
         private GameObject towerRadius;
 
-        
         protected float projectileSpeed;
         protected float attackCooldown;
         protected GameObject TEMPProjectile;
@@ -17,7 +16,6 @@ namespace UpdatedTD
         //For bullet spawning
         protected int damage;
         protected string targetTag;
-
 
         protected float nextAttackTime = 0f;
 

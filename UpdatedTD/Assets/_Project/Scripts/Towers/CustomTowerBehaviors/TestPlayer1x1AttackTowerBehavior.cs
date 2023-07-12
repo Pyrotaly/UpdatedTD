@@ -21,12 +21,9 @@ namespace UpdatedTD
         //TODO : Could make bullets more customizable instead of handling the speed here...
         private void ShootProjectile(GameObject prefab)
         {
-            // Instantiate the projectile at the tower's position and rotation
-            //GameObject spawnedProjectile = Instantiate(prefab, transform.position, transform.rotation);
             GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Folder1);
             bullet.GetComponent<Projectile>().SetUp(damage, targetTag);
 
-            // Get the Rigidbody component from the spawned projectile
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
             if (rb != null)

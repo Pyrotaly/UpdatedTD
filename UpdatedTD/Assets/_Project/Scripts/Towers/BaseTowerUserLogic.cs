@@ -7,10 +7,10 @@ namespace UpdatedTD
     public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable, IDamageable
     {
         [SerializeField] protected BaseTowerSO towerInfo;
-        public float Health { get { return towerInfo.TowerInfo.Health; } set { } }
+        public float Health { get; set; }
 
         private GameObject towerRadius;
-        private BaseTowerAttackBehavior towerAttackBehavior;
+        private BaseTowerAttackBehavior towerAttackBehavior; 
 
         private void Awake()
         {
@@ -26,6 +26,8 @@ namespace UpdatedTD
 
         private void Start()
         {
+            Health = towerInfo.TowerInfo.Health; 
+
             towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
             towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
             var towerRadiusHandler = Instantiate(towerRadius, this.gameObject.transform);
@@ -48,7 +50,7 @@ namespace UpdatedTD
             towerRadius.SetActive(false);
         }
 
-        public void DestroyTower() 
+        public void ManualDestroyTower() 
         {
             //TODO : Make some currency back? how would this change if player upgrade the tower?
             Destroy(gameObject); 
@@ -56,8 +58,10 @@ namespace UpdatedTD
 
         public void AlterHealth(float healthAlterAmount)
         {
-            Debug.Log(gameObject.name + " has taken damage");
+            //TODO : Die function
             Health += healthAlterAmount;
+            
+            if (Health <= 0) { Debug.Log("Die"); }
         }
 
         #region MouseFunctions

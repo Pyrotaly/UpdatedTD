@@ -873,11 +873,10 @@ Late game path
 Change Tower from one shooters to two shooters, make shooters stronger
 -----------------
 
+Nodes, so they hold the function of what to upgrade and whatnot and they can make the next node selectable or not
 
 
-
-
-
+JK, just doing an array that hold skill classes, if increase value then get the whatever 
 
 
 (Below is just the other reserach throughout the day)
@@ -906,8 +905,13 @@ How to make unity UI scale for project scope, make it into its own scene??
 
 
 
+========
+7/12/2023	
+--------
+Need to add a max health value cause everything has a max health and a current health
 
-
+I cannot think of a cleverer way to do this without like revamping my stats system...
+Maybe have stats into a dictionary instead, that way can look for certain values and update them...
 
 
 

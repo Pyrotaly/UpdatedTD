@@ -14,7 +14,7 @@ namespace UpdatedTD
             {
                 Debug.Log("Destroy8ihng");
                 GameObject.Find("Handlers").GetComponent<BuildingStructureHandler>().DestroyTower(SelectionManager<BaseTowerUserLogic>.previousSelectedObject.gameObject);
-                SelectionManager<BaseTowerUserLogic>.previousSelectedObject.DestroyTower();
+                SelectionManager<BaseTowerUserLogic>.previousSelectedObject.ManualDestroyTower();
                 SelectionManager<BaseTowerUserLogic>.previousSelectedObject = null;
             }
         }
