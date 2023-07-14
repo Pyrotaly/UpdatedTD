@@ -7,9 +7,9 @@ namespace UpdatedTD
     public class PlayerHealthHandler : MonoBehaviour, IDamageable
     {
         //TODO : SAVE SYSTEM FOR PLAYER HEALTH
-        public float Health { get; set; } = 100;
+        public int Health { get; set; } = 100;
 
-        public void AlterHealth(float healthAlterAmount)
+        public void AlterCurrentHitPoints(int healthAlterAmount)
         {
             Health += healthAlterAmount;
 

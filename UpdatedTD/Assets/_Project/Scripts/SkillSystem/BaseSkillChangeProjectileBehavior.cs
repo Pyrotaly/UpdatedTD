@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class Tower1Upgrade2 : MonoBehaviour
+    public class BaseSkillChangeProjectileBehavior : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

@@ -15,7 +15,7 @@ MonoBehaviour:
   TowerInfo:
     TowerName: 1x1
     ItemID: 0
-    Health: 100
+    HitPoints: 10
     Damage: 300
     ProjectileSpeed: 10
     AttackRange: 4

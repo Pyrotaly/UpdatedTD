@@ -4,18 +4,17 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable, IDamageable
+    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable
     {
         [SerializeField] protected BaseTowerSO towerInfo;
-        public float Health { get; set; }
 
         private GameObject towerRadius;
-        private BaseTowerAttackBehavior towerAttackBehavior; 
+        private BaseTowerCombatHandler towerAttackBehavior;
 
         private void Awake()
         {
             towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;   
-            towerAttackBehavior = GetComponent<BaseTowerAttackBehavior>();
+            towerAttackBehavior = GetComponent<BaseTowerCombatHandler>();
         }
 
         //TODO : TESTING FUNCTION CallStart, used on Test Spawn Enemy to test 
@@ -26,18 +25,24 @@ namespace UpdatedTD
 
         private void Start()
         {
-            Health = towerInfo.TowerInfo.Health; 
-
+            //Spawn tower radius
             towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
             towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
             var towerRadiusHandler = Instantiate(towerRadius, this.gameObject.transform);
 
+            towerAttackBehavior.TestSetUpDictionary(towerInfo);
             towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadiusHandler);
         }
 
         protected virtual void Update()
         {
             towerAttackBehavior.Attack();
+
+            //TODO : Remove this testing
+            KeyValuePair<Stat, dynamic> kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.Damage, 100);
+
+
+            towerAttackBehavior.AlterStats(kvpTesting);
         }
 
         public virtual void Select()
@@ -54,14 +59,6 @@ namespace UpdatedTD
         {
             //TODO : Make some currency back? how would this change if player upgrade the tower?
             Destroy(gameObject); 
-        }
-
-        public void AlterHealth(float healthAlterAmount)
-        {
-            //TODO : Die function
-            Health += healthAlterAmount;
-            
-            if (Health <= 0) { Debug.Log("Die"); }
         }
 
         #region MouseFunctions

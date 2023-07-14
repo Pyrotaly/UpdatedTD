@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class TestEnemy1x1TowerBehavior : BaseTowerAttackBehavior
+    public class TestEnemy1x1TowerBehavior : BaseTowerCombatHandler
     {
         //TODO : Need to setup tower becuase rn the targestlist is nothing on enemy since it not get reference to the child object list
         public override void Attack()

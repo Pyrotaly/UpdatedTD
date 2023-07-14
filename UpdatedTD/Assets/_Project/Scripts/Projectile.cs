@@ -22,7 +22,7 @@ namespace UpdatedTD
             //TODO : VS telling me there is a more efficient way to compare tag but it lead to errors...
             if (collision.gameObject.CompareTag(targetTag))
             {
-                collision.GetComponent<IDamageable>().AlterHealth(-damageAmount);
+                collision.GetComponent<IDamageable>().AlterCurrentHitPoints(-damageAmount);
                 ObjectPoolHandler.ReturnObjectToPool(gameObject);
             }
         }

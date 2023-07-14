@@ -6,8 +6,6 @@ namespace UpdatedTD
 {
     interface IDamageable
     {
-        public float Health { get; set; }
-
-        public void AlterHealth(float healthAlterAmount);
+        public void AlterCurrentHitPoints(int hitPointAlterAmount);
     }
 }

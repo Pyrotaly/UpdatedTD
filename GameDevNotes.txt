@@ -3,6 +3,14 @@ Goals: Art, Project development pipline structure (learning to reuse code, strea
 
 Goal: Release the 40 wave mode, in one area
 
+Next time : ask for henry for a book about OS, it apparenlty has one of his favorite quotes
+join icpt team or something programming team
+
+Repeatable architectures nad reproducable builds
+Computer graphics, 
+everything flow from underlying data structures, how i model them is how algorithms work...
+Design document; design diagram
+
 Important notes: 7/1 for optimizing
 idea: remove collider on tiles and replace with a ray cast function to not need colliders?... but right now fps is fine
 
@@ -913,10 +921,69 @@ Need to add a max health value cause everything has a max health and a current h
 I cannot think of a cleverer way to do this without like revamping my stats system...
 Maybe have stats into a dictionary instead, that way can look for certain values and update them...
 
+So what i will do is, add a function somewhere, probably internally in the basetoweruserlogic class that allows it to modify a variable
+So the upgradeclass unique to the tower will get the component and just get abstract class (BaseTower whatever) and call that function,
+things should work
+
+The function takes in key value pair and tries to update the towers key to the new value...
+
+Since I cannot see dictionaries in Unity... it will be a bit messy to adjust values in inspector and then have it copied in dictionary
+
+IDamageable, no health parameter since it will be covered in the stats dictionary
+
+
+
+IMPORTANT NOTE FOR USING VARIABLE OF DYNAMIC
+---------------------------------------------
+https://forum.unity.com/threads/no-net-4-x-in-player-settings.1242133/
+All u have to do in player settings under project settings is 
+-Api compatability to .netframework
+-scripting backedn IL2CPP
+
+what is dynamic in C# 4 or whatever NOTE: TO use this, go to player settings and need to change the thing above api .netframework from mono to iCCp2 or wahtever
+what is params in C# or whatever
+
+---------------------
+Save system,
+Polishing
+
+make wave system somewhere (including spawner and figure out how waves work...)
+win condition (super basic level win managenemtn), reach round whatever and u win
+object pooling for enemies
+make unlocking towers work (also adding the notification of a new tower), 
+
+tiles texturing: https://www.youtube.com/watch?v=Y-fDGOqHQZA this video gonna do...
+Make different levels
 
 
 
 
+
+
+
+
+
+Game System Ideas:
+12 Towers (including tower upgrade varients).
+
+6 towers can be upgraded to a new tower version
+3 towers are just new functionality
+
+?? amount of enemies 
+
+1 Big tower that looks like the droid carrier
+2 - another vesrion of big tower
+3 - smaller tower 1
+4 - smaller tower 2
+
+5 lazer tower
+6 AoE circle tower
+7 Flying tower 
+8 Small tower1 (its like smaller tower but normal)
+9 Small tower2 
+10 Armor tower
+
+11 Lazer Tower Boss (sky scraper)
 
 
 
