@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class BaseSkillUpgradeStats : MonoBehaviour
+    public class BaseSkillUpgradeStats : BaseUpgradeClass
     {
         // Start is called before the first frame update
         void Start()

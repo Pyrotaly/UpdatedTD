@@ -15,7 +15,7 @@ MonoBehaviour:
   TowerInfo:
     TowerName: EnemyTower
     ItemID: 0
-    Health: 100
+    HitPoints: 0
     Damage: 10
     ProjectileSpeed: 3
     AttackRange: 5

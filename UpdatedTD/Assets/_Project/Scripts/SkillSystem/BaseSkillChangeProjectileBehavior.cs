@@ -4,8 +4,13 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class BaseSkillChangeProjectileBehavior : MonoBehaviour
+    public class BaseSkillChangeProjectileBehavior : BaseUpgradeClass
     {
+        protected override void Upgrade()
+        {
+            throw new System.NotImplementedException();
+        }
+
         // Start is called before the first frame update
         void Start()
         {

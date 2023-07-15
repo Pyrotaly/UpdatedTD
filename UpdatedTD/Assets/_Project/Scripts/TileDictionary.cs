@@ -35,7 +35,7 @@ namespace UpdatedTD
                 if (uniquePositions.Contains(position))
                 {
                     // The position is already occupied by another GameObject
-                    Debug.Log("Duplicate position found: " + position);
+                    //Debug.Log("Duplicate position found: " + position);
                 }
                 else
                 {

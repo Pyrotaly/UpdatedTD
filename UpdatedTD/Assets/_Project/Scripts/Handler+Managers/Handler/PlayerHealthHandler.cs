@@ -7,11 +7,19 @@ namespace UpdatedTD
     public class PlayerHealthHandler : MonoBehaviour, IDamageable
     {
         //TODO : SAVE SYSTEM FOR PLAYER HEALTH
-        public int Health { get; set; } = 100;
+        public int Health = 100;
+
+        [SerializeField] private TMPro.TextMeshProUGUI text;
+
+        private void Start()
+        {
+            text.text = Health.ToString();
+        }
 
         public void AlterCurrentHitPoints(int healthAlterAmount)
         {
             Health += healthAlterAmount;
+            text.text = Health.ToString();
 
             if (Health <= 0)
             {

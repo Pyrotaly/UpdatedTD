@@ -987,3 +987,53 @@ Game System Ideas:
 
 
 
+
+
+
+
+========
+7/13/2023	
+--------
+Worked on skill tree
+Met with henry
+
+========
+7/14/2023	
+--------
+Do i even need singletons?
+
+Too lazy to add in a play button like bloonstd, just gonna make it auto spawn like plants vs zombies
+
+Work on skill tree...
+I am just gonna brute force it because i am lazy
+
+What i understand of what i was going to do for my skill tree is that, all possible skill upgrades are on tower
+as an array of classes that can be instantiated on the tower
+
+two arrays full of classes
+
+Test tower upgrades
+-----------------
+Early game path:
+Increase stats, change projectile speed
+
+Late game path
+Change Tower from one shooters to two shooters, make shooters stronger
+-----------------
+
+========
+7/15/2023	
+--------
+Work on upgrade system
+Then i guess everything done...
+
+Save system,
+Polishing
+
+make wave system somewhere (including spawner and figure out how waves work...)
+win condition (super basic level win managenemtn), reach round whatever and u win
+object pooling for enemies
+make unlocking towers work (also adding the notification of a new tower), 
+
+tiles texturing: https://www.youtube.com/watch?v=Y-fDGOqHQZA this video gonna do...
+Make different levels

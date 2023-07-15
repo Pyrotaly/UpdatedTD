@@ -42,7 +42,7 @@ namespace UpdatedTD
             KeyValuePair<Stat, dynamic> kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.Damage, 100);
 
 
-            towerAttackBehavior.AlterStats(kvpTesting);
+            //towerAttackBehavior.AlterStats(kvpTesting);
         }
 
         public virtual void Select()
@@ -59,6 +59,12 @@ namespace UpdatedTD
         {
             //TODO : Make some currency back? how would this change if player upgrade the tower?
             Destroy(gameObject); 
+        }
+
+        //TODO : is this effective?
+        public BaseTowerCombatHandler GetTowerAttackBehavior()
+        {
+            return towerAttackBehavior;
         }
 
         #region MouseFunctions

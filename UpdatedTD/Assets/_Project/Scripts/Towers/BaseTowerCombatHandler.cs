@@ -26,13 +26,11 @@ namespace UpdatedTD
         //Test function
         public void TestSetUpDictionary(BaseTowerSO test)
         {
-            Debug.Log("HAHA");
             localStatsDictionary = new Dictionary<Stat, dynamic>(test.StatsDictionary); //Copy dictionary as a new object, not reference
 
             if (localStatsDictionary.ContainsKey(Stat.Damage))
             {
                 int value = localStatsDictionary[Stat.Damage];
-                Debug.Log("First: " + value);
             }
         }
 

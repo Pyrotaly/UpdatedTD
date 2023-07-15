@@ -36,9 +36,8 @@ namespace UpdatedTD
         {
             if (collision.tag == "PlayerHealth")
             {
-                Debug.Log("HAH");
                 collision.GetComponent<IDamageable>().AlterCurrentHitPoints(towerSO.PlayerHealthDamage);
-                Debug.Log(towerSO.PlayerHealthDamage);
+                Destroy(gameObject);
             }
         }
 

@@ -20,7 +20,12 @@ namespace UpdatedTD
 
         private void Update()
         {
-            HandleEdgeScrolling();
+            //TODO : Make this obvious somehow
+            if (Input.GetMouseButton(1)) 
+            {
+                HandleEdgeScrolling();
+            }
+
             HandleZoom();
         }
 

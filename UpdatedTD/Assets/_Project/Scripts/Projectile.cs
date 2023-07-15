@@ -18,7 +18,6 @@ namespace UpdatedTD
         //2d sprite but 3d collider
         private void OnTriggerEnter(Collider collision)
         {
-            Debug.Log(damageAmount);
             //TODO : VS telling me there is a more efficient way to compare tag but it lead to errors...
             if (collision.gameObject.CompareTag(targetTag))
             {
