@@ -20,24 +20,18 @@ namespace UpdatedTD
 
         private void UpgradeTowerTop()
         {
-            Debug.Log(SelectionManager<BaseTowerUserLogic>.previousSelectedObject);
             if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject != null)
             {
-                var tower = SelectionManager<BaseTowerUserLogic>.previousSelectedObject;
-                Debug.Log(tower);
-                Debug.Log("Upgrade");
-                //tower.UpgradeTopPath();
+                var tower = SelectionManager<BaseTowerUserLogic>.previousSelectedObject.GetComponent<TestTower1Skills>();
+                tower.UpgradeTopPath();
             }
 
         }
         private void UpgradeTowerBot()
         {
-            Debug.Log(SelectionManager<BaseTowerUserLogic>.previousSelectedObject);
             if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject != null)
             {
                 var tower = SelectionManager<BaseTowerUserLogic>.previousSelectedObject.GetComponent<TestTower1Skills>();
-                Debug.Log(tower);
-                Debug.Log("Upgrade");
                 tower.UpgradeBotPath();
             }
         }

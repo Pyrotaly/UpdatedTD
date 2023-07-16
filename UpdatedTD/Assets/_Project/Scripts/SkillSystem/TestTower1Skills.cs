@@ -19,6 +19,8 @@ namespace UpdatedTD
 
         private void Start()
         {
+            tower = GetComponent<BaseTowerCombatHandler>();
+
             functionTopMap.Add(1, TopPathUpgrade1);
             functionTopMap.Add(2, TopPathUpgrade2);
             functionTopMap.Add(3, TopPathUpgrade3);
@@ -30,24 +32,15 @@ namespace UpdatedTD
 
         public void UpgradeTopPath()
         {
-            tower = GetComponent<BaseTowerCombatHandler>();
+            Debug.Log(topCounter);
             topCounter++;
-            if (functionTopMap.TryGetValue(topCounter, out Action function))
-            {
-                Debug.Log(topCounter);
-                function.Invoke();
-            }
+            if (functionTopMap.TryGetValue(topCounter, out Action function)) { function.Invoke(); }
         }
 
         public void UpgradeBotPath()
         {
-            tower = GetComponent<BaseTowerCombatHandler>();
             botCounter++;
-            if (functionBotMap.TryGetValue(botCounter, out Action function))
-            {
-                Debug.Log(botCounter);
-                function.Invoke();
-            }
+            if (functionBotMap.TryGetValue(botCounter, out Action function)) { function.Invoke(); }
         }
 
         //Stat increase damage

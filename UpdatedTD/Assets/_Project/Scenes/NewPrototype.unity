@@ -36738,6 +36738,14 @@ PrefabInstance:
       propertyPath: hoverBehaviour_Color_Enter.r
       value: 0.8867924
       objectReference: {fileID: 0}
+    - target: {fileID: 743685252445047846, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 743685252445047846, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 831134278450107738, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -36783,6 +36791,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1972092724517793890, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673572623493184211, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673572623493184211, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844498645914189474, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -36837,6 +36857,14 @@ PrefabInstance:
     - target: {fileID: 6351000201911818933, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
       propertyPath: hoverBehaviour_Color_Enter.r
       value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672294424072073242, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465146456835548935, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8753918093473012279, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
       propertyPath: hoverBehaviour_Color_Enter.b

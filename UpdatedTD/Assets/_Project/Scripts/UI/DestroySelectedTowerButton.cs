@@ -12,7 +12,6 @@ namespace UpdatedTD
             //is the tower the player has just selected
             if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject != null)
             {
-                Debug.Log("Destroy8ihng");
                 GameObject.Find("Handlers").GetComponent<BuildingStructureHandler>().DestroyTower(SelectionManager<BaseTowerUserLogic>.previousSelectedObject.gameObject);
                 SelectionManager<BaseTowerUserLogic>.previousSelectedObject.ManualDestroyTower();
                 SelectionManager<BaseTowerUserLogic>.previousSelectedObject = null;

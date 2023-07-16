@@ -29,8 +29,9 @@ namespace UpdatedTD
             towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
             towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
             var towerRadiusHandler = Instantiate(towerRadius, this.gameObject.transform);
+            Select();
 
-            towerAttackBehavior.TestSetUpDictionary(towerInfo);
+            towerAttackBehavior.SetUpLocalDictionary(towerInfo);
             towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadiusHandler);
         }
 

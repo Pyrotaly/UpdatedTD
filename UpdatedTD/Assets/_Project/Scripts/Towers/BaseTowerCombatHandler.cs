@@ -24,14 +24,9 @@ namespace UpdatedTD
         protected float nextAttackTime = 0f;
 
         //Test function
-        public void TestSetUpDictionary(BaseTowerSO test)
+        public void SetUpLocalDictionary(BaseTowerSO test)
         {
             localStatsDictionary = new Dictionary<Stat, dynamic>(test.StatsDictionary); //Copy dictionary as a new object, not reference
-
-            if (localStatsDictionary.ContainsKey(Stat.Damage))
-            {
-                int value = localStatsDictionary[Stat.Damage];
-            }
         }
 
         //TODO : Remove this maybe?
@@ -59,16 +54,11 @@ namespace UpdatedTD
                 if (localStatsDictionary.ContainsKey(kvp.Key))
                 {
                     localStatsDictionary[kvp.Key] = kvp.Value;
+
+                    Debug.Log("Second: " + kvp.Value);
                 }
             }
-
-            if (localStatsDictionary.ContainsKey(Stat.Damage))
-            {
-                int value = localStatsDictionary[Stat.Damage];
-                Debug.Log("Second: " + value);
-            }
         }
-
 
         private void OnListUpdated(List<GameObject> updatedList) { targetList = updatedList; }
 

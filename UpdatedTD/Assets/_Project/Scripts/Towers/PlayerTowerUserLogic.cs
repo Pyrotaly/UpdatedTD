@@ -23,7 +23,7 @@ namespace UpdatedTD
             base.Select();
 
             //If clicked on same object
-            if (SelectionManager<PlayerTowerUserLogic>.SelectedSameObject(this))
+            if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
             {
                 GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
                 HelperFunctions.SetDescriptionText("Clicked on me again");

@@ -969,16 +969,16 @@ Game System Ideas:
 6 towers can be upgraded to a new tower version
 3 towers are just new functionality
 
-?? amount of enemies 
+14 amount of enemies 
 
 1 Big tower that looks like the droid carrier
 2 - another vesrion of big tower
 3 - smaller tower 1
 4 - smaller tower 2
 
-5 lazer tower
-6 AoE circle tower
-7 Flying tower 
+5 lazer tower X 2
+6 AoE circle tower X 2
+7 Flying tower X 2
 8 Small tower1 (its like smaller tower but normal)
 9 Small tower2 
 10 Armor tower
@@ -1037,3 +1037,123 @@ make unlocking towers work (also adding the notification of a new tower),
 
 tiles texturing: https://www.youtube.com/watch?v=Y-fDGOqHQZA this video gonna do...
 Make different levels
+
+
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace UpdatedTD
+{
+    public static class SelectionManager<T> where T : MonoBehaviour, ISelectable
+    {
+        public static T previousSelectedObject;
+
+        public static bool SelectedSameObject(T selectable)
+        {
+            //If player clicked on same object
+            if (previousSelectedObject != null && previousSelectedObject == selectable)
+            {
+                return true;
+            }
+
+            //First click or clicked on different object
+            previousSelectedObject = selectable;
+            return false;
+        }
+
+        public static void CallDeslectOnPreviousObject()
+        {
+            if (previousSelectedObject != null) { previousSelectedObject.Deselect(); }
+        }
+    }
+}
+
+
+Okay trying to fix stupid selection bug... it worked on WorkinOnSkillTree then it no longer wwork...
+
+
+Find the difference below....
+----------------------------------
+            if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
+            {
+                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject = this;
+                GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
+                HelperFunctions.SetDescriptionText("Clicked on me again");
+            }
+            //First time selecting or this is new selection
+            else
+            {
+                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject = this;
+                GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
+                HelperFunctions.SetDescriptionText("First clicked");
+            }
+
+----------------------------------
+
+            if (SelectionManager<PlayerTowerUserLogic>.SelectedSameObject(this))
+            {
+                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject = this;
+                GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
+                HelperFunctions.SetDescriptionText("Clicked on me again");
+            }
+            //First time selecting or this is new selection
+            else
+            {
+                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject = this;
+                GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
+                HelperFunctions.SetDescriptionText("First clicked");
+            }
+----------------------------------
+
+Okay upgrade system in placew
+
+Then i guess everything done...
+
+Save system,
+What am i saving:
+}Player health
+}Player currency
+}Towers
+}-Tower upgrade counters (call loop function to call upgrade thing...)
+}-Tower health
+}-Tower location (How does this relate to the tiles as well...)
+}Wave Counter
+---------------
+Polishing
+
+make wave system somewhere (including spawner and figure out how waves work...)
+win condition (super basic level win managenemtn), reach round whatever and u win
+object pooling for enemies
+make unlocking towers work (also adding the notification of a new tower), 
+
+tiles texturing: https://www.youtube.com/watch?v=Y-fDGOqHQZA this video gonna do...
+Make different levels
+
+
+Game System Ideas:
+12 Towers (including tower upgrade varients).
+
+6 towers can be upgraded to a new tower version
+3 towers are just new functionality
+
+14 amount of enemies 
+
+1 Big tower that looks like the droid carrier
+2 - another vesrion of big tower
+3 - smaller tower 1
+4 - smaller tower 2
+
+5 lazer tower X 2
+6 AoE circle tower X 2
+7 Flying tower X 2
+8 Small tower1 (its like smaller tower but normal)
+9 Small tower2 
+10 Armor tower
+
+11 Lazer Tower Boss (sky scraper)
+
+

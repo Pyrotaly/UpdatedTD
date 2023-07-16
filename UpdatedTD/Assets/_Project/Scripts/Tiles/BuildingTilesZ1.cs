@@ -27,7 +27,6 @@ namespace UpdatedTD
 
             if (isBuildable)
             {
-                Debug.Log("AHA");
                 cubeRenderer.material.color = originalColor;
             }
             else
