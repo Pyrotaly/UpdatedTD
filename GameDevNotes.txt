@@ -1156,4 +1156,33 @@ Game System Ideas:
 
 11 Lazer Tower Boss (sky scraper)
 
+========
+7/16/2023	
+--------
+Rest day
+
+========
+7/17/2023	
+--------
+Implement save system
+
+
+What am i saving:
+}Player health
+}Player currency
+}Towers
+}-Tower upgrade counters (call loop function to call upgrade thing...)
+}-Tower health
+}-Tower location (How does this relate to the tiles as well...)
+}Wave Counter
+---------------
+
+
+When maknig art, have to look into sprite atlases, making animations from animatio nsheet and not individual frames...
+
+
+
+
+
+
 
