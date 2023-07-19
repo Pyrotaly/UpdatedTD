@@ -1181,6 +1181,25 @@ What am i saving:
 When maknig art, have to look into sprite atlases, making animations from animatio nsheet and not individual frames...
 
 
+========
+7/18/2023	
+--------
+Gonna copy save system
+
+Did i just do the repository pattern for my game?  I just like wuuutt
+What pattern is unit of work??
+
+To save tower prefab, get tower id from asset manager thing
+
+
+what is sprite atlas and all the ways to save art graphics whatever
+
+
+
+
+
+
+
 
 
 

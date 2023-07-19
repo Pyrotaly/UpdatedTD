@@ -1,10 +1,11 @@
+using GenericSave;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class PlayerHealthHandler : MonoBehaviour, IDamageable
+    public class PlayerHealthHandler : MonoBehaviour, IDamageable, IDataPersistence
     {
         //TODO : SAVE SYSTEM FOR PLAYER HEALTH
         public int Health = 100;
@@ -25,6 +26,16 @@ namespace UpdatedTD
             {
                 GameManager.Instance.UpdateGameState(GameManager.GameState.GameOver);
             }
+        }
+
+        public void LoadData(GameData data)
+        {
+            Health = data.playerHealth;
+        }
+
+        public void SaveData(ref GameData data)
+        {
+            data.playerHealth = Health;
         }
     }
 }

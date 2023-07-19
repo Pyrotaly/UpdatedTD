@@ -18,8 +18,6 @@ namespace UpdatedTD
             }
 
             //First click or clicked on different object
-            Debug.Log(selectable);
-            Debug.Log(previousSelectedObject);
             previousSelectedObject = selectable;
             CallDeslectOnPreviousObject();
             return false;
