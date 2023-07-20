@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.mypackages.save-system": "file:C:/Users/Minha/Desktop/save-system",
+    "com.mypackages.save-system": "file:C:/_Unity/GitHub/UpdatedTD/save-system",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "1.1.3",
     "com.unity.cinemachine": "2.9.7",

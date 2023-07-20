@@ -1,0 +1,17 @@
+{
+  "name": "com.mypackages.save-system",
+  "version": "1.0.0",
+  "displayName": "Save System",
+  "description": "Small save system library.",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "dependencies": {
+  },
+  "keywords": [
+    "library",
+    "utility",
+    "save"
+  ],
+  "author": {
+  }
+}
