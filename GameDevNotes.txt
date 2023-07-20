@@ -1196,6 +1196,27 @@ what is sprite atlas and all the ways to save art graphics whatever
 
 
 
+========
+7/19/2023	
+--------
+There will be a level select in my game, but it just like starting at a certain level, i will make levels a new scene i guess...
+
+just like 3 levels ause it 3 hour game
+
+Just realized need new input system for some things, like pressing escape in build mode to cancel building or something...
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

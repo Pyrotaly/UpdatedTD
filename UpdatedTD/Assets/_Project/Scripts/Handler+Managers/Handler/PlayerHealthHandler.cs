@@ -30,12 +30,12 @@ namespace UpdatedTD
 
         public void LoadData(GameData data)
         {
-            Health = data.playerHealth;
+            //Health = data.playerHealth;
         }
 
-        public void SaveData(ref GameData data)
+        public void SaveData(GameData data)
         {
-            data.playerHealth = Health;
+           //data.playerHealth = Health;
         }
     }
 }
