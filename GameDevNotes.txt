@@ -1207,7 +1207,123 @@ Just realized need new input system for some things, like pressing escape in bui
 
 
 
+========
+7/21/2023	
+--------
+Basically have save system uh kinda done: 
 
+Tower save system is each tower having id, and then when loading game, have script that reads the list of towers saved and then call build manager to do it...
+
+
+//save system testing --
+
+using UnityEngine;
+using System.Collections.Generic;
+using Newtonsoft.Json;  // Make sure to import the Newtonsoft.Json namespace
+
+public class GameManager : MonoBehaviour
+{
+    // Sample data
+    private int id1 = 1;
+    private double[] coordinates1 = { 1.5, 2.0, 3.7 };
+    private int integerVariable1 = 10;
+
+    private int id2 = 2;
+    private double[] coordinates2 = { 3.0, 1.2, 4.5 };
+    private int integerVariable2 = 25;
+
+    private Dictionary<int, DataEntry> data = new Dictionary<int, DataEntry>();
+
+    private void Start()
+    {
+        // Organize the data in the Dictionary
+        data.Add(id1, new DataEntry(coordinates1, integerVariable1));
+        data.Add(id2, new DataEntry(coordinates2, integerVariable2));
+
+        // Save the data to a JSON file
+        SaveDataToJson();
+
+        // Load the data from the JSON file
+        LoadDataFromJson();
+    }
+
+    private void SaveDataToJson()
+    {
+        // Convert the data Dictionary to a JSON string
+        string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+
+        // Save the JSON data to a file
+        string path = Application.persistentDataPath + "/game_data.json";
+        System.IO.File.WriteAllText(path, jsonData);
+        Debug.Log("Game data saved to JSON.");
+    }
+
+    private void LoadDataFromJson()
+    {
+        // Load the JSON data from the file
+        string path = Application.persistentDataPath + "/game_data.json";
+        if (System.IO.File.Exists(path))
+        {
+            string jsonData = System.IO.File.ReadAllText(path);
+
+            // Deserialize the JSON data back to a Dictionary<int, DataEntry>
+            data = JsonConvert.DeserializeObject<Dictionary<int, DataEntry>>(jsonData);
+
+            // Accessing the data
+            Debug.Log("Data for id1 - Coordinates: " + string.Join(", ", data[id1].Coordinates));
+            Debug.Log("Data for id2 - IntegerVariable: " + data[id2].IntegerVariable);
+        }
+        else
+        {
+            Debug.Log("No saved game data found.");
+        }
+    }
+}
+
+[System.Serializable]
+public class DataEntry
+{
+    public double[] Coordinates;
+    public int IntegerVariable;
+
+    public DataEntry(double[] coordinates, int integerVariable)
+    {
+        Coordinates = coordinates;
+        IntegerVariable = integerVariable;
+    }
+}
+
+-- //
+
+
+
+i can, work on, making art, how to make terrain in unity....
+
+
+
+
+
+
+
+Save system,
+What am i saving:
+}Player health
+}Player currency
+}Towers
+}-Tower upgrade counters (call loop function to call upgrade thing...)
+}-Tower health
+}-Tower location (How does this relate to the tiles as well...)
+}Wave Counter
+---------------
+Polishing
+
+make wave system somewhere (including spawner and figure out how waves work...)
+win condition (super basic level win managenemtn), reach round whatever and u win
+object pooling for enemies
+make unlocking towers work (also adding the notification of a new tower), 
+
+tiles texturing: https://www.youtube.com/watch?v=Y-fDGOqHQZA this video gonna do...
+Make different levels
 
 
 
