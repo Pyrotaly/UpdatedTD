@@ -1350,3 +1350,12 @@ Going to use Unity audio mixer for my audio...
 After this game, gonna have to have code in their own packages...
 
 I think, i need to do vector art, that is the solutions
+
+
+
+========
+7/25/2023	
+--------
+
+
+
