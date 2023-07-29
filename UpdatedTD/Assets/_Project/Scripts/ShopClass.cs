@@ -41,7 +41,7 @@ namespace UpdatedTD
             RectTransform newButtonRectTransform = newButtonTransform.GetComponent<RectTransform>();
 
             newButtonTransform.Find("Price").GetComponent<TextMeshProUGUI>().SetText(towerSO.TowerPrice.ToString());
-            newButtonTransform.Find("TowerIcon").GetComponent<Image>().sprite = towerPrefab.GetComponent<SpriteRenderer>().sprite;
+            newButtonTransform.Find("TowerIcon").GetComponent<Image>().sprite = towerPrefab.GetComponentInChildren<SpriteRenderer>().sprite;
             newButtonTransform.GetComponent<Button_UI>().ClickFunc = () => { BuyItem(towerPrefab, towerSO.TowerPrice); };
 
             Transform moreInfoButton = newButtonTransform.Find("InfoIconButton");

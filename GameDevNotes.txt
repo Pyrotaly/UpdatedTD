@@ -1378,10 +1378,31 @@ So it looks good!
 --------
 To learn about some post processing
 
-
 have to learn how to place towers on center, maybe it is like have it as child object??
 Deal with rotatoin in sequal
 
 
+========
+7/29/2023	
+--------
+okay, make enemy shoot back
+make unique towers and to fit on center of tiles if like a 2x2 tower or whatever...
 
-https://www.myworkday.com/psu/d/inst/15$392530/9925$121673.htmld
+
+
+Maybe only some enemy towers can fight back...
+
+
+Future creep: make enemy towers not do damage but disrupt tower placement if possible...
+Add platforms, put towers in interesting locations...
+
+should make a 1x1 tower...
+
+
+
+Like bloons, the monkey in shop will be different drawing than actual game OR take like screenshot and use that i guess
+
+
+
+
+

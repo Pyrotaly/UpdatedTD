@@ -32,7 +32,9 @@ namespace UpdatedTD
         {
             if (inBuildState) 
             {
-                towerCursor.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                towerCursor.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(transform.position.x + 1.08937f + 0.3f, transform.position.y + 0.16535f - 0.5f, transform.position.z + 3.36638f);
+                // towerCursor.transform.position = new Vector3(transform.position.x - 1.08937f, transform.position.y - 0.16535f, transform.position.z - 3.36638f);
+                towerCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
                 HandleBuilding(); 
             }
         }
