@@ -1349,13 +1349,39 @@ Going to use Unity audio mixer for my audio...
 
 After this game, gonna have to have code in their own packages...
 
-I think, i need to do vector art, that is the solutions
+I think, i need to do vector art, that is the solutions (note from 2/27, this is wrong)
 
 
 
 ========
-7/25/2023	
+7/27/2023	
 --------
+I made the light intensity super high because it dark in game
+also, i figured out how to remove the blurry graphics, had to enable antialiasing post processing camera..
+
+
+So, i think most towers are actually going to take up 2x2 spaces, for some reason, i was trying to scale up all the tiles' sizes even though i could just use the system i have rn instead of trying to mess up everything...
+
+
+I can make all enemies complete symetrically...
+
+https://www.reddit.com/r/Unity2D/comments/794te8/unity2d_how_to_make_sprite_to_material/ this is how i made my sprite into material, I think this only for the tiles...
+
+so i have made sprite template of the enemy design, i think i can pull off with enemies. interesting style...
+NOTE: There will be some rotation on the sprite, Y rotation: 21.647
+
+So it looks good!
+
+
+========
+7/28/2023	
+--------
+To learn about some post processing
+
+
+have to learn how to place towers on center, maybe it is like have it as child object??
+Deal with rotatoin in sequal
 
 
 
+https://www.myworkday.com/psu/d/inst/15$392530/9925$121673.htmld

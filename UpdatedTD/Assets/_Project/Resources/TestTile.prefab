@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7377411367276218926
 MeshFilter:
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 828d4fde7bcddd74e9c623a2162099f3, type: 2}
+  - {fileID: 2100000, guid: 0005c6cc93358e9448665697b250c119, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5494ece2cc42a764194b5013a19757ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.2264151, g: 0.13114987, b: 0.13114987, a: 0}
-  clickColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 1, g: 0, b: 0, a: 0}
+  clickColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0}
   isBuildable: 1
-  cD: {fileID: 8719220722576904971, guid: f3fe8e876ceaf634a8ad02e9edad87e2, type: 3}
