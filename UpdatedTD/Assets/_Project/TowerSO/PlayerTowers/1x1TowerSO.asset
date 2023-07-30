@@ -23,7 +23,7 @@ MonoBehaviour:
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
     targetTag: Enemy
   TowerPrice: 444
-  Height: 1
-  Width: 1
+  Height: 2
+  Width: 2
   TowerDescription: asdfasdfasdfasdfsadfsdfasdfasdfasdfasdfsadfasdfasdfasdfasdfsadfasdfasdfasdfasdfsadfasdfasdfasdfasdfsadf
   localDir: 0

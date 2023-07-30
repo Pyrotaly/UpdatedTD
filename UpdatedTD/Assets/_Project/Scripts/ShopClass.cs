@@ -34,7 +34,7 @@ namespace UpdatedTD
 
         private void CreateItemButton(GameObject towerPrefab)
         {
-            PlayerTowerSO towerSO = towerPrefab.GetComponent<PlayerTowerUserLogic>().GetTowerInfo();
+            PlayerTowerSO towerSO = towerPrefab.GetComponentInChildren<PlayerTowerUserLogic>().GetTowerInfo();
 
             //Spawn template in scroll menu
             Transform newButtonTransform = Instantiate(buttonTemplate, scrollBarContentHolder);

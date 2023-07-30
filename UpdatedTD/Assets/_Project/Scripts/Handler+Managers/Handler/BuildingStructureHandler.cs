@@ -41,7 +41,7 @@ namespace UpdatedTD
 
         private void HandleBuilding()
         {
-            PlayerTowerSO towerSO = TowerToBePlaced.GetComponent<PlayerTowerUserLogic>().GetTowerInfo();
+            PlayerTowerSO towerSO = TowerToBePlaced.GetComponentInChildren<PlayerTowerUserLogic>().GetTowerInfo();
 
             //Rotate structure
             if (Input.GetMouseButtonDown(1))

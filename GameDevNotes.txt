@@ -1399,10 +1399,20 @@ Add platforms, put towers in interesting locations...
 should make a 1x1 tower...
 
 
-
+(adjusting camera issues below...)
 Like bloons, the monkey in shop will be different drawing than actual game OR take like screenshot and use that i guess
 
+11.46063 12.55 = 1.08937
+
+10.82465 10.99 = 0.16535
+
+-17.72638 -14.36 = 3.36638
 
 
+rotation visual error, 
 
 
+There is sometimes hard time to click on stuff behind towers...
+What i can do is, have two box colliders, one for enemy to hit and then another that if player clicked on it...
+
+Sometimes red square not showing up...

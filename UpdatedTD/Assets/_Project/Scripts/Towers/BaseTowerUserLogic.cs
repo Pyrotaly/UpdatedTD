@@ -10,11 +10,18 @@ namespace UpdatedTD
 
         private GameObject towerRadius;
         private BaseTowerCombatHandler towerAttackBehavior;
+        private bool inBuildState;
 
         private void Awake()
         {
+            GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
             towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;   
             towerAttackBehavior = GetComponent<BaseTowerCombatHandler>();
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.OnGameStateChanged -= GameManager_OnGameStateChanged;
         }
 
         //TODO : TESTING FUNCTION CallStart, used on Test Spawn Enemy to test 
@@ -79,12 +86,20 @@ namespace UpdatedTD
 
         private void OnMouseDown()
         {
-            Select();
+            if (!inBuildState) {
+                Debug.Log("what");
+                    Select(); }
         }
 
         private void OnMouseUp()
         {
         }
         #endregion
+
+
+        private void GameManager_OnGameStateChanged(GameManager.GameState state)
+        {
+            inBuildState = (state == GameManager.GameState.Building);
+        }
     }
 }
