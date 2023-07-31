@@ -32,13 +32,7 @@ namespace UpdatedTD
             else
             {
                 cubeRenderer.material.color = hoverColor;
-                Invoke(nameof(DoublingColor), 0.3f);
             }
-        }
-
-        public void DoublingColor()
-        {
-            cubeRenderer.material.color = hoverColor;
         }
 
         #region MouseFunctions

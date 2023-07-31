@@ -83,7 +83,6 @@ namespace UpdatedTD
                     {
                         BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
                         buildingTile.SetBuildable(false);
-                        buildingTile.DoublingColor(); //idk why but it just not change color sometimes
                     }
 
                     Destroy(towerCursor);
