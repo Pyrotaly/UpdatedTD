@@ -81,16 +81,19 @@ namespace UpdatedTD
                 {
                     foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
                     {
-                        Debug.Log(cooridnate);
                         BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
                         buildingTile.SetBuildable(false);
+                        buildingTile.DoublingColor(); //idk why but it just not change color sometimes
                     }
 
                     Destroy(towerCursor);
 
-                    Instantiate(TowerToBePlaced,
+                    var tower = Instantiate(TowerToBePlaced,
                         new Vector3((int)SelectedTile.transform.position.x, (int)SelectedTile.transform.position.y + 1, (int)SelectedTile.transform.position.z),
                         Quaternion.identity);
+
+                    tower.GetComponentInChildren<PlayerTowerUserLogic>().Initiazlied = true;
+                    tower.GetComponentInChildren<PlayerTowerUserLogic>().towerDir = towerDir;
 
                     TowerToBePlaced = null;
                     towerDir = PlayerTowerSO.Directions.Down;
@@ -103,14 +106,19 @@ namespace UpdatedTD
         {
             PlayerTowerSO towerSO = towerToBeDestroyed.GetComponent<PlayerTowerUserLogic>().GetTowerInfo();
 
+            towerDir = towerToBeDestroyed.GetComponent<PlayerTowerUserLogic>().towerDir;
+
             List<Vector3Int> tileCoordinatesToCheck =
-                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)towerToBeDestroyed.transform.position.x, (int)towerToBeDestroyed.transform.position.y - 1, (int)towerToBeDestroyed.transform.position.z), towerSO.localDir);
+                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)towerToBeDestroyed.transform.position.x, 
+                    (int)towerToBeDestroyed.transform.position.y - 1, (int)towerToBeDestroyed.transform.position.z), towerDir);
 
             foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
             {
                 BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
                 buildingTile.SetBuildable(true);
             }
+
+            towerDir = PlayerTowerSO.Directions.Down;
         }
 
         private void GameManager_OnGameStateChanged(GameManager.GameState state)

@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8323799906908780037}
   m_Layer: 8
   m_Name: 1x1Holder
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ Transform:
   m_Children:
   - {fileID: 939383662473134964}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8439762770080620038
 GameObject:
@@ -129,9 +129,9 @@ GameObject:
   - component: {fileID: 3134419207751793346}
   - component: {fileID: 1932286305034242466}
   - component: {fileID: 3056290956062782828}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: TowerInformation
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInfo: {fileID: 11400000, guid: 78a126db6d0631c46b231d7b33a75e1f, type: 2}
+  Initiazlied: 0
 --- !u!114 &1932286305034242466
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ namespace UpdatedTD
         private void OnTriggerEnter(Collider collision)
         {
             //TODO : VS telling me there is a more efficient way to compare tag but it lead to errors...
-            if (collision.gameObject.CompareTag(targetTag))
+            if (collision.gameObject.tag == targetTag)
             {
                 collision.GetComponent<IDamageable>().AlterCurrentHitPoints(-damageAmount);
                 ObjectPoolHandler.ReturnObjectToPool(gameObject);

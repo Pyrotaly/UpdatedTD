@@ -18,8 +18,8 @@ MonoBehaviour:
     HitPoints: 10
     Damage: 300
     ProjectileSpeed: 10
-    AttackRange: 4
-    AttackCooldown: 20
+    AttackRange: 25
+    AttackCooldown: 2
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
     targetTag: Enemy
   TowerPrice: 444

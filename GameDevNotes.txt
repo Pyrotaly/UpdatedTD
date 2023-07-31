@@ -1409,10 +1409,53 @@ Like bloons, the monkey in shop will be different drawing than actual game OR ta
 -17.72638 -14.36 = 3.36638
 
 
-rotation visual error, 
-
-
 There is sometimes hard time to click on stuff behind towers...
 What i can do is, have two box colliders, one for enemy to hit and then another that if player clicked on it...
 
-Sometimes red square not showing up...
+Sometimes red square not showing up... idk why, it functions the same, it just not look the same...
+FIXED IT, ERROR WAS THAT MY TILES WERE NOT INTEGER POSITIONS FOR SOME REASONS
+
+
+Okay today: 
+added in sprites to work with the tile system
+fixed many errors, like tiles not being on int locations causing red squares to not appear correclty
+fixed towers not working 
+
+
+TODO : When clicking on something that not selected object, deselect everything...
+
+rotation visual error, 
+I have it so that the button to move camera and rotate button are the same, need to change that...
+
+Player can shoot, it slow
+Need barriers so that any bullets that miss will get destroyed
+
+So lazer tower do lot of single target damage
+
+https://www.youtube.com/watch?v=7T-MTo8Uaio
+
+
+========
+7/31/2023	
+--------
+So to fix the rotation issue, i can have like cooridnates to save the towers to be in, i can just play around when opining the prefab
+
+for the 1x3 like towers, just have a different srptie show, somehow make tower read the direction it is in...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

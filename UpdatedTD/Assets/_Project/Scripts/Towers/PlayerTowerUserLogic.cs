@@ -6,6 +6,9 @@ namespace UpdatedTD
 {
     public class PlayerTowerUserLogic : BaseTowerUserLogic
     {
+        public bool Initiazlied = false;
+        public PlayerTowerSO.Directions towerDir = PlayerTowerSO.Directions.Down;
+
         //TODO : Check if it i put in a PlayerTowerSO or tell me if i messed up
         public PlayerTowerSO GetTowerInfo()
         {
@@ -22,17 +25,26 @@ namespace UpdatedTD
         {
             base.Select();
 
-            //If clicked on same object
-            if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
+            if (Initiazlied)
             {
-                GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
-                HelperFunctions.SetDescriptionText("Clicked on me again");
-            }
-            //First time selecting or this is new selection
-            else
-            {
-                GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
-                HelperFunctions.SetDescriptionText("First clicked");
+                //If clicked on same object
+                if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
+                {
+                    GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
+                    HelperFunctions.SetDescriptionText("Clicked on me again");
+
+                    var temp = GetTowerInfo();
+                    Debug.Log(towerDir);
+                }
+                //First time selecting or this is new selection
+                else
+                {
+                    GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
+                    HelperFunctions.SetDescriptionText("First clicked");
+
+                    var temp = GetTowerInfo();
+                    Debug.Log(towerDir);
+                }
             }
         }
     }

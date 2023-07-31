@@ -9,19 +9,14 @@ namespace UpdatedTD
         [SerializeField] protected BaseTowerSO towerInfo;
 
         private GameObject towerRadius;
+        private GameObject towerRadiusObject;
         private BaseTowerCombatHandler towerAttackBehavior;
         private bool inBuildState;
 
         private void Awake()
         {
-            GameManager.OnGameStateChanged += GameManager_OnGameStateChanged;
             towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;   
             towerAttackBehavior = GetComponent<BaseTowerCombatHandler>();
-        }
-
-        private void OnDestroy()
-        {
-            GameManager.OnGameStateChanged -= GameManager_OnGameStateChanged;
         }
 
         //TODO : TESTING FUNCTION CallStart, used on Test Spawn Enemy to test 
@@ -35,11 +30,11 @@ namespace UpdatedTD
             //Spawn tower radius
             towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
             towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
-            var towerRadiusHandler = Instantiate(towerRadius, this.gameObject.transform);
-            //Select();
+            towerRadiusObject = Instantiate(towerRadius, this.gameObject.transform);
+            Select();
 
             towerAttackBehavior.SetUpLocalDictionary(towerInfo);
-            towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadiusHandler);
+            towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadiusObject);
         }
 
         protected virtual void Update()
@@ -48,19 +43,16 @@ namespace UpdatedTD
 
             //TODO : Remove this testing
             KeyValuePair<Stat, dynamic> kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.Damage, 100);
-
-
-            //towerAttackBehavior.AlterStats(kvpTesting);
         }
 
         public virtual void Select()
         {
-            towerRadius.SetActive(true);
+            towerRadiusObject.GetComponent<SpriteRenderer>().enabled = true;
         }
 
         public virtual void Deselect()
         {
-            towerRadius.SetActive(false);
+            towerRadiusObject.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         public void ManualDestroyTower() 
@@ -86,20 +78,12 @@ namespace UpdatedTD
 
         private void OnMouseDown()
         {
-            if (!inBuildState) {
-                Debug.Log("what");
-                    Select(); }
+            if (!inBuildState) { Select(); }
         }
 
         private void OnMouseUp()
         {
         }
         #endregion
-
-
-        private void GameManager_OnGameStateChanged(GameManager.GameState state)
-        {
-            inBuildState = (state == GameManager.GameState.Building);
-        }
     }
 }

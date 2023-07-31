@@ -13,7 +13,6 @@ namespace UpdatedTD
             {
                 if (Time.time - nextAttackTime >= attackCooldown)
                 {
-                    Debug.Log("DIE FROM ENEMY");
                     ShootProjectile(TEMPProjectile);
                     nextAttackTime = Time.time;
                 }
