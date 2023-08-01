@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5390674671773098743}
   - component: {fileID: -2417196139554213187}
   - component: {fileID: 7732424410118318518}
+  - component: {fileID: 4253551461098833463}
   m_Layer: 8
   m_Name: 1x3
   m_TagString: Player
@@ -100,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInfo: {fileID: 11400000, guid: 7c5e28d6d95b9434a8fa1bad8cfa086d, type: 2}
+  Initiazlied: 0
+  towerDir: 0
 --- !u!65 &-2417196139554213187
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,3 +136,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21fb3844d32bc446906d4d20c4a3bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4253551461098833463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732199487362033775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7566d26f1d2c274d9a144d10d9f3c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerDir: 0

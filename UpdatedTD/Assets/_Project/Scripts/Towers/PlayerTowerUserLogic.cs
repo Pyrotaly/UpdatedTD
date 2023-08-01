@@ -38,18 +38,12 @@ namespace UpdatedTD
                 {
                     GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
                     HelperFunctions.SetDescriptionText("Clicked on me again");
-
-                    var temp = GetTowerInfo();
-                    Debug.Log(towerDir);
                 }
                 //First time selecting or this is new selection
                 else
                 {
                     GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
                     HelperFunctions.SetDescriptionText("First clicked");
-
-                    var temp = GetTowerInfo();
-                    Debug.Log(towerDir);
                 }
             }
         }
