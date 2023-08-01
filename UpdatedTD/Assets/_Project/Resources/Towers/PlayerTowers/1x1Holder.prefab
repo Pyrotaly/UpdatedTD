@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 3134419207751793346}
   - component: {fileID: 1932286305034242466}
   - component: {fileID: 3056290956062782828}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: TowerInformation
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerInfo: {fileID: 11400000, guid: 78a126db6d0631c46b231d7b33a75e1f, type: 2}
   Initiazlied: 0
+  towerDir: 0
 --- !u!114 &1932286305034242466
 MonoBehaviour:
   m_ObjectHideFlags: 0
