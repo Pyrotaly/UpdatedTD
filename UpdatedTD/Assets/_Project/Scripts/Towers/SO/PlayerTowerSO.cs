@@ -19,6 +19,19 @@ namespace UpdatedTD
         {
             List<Vector3Int> coordinatesTowerTakesUp = new List<Vector3Int>();
 
+            if (Height == Width)
+            {
+                for (int x = 0; x < Width; x++)
+                {
+                    for (int z = 0; z < Height; z++)
+                    {
+                        coordinatesTowerTakesUp.Add(tileCooridnatePlayerClicked + new Vector3Int(x, 0, z));
+                    }
+                }
+
+                dir = Directions.Down;
+            }
+
             switch (dir)
             {
                 case Directions.Down:

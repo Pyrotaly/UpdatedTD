@@ -89,7 +89,7 @@ namespace UpdatedTD
                 towerDir = PlayerTowerSO.GetNextDir(towerDir);
 
                 //TODO : This is bizzare here...
-                TowerToBePlaced.GetComponent<PlayerTowerUserLogic>().
+                //TowerToBePlaced.GetComponent<PlayerTowerUserLogic>().
             }
 
             if (SelectedTile != null && Input.GetMouseButtonDown(0))

@@ -1450,6 +1450,7 @@ TODO :
 -When clicking on something that not selected object, deselect everything...
 
 -rotation visual error, 
+--make tiles sprite change depending on their DIR... could just stuff it into playertowerSO since square towers always return that they are facing down
 -I have it so that the button to move camera and rotate button are the same, need to change that...
 
 -Player can shoot, it slow
@@ -1462,7 +1463,9 @@ https://www.youtube.com/watch?v=7T-MTo8Uaio
 
 
 
-
+========
+8/1/2023	
+--------
 
 
 

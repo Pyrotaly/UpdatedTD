@@ -45,6 +45,8 @@ namespace UpdatedTD
             {
                 cubeRenderer.material.color = originalColor;
             }
+
+            if (!isBuildable) { cubeRenderer.material.color = hoverColor; }
         }
 
         #region MouseFunctions
