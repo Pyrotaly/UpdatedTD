@@ -1467,9 +1467,18 @@ https://www.youtube.com/watch?v=7T-MTo8Uaio
 8/1/2023	
 --------
 
+cannot click on towers any more...
+okay made life qualitites a lot better,
 
+Rotation can be unique for all towers now...
 
+-I have it so that the button to move camera and rotate button are the same, need to change that...
 
+-Player can shoot, it slow
+-Need barriers so that any bullets that miss will get destroyed
 
+-So lazer tower do lot of single target damage
+
+https://www.youtube.com/watch?v=7T-MTo8Uaio
 
 

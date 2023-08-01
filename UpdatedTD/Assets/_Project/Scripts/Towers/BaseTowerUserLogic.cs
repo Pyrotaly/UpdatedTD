@@ -53,7 +53,6 @@ namespace UpdatedTD
 
         public virtual void Deselect()
         {
-            Debug.Log("please");
             towerRadiusObject.GetComponent<SpriteRenderer>().enabled = false;
         }
 

@@ -11,6 +11,10 @@ namespace UpdatedTD
         [SerializeField] private Transform[] path;
         public Transform[] GetPath { get { return path;  } }
 
+
+        private int WaveNumber;
+
+
         public static WIPLevelManager Instance;
 
         private void Awake()
@@ -26,5 +30,9 @@ namespace UpdatedTD
         }
 
         //TODO : If finished final wave then game manaer set gamestate to victory
+        private void StartWave()
+        {
+            GameManager.Instance.UpdateGameState(GameManager.GameState.Building);
+        }
     }
 }
