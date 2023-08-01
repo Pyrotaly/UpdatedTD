@@ -70,34 +70,32 @@ namespace UpdatedTD
         #region MouseFunctions
         private void OnMouseEnter()
         {
-            if (!inBuildState)
+            Invoke("Blah", 0.5f);
+            if (GameManager.Instance.State == GameManager.GameState.Building)
             {
-                gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
-                Select();
+                gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
-
-            if (inBuildState) { gameObject.layer = LayerMask.NameToLayer("Ignore Raycast"); }
+            
         }
 
         private void OnMouseExit()
         {
-            gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
+
         }
 
         private void OnMouseDown()
         {
-            if (!inBuildState) 
-            {
-                gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
-                Select(); 
-            }
-
-            if (inBuildState) { gameObject.layer = LayerMask.NameToLayer("Ignore Raycast"); }
+            Select();
         }
 
         private void OnMouseUp()
         {
         }
         #endregion
+
+        private void Blah()
+        {
+            gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
+        }
     }
 }
