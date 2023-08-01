@@ -31,7 +31,8 @@ namespace UpdatedTD
             towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
             towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
             towerRadiusObject = Instantiate(towerRadius, this.gameObject.transform);
-            Select();
+            OnMouseDown();
+
 
             towerAttackBehavior.SetUpLocalDictionary(towerInfo);
             towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadiusObject);
@@ -47,18 +48,19 @@ namespace UpdatedTD
 
         public virtual void Select()
         {
-            towerRadiusObject.GetComponent<SpriteRenderer>().enabled = true;
+            //towerRadiusObject.GetComponent<SpriteRenderer>().enabled = true;
         }
 
         public virtual void Deselect()
         {
+            Debug.Log("please");
             towerRadiusObject.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         public void ManualDestroyTower() 
         {
             //TODO : Make some currency back? how would this change if player upgrade the tower?
-            Destroy(gameObject); 
+            Destroy(transform.parent.gameObject); 
         }
 
         //TODO : is this effective?
@@ -85,7 +87,16 @@ namespace UpdatedTD
 
         private void OnMouseDown()
         {
-            Select();
+            //If clicked on same object
+            if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
+            {
+                Debug.Log("haha");
+            }
+            //First time selecting or this is new selection
+            else
+            {
+                towerRadiusObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
 
         private void OnMouseUp()

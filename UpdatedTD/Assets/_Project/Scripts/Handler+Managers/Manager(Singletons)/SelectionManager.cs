@@ -18,8 +18,8 @@ namespace UpdatedTD
             }
 
             //First click or clicked on different object
-            previousSelectedObject = selectable;
             CallDeslectOnPreviousObject();
+            previousSelectedObject = selectable;
             return false;
         }
 
