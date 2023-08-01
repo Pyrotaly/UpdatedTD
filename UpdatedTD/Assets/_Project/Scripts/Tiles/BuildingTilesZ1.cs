@@ -35,8 +35,20 @@ namespace UpdatedTD
             }
         }
 
+        public void ChangeColorBool(bool boolValue)
+        {
+            if (boolValue == true)
+            {
+                cubeRenderer.material.color = hoverColor;
+            }
+            else
+            {
+                cubeRenderer.material.color = originalColor;
+            }
+        }
+
         #region MouseFunctions
-        private void OnMouseEnter()
+        public void OnMouseEnter()
         {
             if (isBuildable) { cubeRenderer.material.color = hoverColor; }
             BuildingStructureHandler.SelectedTile = this.gameObject;

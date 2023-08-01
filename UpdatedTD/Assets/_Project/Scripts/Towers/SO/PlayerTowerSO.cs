@@ -15,9 +15,6 @@ namespace UpdatedTD
         [TextArea(5, 10)]
         public string TowerDescription;
 
-        [HideInInspector]
-        public Directions localDir;
-
         public List<Vector3Int> CoordinatesTowerTakesUp(Vector3Int tileCooridnatePlayerClicked, Directions dir)
         {
             List<Vector3Int> coordinatesTowerTakesUp = new List<Vector3Int>();
@@ -25,7 +22,6 @@ namespace UpdatedTD
             switch (dir)
             {
                 case Directions.Down:
-                    localDir = dir;
                     for (int x = 0; x < Width; x++)
                     {
                         for (int z = 0; z < Height; z++)
@@ -35,7 +31,6 @@ namespace UpdatedTD
                     }
                     break;
                 case Directions.Left:
-                    localDir = dir;
                     for (int x = 0; x < Height; x++)
                     {
                         for (int z = 0; z < Width; z++)
@@ -45,7 +40,6 @@ namespace UpdatedTD
                     }
                     break;
                 case Directions.Up:
-                    localDir = dir;
                     for (int x = 0; x < Width; x++)
                     {
                         for (int z = 0; z < Height; z++)
@@ -55,7 +49,6 @@ namespace UpdatedTD
                     }
                     break;
                 case Directions.Right:
-                    localDir = dir;
                     for (int x = 0; x < Height; x++)
                     {
                         for (int z = 0; z < Width; z++)

@@ -14,6 +14,12 @@ namespace UpdatedTD
         {
             return (PlayerTowerSO)towerInfo; 
         }
+    
+        //TODO : HandleImageRotation as a interface...
+        public void HandleImageRotation()
+        {
+
+        }
 
         public override void Deselect()
         {

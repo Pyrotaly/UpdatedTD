@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace UpdatedTD
 {
@@ -17,6 +18,7 @@ namespace UpdatedTD
         PlayerTowerSO.Directions towerDir = PlayerTowerSO.Directions.Down;
         private GameObject towerCursor;
         private bool inBuildState;
+        private List<Vector3Int> previousTileCooridnatesToCheck = new List<Vector3Int>();
 
         private void Awake()
         {
@@ -35,7 +37,43 @@ namespace UpdatedTD
                 towerCursor.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(transform.position.x + 1.08937f + 0.3f, transform.position.y + 0.16535f - 0.5f, transform.position.z + 3.36638f);
                 // towerCursor.transform.position = new Vector3(transform.position.x - 1.08937f, transform.position.y - 0.16535f, transform.position.z - 3.36638f);
                 towerCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
-                HandleBuilding(); 
+                HandleBuilding();
+            }
+        }
+
+        //TODO : not the best but it works...
+        private void HandleBuildingVisual(PlayerTowerSO towerSO)
+        {
+            if (SelectedTile != null)
+            {
+                List<Vector3Int> currentTileCoordinatesToCheck =
+                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)SelectedTile.transform.position.x, (int)SelectedTile.transform.position.y, (int)SelectedTile.transform.position.z), towerDir);
+
+                foreach (Vector3Int cooridnate in currentTileCoordinatesToCheck)
+                {
+                    BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+
+                    //TODO : If it is null, make the tower rd to indicate cannot build there
+                    if (buildingTile != null)
+                    {
+                        buildingTile.ChangeColorBool(true);
+                    }
+                }
+
+                if (!currentTileCoordinatesToCheck.SequenceEqual(previousTileCooridnatesToCheck))
+                {
+                    foreach (Vector3Int cooridnate in previousTileCooridnatesToCheck)
+                    {
+                        BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
+
+                        if (buildingTile != null)
+                        {
+                            buildingTile.ChangeColorBool(false);
+                        }
+                    }
+
+                    previousTileCooridnatesToCheck = currentTileCoordinatesToCheck.ToList();
+                }
             }
         }
 
@@ -43,11 +81,15 @@ namespace UpdatedTD
         {
             PlayerTowerSO towerSO = TowerToBePlaced.GetComponentInChildren<PlayerTowerUserLogic>().GetTowerInfo();
 
+            HandleBuildingVisual(towerSO);
+
             //Rotate structure
             if (Input.GetMouseButtonDown(1))
             {
                 towerDir = PlayerTowerSO.GetNextDir(towerDir);
-                Debug.Log(towerDir);
+
+                //TODO : This is bizzare here...
+                TowerToBePlaced.GetComponent<PlayerTowerUserLogic>().
             }
 
             if (SelectedTile != null && Input.GetMouseButtonDown(0))
