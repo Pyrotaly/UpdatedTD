@@ -1466,7 +1466,6 @@ https://www.youtube.com/watch?v=7T-MTo8Uaio
 ========
 8/1/2023	
 --------
-
 cannot click on towers any more...
 okay made life qualitites a lot better,
 
@@ -1480,5 +1479,33 @@ Rotation can be unique for all towers now...
 -So lazer tower do lot of single target damage
 
 https://www.youtube.com/watch?v=7T-MTo8Uaio
+
+
+
+Have to make 3 paths for enemy towers to spawn...
+
+
+To make enemies fly over towers, bombing them,
+
+can make player use money to heal towers...
+
+boss will destroy towers like boss in pvz2
+
+Could make tower show a sphere gizmo or whatever instead of the circle radius, i think that would make much more sense and no more dealing with clipping
+
+https://github.com/Chaser324/unity-wireframe NOTE: NEED TO ATTRIBUTE THIS SO YEAH { TODO : } THIS IS IMPORTANT NO SKIP
+USE THIS FOR THE SPHERE RADIUS FOR THE UH FLYING TOWERS...
+
+
+
+
+
+
+
+
+
+
+
+
 
 
