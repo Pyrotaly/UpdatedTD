@@ -1,3 +1,4 @@
+using GenericObjectPooling;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace UpdatedTD
         //TODO : Could make bullets more customizable instead of handling the speed here...
         private void ShootProjectile(GameObject prefab)
         {
-            GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Folder1);
+            GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
             bullet.GetComponent<Projectile>().SetUp(damage, targetTag);
 
             Rigidbody rb = bullet.GetComponent<Rigidbody>();

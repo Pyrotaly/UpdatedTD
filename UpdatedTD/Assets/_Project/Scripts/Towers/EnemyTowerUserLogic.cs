@@ -18,15 +18,15 @@ namespace UpdatedTD
         {
             base.Update();
 
-            if (pathIndex == WIPLevelManager.Instance.GetPath.Length)
+            if (pathIndex == LevelManager.Instance.GetPath1.Length)
             {
                 Destroy(gameObject);
                 return;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, LevelManager.Instance.GetPath1[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, WIPLevelManager.Instance.GetPath[pathIndex].position) < 0.01f)
+            if (Vector3.Distance(transform.position, LevelManager.Instance.GetPath1[pathIndex].position) < 0.01f)
             {
                 pathIndex++;
             }

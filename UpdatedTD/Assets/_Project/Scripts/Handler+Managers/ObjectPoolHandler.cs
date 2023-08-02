@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 
 //TODO : Make this an objectpool namespace to reuse
-namespace UpdatedTD
+namespace GenericObjectPooling
 {
     public class ObjectPoolHandler : MonoBehaviour
     {
@@ -13,13 +13,15 @@ namespace UpdatedTD
 
         private GameObject objectPoolEmptyHolder;
 
-        private static GameObject folder1Empty;
-        private static GameObject folder2Empty;
+        private static GameObject playerProjectiles;
+        private static GameObject enemyProjectiles;
+        private static GameObject enemies;
 
         public enum PoolType
         {
-            Folder1,
-            Folder2,
+            PlayerProjectiles,
+            EnemyProjectiles,
+            Enemies,
             None
         }
         public static PoolType PoolingType;
@@ -33,11 +35,14 @@ namespace UpdatedTD
         {
             objectPoolEmptyHolder = new GameObject("PooledObjects");
 
-            folder1Empty = new GameObject("Folder1");
-            folder1Empty.transform.SetParent(objectPoolEmptyHolder.transform);
+            playerProjectiles = new GameObject("PlayerProjectiles");
+            playerProjectiles.transform.SetParent(objectPoolEmptyHolder.transform);
 
-            folder2Empty = new GameObject("Folder2");
-            folder2Empty.transform.SetParent(objectPoolEmptyHolder.transform);
+            enemyProjectiles = new GameObject("EnemyProjectiles");
+            enemyProjectiles.transform.SetParent(objectPoolEmptyHolder.transform);
+
+            enemies = new GameObject("Enemies");
+            enemies.transform.SetParent(objectPoolEmptyHolder.transform);
         }
 
         public static GameObject SpawnObject(GameObject objectToSpawn, Vector3 spawnPosition, Quaternion spawnRotation, PoolType poolType = PoolType.None)
@@ -109,10 +114,12 @@ namespace UpdatedTD
         {
             switch (poolType)
             {
-                case PoolType.Folder1:
-                    return folder1Empty;
-                case PoolType.Folder2:
-                    return folder2Empty;
+                case PoolType.PlayerProjectiles:
+                    return playerProjectiles;
+                case PoolType.EnemyProjectiles:
+                    return enemyProjectiles;
+                case PoolType.Enemies:
+                    return enemies;
                 case PoolType.None:
                     return null;
                 default:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable
+    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable, IDamageable
     {
         [SerializeField] protected BaseTowerSO towerInfo;
 
@@ -71,7 +71,7 @@ namespace UpdatedTD
         #region MouseFunctions
         private void OnMouseEnter()
         {
-            Invoke("Blah", 0.5f);
+            Invoke("RevertTowerLayer", 0.5f);
             if (GameManager.Instance.State == GameManager.GameState.Building)
             {
                 gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
@@ -103,9 +103,14 @@ namespace UpdatedTD
         }
         #endregion
 
-        private void Blah()
+        private void RevertTowerLayer()
         {
             gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
+        }
+
+        public void AlterCurrentHitPoints(int hitPointAlterAmount)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -1501,11 +1501,25 @@ USE THIS FOR THE SPHERE RADIUS FOR THE UH FLYING TOWERS...
 
 
 
+========
+8/2/2023	
+--------
+make enemy towers,
+
+lazer, circle death
 
 
+Make enemy spawns with objectpooling
+
+In future, all enemy paths will be 3 x 3 kind of style...
 
 
+In my game, it will be like plants vs zombies with no pausing for putting towers and thinking 
+Though can pause if need to like pause the game. save and exit is just start on certain wave number, wave numbers will just be at certain times like timer
 
+Using action system thing from VSClone for checking enemy deaths... will auto go to next wave if all enemies dead.
 
+So i have a levelmanager, it just keeps track of level and what enemies to spawn at and how much at certain level...
+I have wavespawner which just spawns in enemies at whatever location
 
-
+Should health be in a dictionary?

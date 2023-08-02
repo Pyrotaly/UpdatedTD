@@ -1,3 +1,4 @@
+using GenericObjectPooling;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class WaveHandler : MonoBehaviour
+    public class WaveSpawner : MonoBehaviour
     {
         [Header("References")]
         [SerializeField] private GameObject[] enemyPrefabs;
@@ -46,7 +47,7 @@ namespace UpdatedTD
         private void SpawnEnemy()
         {
             GameObject prefabToSpawn = enemyPrefabs[0];
-            //Instantiate(prefabToSpawn)
+            GameObject enemySpawn = ObjectPoolHandler.SpawnObject(prefabToSpawn, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Enemies);
         }
 
         private void StartWave()

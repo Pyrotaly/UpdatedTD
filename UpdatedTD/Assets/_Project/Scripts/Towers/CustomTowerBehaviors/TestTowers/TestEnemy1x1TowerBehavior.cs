@@ -1,3 +1,4 @@
+using GenericObjectPooling;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,7 @@ namespace UpdatedTD
         private void ShootProjectile(GameObject prefab)
         {
             // Instantiate the projectile at the tower's position and rotation
-            GameObject spawnedProjectile = Instantiate(prefab, transform.position, transform.rotation);
+            GameObject spawnedProjectile = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.EnemyProjectiles);
 
             // Get the Rigidbody component from the spawned projectile
             Rigidbody rb = spawnedProjectile.GetComponent<Rigidbody>();
