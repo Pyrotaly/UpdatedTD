@@ -14,44 +14,11 @@ namespace UpdatedTD
         {
             return (PlayerTowerSO)towerInfo; 
         }
-    
-        //TODO : HandleImageRotation as a interface...
-        public void HandleImageRotation()
+
+        public void ManualDestroyTower()
         {
-
-        }
-
-        public override void Deselect()
-        {
-            base.Deselect();
-        }
-
-        //TODO : This select function might not need to be overriden as it will probably function the same for all towers, put functionality into the base class
-        public override void Select()
-        {
-            //base.Select();
-
-            //if (Initiazlied)
-            //{
-            //    //If clicked on same object
-            //    if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
-            //    {
-            //        GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
-            //        HelperFunctions.SetDescriptionText("Clicked on me again");
-
-            //        var temp = GetTowerInfo();
-            //        Debug.Log(towerDir);
-            //    }
-            //    //First time selecting or this is new selection
-            //    else
-            //    {
-            //        GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
-            //        HelperFunctions.SetDescriptionText("First clicked");
-
-            //        var temp = GetTowerInfo();
-            //        Debug.Log(towerDir);
-            //    }
-            //}
+            //TODO : Make some currency back? how would this change if player upgrade the tower?
+            Destroy(transform.parent.gameObject);
         }
     }
 }

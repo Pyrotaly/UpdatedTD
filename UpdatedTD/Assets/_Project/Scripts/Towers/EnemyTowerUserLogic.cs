@@ -14,10 +14,9 @@ namespace UpdatedTD
             towerSO = (EnemyTowerInfoSO)towerInfo;
         }
 
-        protected override void Update()
+        private void Update()
         {
-            base.Update();
-
+            #region HandleMoving
             if (pathIndex == LevelManager.Instance.GetPath1.Length)
             {
                 Destroy(gameObject);
@@ -30,6 +29,7 @@ namespace UpdatedTD
             {
                 pathIndex++;
             }
+            #endregion
         }
 
         private void OnTriggerEnter(Collider collision)
@@ -39,16 +39,6 @@ namespace UpdatedTD
                 collision.GetComponent<IDamageable>().AlterCurrentHitPoints(towerSO.PlayerHealthDamage);
                 Destroy(gameObject);
             }
-        }
-
-        public override void Deselect()
-        {
-            base.Deselect();
-        }
-
-        public override void Select()
-        {
-            base.Select();
         }
     }
 }

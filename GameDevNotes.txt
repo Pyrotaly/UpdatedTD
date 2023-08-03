@@ -1522,4 +1522,7 @@ Using action system thing from VSClone for checking enemy deaths... will auto go
 So i have a levelmanager, it just keeps track of level and what enemies to spawn at and how much at certain level...
 I have wavespawner which just spawns in enemies at whatever location
 
-Should health be in a dictionary?
+
+
+
+The attack function is moved to BaseTowerCombatHandler, need to make it wait for SetUpTower called first just incase of errors i guess

@@ -4,18 +4,17 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable, IDamageable
+    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable
     {
         [SerializeField] protected BaseTowerSO towerInfo;
 
         private GameObject towerRadius;
         private GameObject towerRadiusObject;
         private BaseTowerCombatHandler towerAttackBehavior;
-        private bool inBuildState;
 
         private void Awake()
         {
-            towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;   
+            towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;
             towerAttackBehavior = GetComponent<BaseTowerCombatHandler>();
         }
 
@@ -33,9 +32,7 @@ namespace UpdatedTD
             towerRadiusObject = Instantiate(towerRadius, this.gameObject.transform);
             OnMouseDown();
 
-
-            towerAttackBehavior.SetUpLocalDictionary(towerInfo);
-            towerAttackBehavior.SetUpTowerAttackParameters(towerInfo.TowerInfo, towerRadiusObject);
+            towerAttackBehavior.SetUpTowerCombat(towerInfo, towerRadiusObject);
         }
 
         protected virtual void Update()
@@ -56,19 +53,13 @@ namespace UpdatedTD
             towerRadiusObject.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        public void ManualDestroyTower() 
+        private void RevertTowerLayer()
         {
-            //TODO : Make some currency back? how would this change if player upgrade the tower?
-            Destroy(transform.parent.gameObject); 
-        }
-
-        //TODO : is this effective?
-        public BaseTowerCombatHandler GetTowerAttackBehavior()
-        {
-            return towerAttackBehavior;
+            gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
         }
 
         #region MouseFunctions
+        //TODO : Do enemies need this features as well?
         private void OnMouseEnter()
         {
             Invoke("RevertTowerLayer", 0.5f);
@@ -79,17 +70,11 @@ namespace UpdatedTD
             
         }
 
-        private void OnMouseExit()
-        {
-
-        }
-
         private void OnMouseDown()
         {
             //If clicked on same object
             if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
             {
-                Debug.Log("haha");
             }
             //First time selecting or this is new selection
             else
@@ -97,20 +82,6 @@ namespace UpdatedTD
                 towerRadiusObject.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
-
-        private void OnMouseUp()
-        {
-        }
         #endregion
-
-        private void RevertTowerLayer()
-        {
-            gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
-        }
-
-        public void AlterCurrentHitPoints(int hitPointAlterAmount)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

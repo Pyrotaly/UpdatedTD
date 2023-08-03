@@ -46,8 +46,9 @@ namespace UpdatedTD
 
         private void SpawnEnemy()
         {
-            GameObject prefabToSpawn = enemyPrefabs[0];
-            GameObject enemySpawn = ObjectPoolHandler.SpawnObject(prefabToSpawn, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Enemies);
+            //TODO : FINISH THIS
+            //GameObject prefabToSpawn = enemyPrefabs[0];
+            //GameObject enemySpawn = ObjectPoolHandler.SpawnObject(prefabToSpawn, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Enemies);
         }
 
         private void StartWave()

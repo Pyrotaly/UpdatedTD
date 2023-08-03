@@ -22,31 +22,34 @@ namespace UpdatedTD
         protected string targetTag;
 
         protected float nextAttackTime = 0f;
+        private bool isSetUp = false;
 
-        //Test function
-        public void SetUpLocalDictionary(BaseTowerSO test)
+        protected virtual void Update()
         {
-            localStatsDictionary = new Dictionary<Stat, dynamic>(test.StatsDictionary); //Copy dictionary as a new object, not reference
+            //TODO idk if setup check does anything....
+            if (!isSetUp) { return; }
+            Attack();
+
+            //TODO : Remove this testing
+            KeyValuePair<Stat, dynamic> kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.Damage, 100);
         }
 
-        //TODO : Remove this maybe?
-        public void SetUpTowerAttackParameters(TowerInfoStruct towerStruct, GameObject towerRadiusReference)
+        public void SetUpTowerCombat(BaseTowerSO test, GameObject towerRadiusReference)
         {
-            hitPoints = towerStruct.HitPoints;
-            damage = towerStruct.Damage;
-            projectileSpeed = towerStruct.ProjectileSpeed;
-            attackCooldown = towerStruct.AttackCooldown;
-            TEMPProjectile = towerStruct.TEMPProjectile;
-            targetTag = towerStruct.targetTag;
+            localStatsDictionary = new Dictionary<Stat, dynamic>(test.StatsDictionary); //Copy dictionary as a new object, not reference
+            hitPoints = test.StatsDictionary[Stat.HitPoints];
+            targetTag = test.TowerInfo.targetTag;
+
+            TEMPProjectile = test.TowerInfo.TEMPProjectile;
             TEMPProjectile.GetComponent<Projectile>().SetUp(damage, targetTag);
             towerRadius = towerRadiusReference;
 
             towerRadius.GetComponent<TowerRadiusTargetList>().ListUpdated += OnListUpdated;
+            isSetUp = true;
         }
 
         //This function called from skill upgrades system
-        //TODO : Ask about what is params
-        //TODO : When adding save system, plan to call AlterStats but must be d
+        //TODO : When adding save system, plan to call AlterStats
         public void AlterStats(params KeyValuePair<Stat, dynamic>[] pair)
         {
             foreach (KeyValuePair<Stat, dynamic> kvp in pair)
