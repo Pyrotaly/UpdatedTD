@@ -12,26 +12,28 @@ namespace UpdatedTD
         {
             if (targetList.Count != 0)
             {
-                if (Time.time - nextAttackTime >= attackCooldown)
+                if (Time.time > nextAttackTime)
                 {
+                    nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
                     ShootProjectile(TEMPProjectile);
-                    nextAttackTime = Time.time;
                 }
             }
         }
 
+        //TODO : Could make bullets more customizable instead of handling the speed here...
         private void ShootProjectile(GameObject prefab)
         {
-            // Instantiate the projectile at the tower's position and rotation
-            GameObject spawnedProjectile = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.EnemyProjectiles);
+            GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
+            //bullet.GetComponent<Projectile>().SetUp(damage, targetTag);
 
-            // Get the Rigidbody component from the spawned projectile
-            Rigidbody rb = spawnedProjectile.GetComponent<Rigidbody>();
+            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
+
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
             if (rb != null)
             {
                 Vector3 direction = (targetList[0].transform.position - transform.position).normalized;
-                rb.AddForce(direction * projectileSpeed, ForceMode.Impulse);
+                rb.AddForce(direction * localStatsDictionary[Stat.ProjectileSpeed], ForceMode.Impulse);
             }
         }
     }

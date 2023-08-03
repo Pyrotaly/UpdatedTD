@@ -1,3 +1,4 @@
+using GenericObjectPooling;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace UpdatedTD
             towerSO = (EnemyTowerInfoSO)towerInfo;
         }
 
-        private void Update()
+        protected override void Update()
         {
             #region HandleMoving
             if (pathIndex == LevelManager.Instance.GetPath1.Length)
@@ -37,7 +38,7 @@ namespace UpdatedTD
             if (collision.tag == "PlayerHealth")
             {
                 collision.GetComponent<IDamageable>().AlterCurrentHitPoints(towerSO.PlayerHealthDamage);
-                Destroy(gameObject);
+                ObjectPoolHandler.ReturnObjectToPool(gameObject);
             }
         }
     }

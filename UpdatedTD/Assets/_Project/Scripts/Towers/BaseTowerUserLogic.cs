@@ -18,19 +18,19 @@ namespace UpdatedTD
             towerAttackBehavior = GetComponent<BaseTowerCombatHandler>();
         }
 
-        //TODO : TESTING FUNCTION CallStart, used on Test Spawn Enemy to test 
-        public void TEMPCallStart()
+        //CustomInitialize will be called for wave spawners as instantiating objects won't call Start
+        private void Start()
         {
-            Start();
+            CustomInitialize();
+            OnMouseDown();
         }
 
-        private void Start()
+        public void CustomInitialize()
         {
             //Spawn tower radius
             towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
             towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
             towerRadiusObject = Instantiate(towerRadius, this.gameObject.transform);
-            OnMouseDown();
 
             towerAttackBehavior.SetUpTowerCombat(towerInfo, towerRadiusObject);
         }

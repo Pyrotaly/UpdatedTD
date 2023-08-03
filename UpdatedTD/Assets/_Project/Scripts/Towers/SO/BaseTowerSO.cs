@@ -19,7 +19,7 @@ namespace UpdatedTD
             StatsDictionary.Add(Stat.ProjectileSpeed, TowerInfo.ProjectileSpeed);
             StatsDictionary.Add(Stat.AttackRange, TowerInfo.AttackRange);
             StatsDictionary.Add(Stat.AttackCooldown, TowerInfo.AttackCooldown);
-            StatsDictionary.Add(Stat.Projectile, TowerInfo.ProjectileSpeed);
+            StatsDictionary.Add(Stat.Projectile, TowerInfo.TEMPProjectile);
             StatsDictionary.Add(Stat.TargetTag, TowerInfo.targetTag);
             //DebugStatsDictionary();
         }

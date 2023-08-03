@@ -13,7 +13,7 @@ namespace UpdatedTD
         {
             //TODO : Set up rotation due to new art rotation, delete this entire script later...
             var temp = Instantiate(TestTower, TestTowerStartingPoint.position, Quaternion.Euler(transform.rotation.x, 21.647f, transform.rotation.z));
-            temp.GetComponent<BaseTowerUserLogic>().TEMPCallStart();
+            temp.GetComponent<BaseTowerUserLogic>().CustomInitialize();
         }
     }
 }

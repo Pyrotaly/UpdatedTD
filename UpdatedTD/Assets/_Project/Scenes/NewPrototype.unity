@@ -5454,7 +5454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9911c8bdc24b24791c039e6378a40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestTower: {fileID: 1456830628528368378, guid: 86cd32c2a52beaa4da22cef2a864a4cb, type: 3}
+  TestTower: {fileID: 5738552369941678758, guid: 50b6cb355aa765245bfa58ed9525da81, type: 3}
   TestTowerStartingPoint: {fileID: 126397611}
 --- !u!1001 &288928339
 PrefabInstance:
@@ -12190,7 +12190,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd9958963373d7499ef24a96b3888f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path1: []
+  path1:
+  - {fileID: 126397611}
+  - {fileID: 84873353}
+  - {fileID: 1649693617}
+  - {fileID: 452576112}
+  - {fileID: 949344909}
+  - {fileID: 1619427231}
+  - {fileID: 2111640134}
   path2: []
 --- !u!4 &712382065 stripped
 Transform:
@@ -38455,7 +38462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 1456830628528368378, guid: 86cd32c2a52beaa4da22cef2a864a4cb, type: 3}
+  - {fileID: 5738552369941678758, guid: 50b6cb355aa765245bfa58ed9525da81, type: 3}
   baseEnemies: 8
   enemiesPerSecond: 0.5
   timeBetweenWaves: 5

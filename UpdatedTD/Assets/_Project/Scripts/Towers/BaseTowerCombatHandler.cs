@@ -11,18 +11,12 @@ namespace UpdatedTD
 
         protected int hitPoints;
 
-        private Dictionary<Stat, dynamic> localStatsDictionary;
+        protected Dictionary<Stat, dynamic> localStatsDictionary;
 
-        protected float projectileSpeed;
-        protected float attackCooldown;
         protected GameObject TEMPProjectile;
 
-        //For bullet spawning
-        protected int damage;
-        protected string targetTag;
-
         protected float nextAttackTime = 0f;
-        private bool isSetUp = false;
+        public bool isSetUp = false;
 
         protected virtual void Update()
         {
@@ -37,11 +31,9 @@ namespace UpdatedTD
         public void SetUpTowerCombat(BaseTowerSO test, GameObject towerRadiusReference)
         {
             localStatsDictionary = new Dictionary<Stat, dynamic>(test.StatsDictionary); //Copy dictionary as a new object, not reference
-            hitPoints = test.StatsDictionary[Stat.HitPoints];
-            targetTag = test.TowerInfo.targetTag;
+            hitPoints = localStatsDictionary[Stat.HitPoints];
 
-            TEMPProjectile = test.TowerInfo.TEMPProjectile;
-            TEMPProjectile.GetComponent<Projectile>().SetUp(damage, targetTag);
+            TEMPProjectile = localStatsDictionary[Stat.Projectile];
             towerRadius = towerRadiusReference;
 
             towerRadius.GetComponent<TowerRadiusTargetList>().ListUpdated += OnListUpdated;
@@ -60,6 +52,12 @@ namespace UpdatedTD
 
                     Debug.Log("Second: " + kvp.Value);
                 }
+
+                if (kvp.Key == Stat.AttackRange)
+                {
+                    float newRange = localStatsDictionary[Stat.AttackRange];
+                    towerRadius.transform.localScale = new Vector3(newRange, newRange, newRange);
+                }
             }
         }
 
@@ -72,12 +70,14 @@ namespace UpdatedTD
 
         public abstract void Attack();
 
+        protected abstract void Die();
+
         public void AlterCurrentHitPoints(int hitPointAlterAmount)
         {
             //TODO : Die function
             hitPoints += hitPointAlterAmount;
 
-            if (hitPoints <= 0) { Debug.Log("Die"); }
+            if (hitPoints <= 0) { Die(); }
         }
     }
 }

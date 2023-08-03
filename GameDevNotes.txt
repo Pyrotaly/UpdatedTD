@@ -1526,3 +1526,26 @@ I have wavespawner which just spawns in enemies at whatever location
 
 
 The attack function is moved to BaseTowerCombatHandler, need to make it wait for SetUpTower called first just incase of errors i guess
+
+
+========
+8/3/2023	
+--------
+Fixed up with wave manager things..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

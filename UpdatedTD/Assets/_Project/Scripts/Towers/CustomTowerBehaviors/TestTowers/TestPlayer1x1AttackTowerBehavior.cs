@@ -13,7 +13,7 @@ namespace UpdatedTD
             {
                 if (Time.time > nextAttackTime)
                 {
-                    nextAttackTime = Time.time + attackCooldown;
+                    nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
                     ShootProjectile(TEMPProjectile);
                 }
             }
@@ -23,14 +23,16 @@ namespace UpdatedTD
         private void ShootProjectile(GameObject prefab)
         {
             GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
-            bullet.GetComponent<Projectile>().SetUp(damage, targetTag);
+            //bullet.GetComponent<Projectile>().SetUp(damage, targetTag);
+
+            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
 
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
             if (rb != null)
             {
                 Vector3 direction = (targetList[0].transform.position - transform.position).normalized;
-                rb.AddForce(direction * projectileSpeed, ForceMode.Impulse);
+                rb.AddForce(direction * localStatsDictionary[Stat.ProjectileSpeed], ForceMode.Impulse);
             }
         }
     }
