@@ -1534,14 +1534,15 @@ The attack function is moved to BaseTowerCombatHandler, need to make it wait for
 Fixed up with wave manager things..
 
 
+When upgrading tower healht, it will also heal it...
+
+Destryong player tower should actually just destroy it since having to use it later would not make sense
 
 
+Okay so the issue with missing refernce to first unit is becuase
+when i make the tower go back to the object pool, the target list is not cleared and like all messed up...
 
-
-
-
-
-
+Also, when u destroy the player tower, the reference is still like in the thing...
 
 
 

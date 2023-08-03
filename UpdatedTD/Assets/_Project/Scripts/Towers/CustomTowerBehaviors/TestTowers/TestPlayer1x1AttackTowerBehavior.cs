@@ -9,14 +9,20 @@ namespace UpdatedTD
     {
         public override void Attack()
         {
-            if (targetList.Count != 0)
+            
+            if (Time.time > nextAttackTime)
             {
-                if (Time.time > nextAttackTime)
+                if (targetList.Count != 0)
                 {
                     nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
-                    ShootProjectile(TEMPProjectile);
+                    //ShootProjectile(TEMPProjectile);
                 }
             }
+        }
+
+        protected override void Die()
+        {
+            Destroy(transform.parent.gameObject);
         }
 
         //TODO : Could make bullets more customizable instead of handling the speed here...

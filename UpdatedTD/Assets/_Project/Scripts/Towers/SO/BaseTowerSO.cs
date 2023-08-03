@@ -14,7 +14,7 @@ namespace UpdatedTD
         //TODO : Check if this is initialized correctly
         private void OnEnable()
         {
-            StatsDictionary.Add(Stat.HitPoints, TowerInfo.HitPoints);
+            StatsDictionary.Add(Stat.MaxHitpoints, TowerInfo.HitPoints);
             StatsDictionary.Add(Stat.Damage, TowerInfo.Damage);
             StatsDictionary.Add(Stat.ProjectileSpeed, TowerInfo.ProjectileSpeed);
             StatsDictionary.Add(Stat.AttackRange, TowerInfo.AttackRange);
@@ -57,7 +57,7 @@ namespace UpdatedTD
 
     public enum Stat
     {
-        HitPoints,
+        MaxHitpoints,
         Damage,
         ProjectileSpeed,
         AttackRange,

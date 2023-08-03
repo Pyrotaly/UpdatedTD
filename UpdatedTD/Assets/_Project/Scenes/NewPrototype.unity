@@ -5426,7 +5426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &287848828
 Transform:
   m_ObjectHideFlags: 0
@@ -38463,7 +38463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 5738552369941678758, guid: 50b6cb355aa765245bfa58ed9525da81, type: 3}
-  baseEnemies: 8
+  baseEnemies: 1
   enemiesPerSecond: 0.5
   timeBetweenWaves: 5
   difficulityScalingFactor: 0.75

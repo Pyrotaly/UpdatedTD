@@ -20,7 +20,7 @@ namespace UpdatedTD
             #region HandleMoving
             if (pathIndex == LevelManager.Instance.GetPath1.Length)
             {
-                Destroy(gameObject);
+                ObjectPoolHandler.ReturnObjectToPool(gameObject);
                 return;
             }
 

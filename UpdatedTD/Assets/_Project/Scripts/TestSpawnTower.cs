@@ -1,3 +1,4 @@
+using GenericObjectPooling;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,8 @@ namespace UpdatedTD
         public void Start()
         {
             //TODO : Set up rotation due to new art rotation, delete this entire script later...
-            var temp = Instantiate(TestTower, TestTowerStartingPoint.position, Quaternion.Euler(transform.rotation.x, 21.647f, transform.rotation.z));
-            temp.GetComponent<BaseTowerUserLogic>().CustomInitialize();
+            GameObject enemySpawn = ObjectPoolHandler.SpawnObject(TestTower, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Enemies);
+            enemySpawn.GetComponent<BaseTowerUserLogic>().CustomInitialize();
         }
     }
 }

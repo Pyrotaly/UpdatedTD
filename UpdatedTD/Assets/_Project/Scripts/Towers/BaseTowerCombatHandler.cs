@@ -9,7 +9,8 @@ namespace UpdatedTD
         protected List<GameObject> targetList = new List<GameObject>();
         private GameObject towerRadius;
 
-        protected int hitPoints;
+        protected int currentHP;
+        protected int maxHP;
 
         protected Dictionary<Stat, dynamic> localStatsDictionary;
 
@@ -31,7 +32,7 @@ namespace UpdatedTD
         public void SetUpTowerCombat(BaseTowerSO test, GameObject towerRadiusReference)
         {
             localStatsDictionary = new Dictionary<Stat, dynamic>(test.StatsDictionary); //Copy dictionary as a new object, not reference
-            hitPoints = localStatsDictionary[Stat.HitPoints];
+            currentHP = localStatsDictionary[Stat.MaxHitpoints];
 
             TEMPProjectile = localStatsDictionary[Stat.Projectile];
             towerRadius = towerRadiusReference;
@@ -51,6 +52,12 @@ namespace UpdatedTD
                     localStatsDictionary[kvp.Key] = kvp.Value;
 
                     Debug.Log("Second: " + kvp.Value);
+                }
+
+                //If ugprading tower health, it will also heal it to max
+                if (kvp.Key == Stat.MaxHitpoints)
+                {
+                    currentHP = localStatsDictionary[Stat.MaxHitpoints];
                 }
 
                 if (kvp.Key == Stat.AttackRange)
@@ -75,9 +82,9 @@ namespace UpdatedTD
         public void AlterCurrentHitPoints(int hitPointAlterAmount)
         {
             //TODO : Die function
-            hitPoints += hitPointAlterAmount;
+            currentHP += hitPointAlterAmount;
 
-            if (hitPoints <= 0) { Die(); }
+            if (currentHP <= 0) { Die(); }
         }
     }
 }

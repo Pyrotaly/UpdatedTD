@@ -10,20 +10,33 @@ namespace UpdatedTD
         //TODO : Need to setup tower becuase rn the targestlist is nothing on enemy since it not get reference to the child object list
         public override void Attack()
         {
-            if (targetList.Count != 0)
+            if (Time.time > nextAttackTime)
             {
-                if (Time.time > nextAttackTime)
+
+                if (targetList.Count != 0)
                 {
+                    if (targetList[0] == null)
+                    {
+                        targetList.Clear();
+                        return;
+                    }
+
                     nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
-                    ShootProjectile(TEMPProjectile);
+                    var targetPos = targetList[0].transform.position;
+                    ShootProjectile(TEMPProjectile, targetPos);
                 }
             }
         }
 
-        //TODO : Could make bullets more customizable instead of handling the speed here...
-        private void ShootProjectile(GameObject prefab)
+        protected override void Die()
         {
-            GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
+            ObjectPoolHandler.ReturnObjectToPool(gameObject);
+        }
+
+        //TODO : Could make bullets more customizable instead of handling the speed here...
+        private void ShootProjectile(GameObject prefab, Vector3 position)
+        {
+            GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.EnemyProjectiles);
             //bullet.GetComponent<Projectile>().SetUp(damage, targetTag);
 
             bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
@@ -32,7 +45,9 @@ namespace UpdatedTD
 
             if (rb != null)
             {
-                Vector3 direction = (targetList[0].transform.position - transform.position).normalized;
+                if (targetList[0] == null) { Debug.Log("ja"); }
+
+                Vector3 direction = (position - transform.position).normalized;
                 rb.AddForce(direction * localStatsDictionary[Stat.ProjectileSpeed], ForceMode.Impulse);
             }
         }

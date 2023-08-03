@@ -25,11 +25,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217601236081209146}
   m_LocalRotation: {x: -0, y: 0.25945473, z: -0, w: 0.9657553}
-  m_LocalPosition: {x: 0, y: 2.17, z: -0.36}
-  m_LocalScale: {x: 0.20216587, y: 0.93047416, z: 0.40369388}
+  m_LocalPosition: {x: 0.47000003, y: 2.17, z: 0.24000002}
+  m_LocalScale: {x: 0.20216587, y: 0.9304742, z: 0.40369388}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 939383662473134964}
+  m_Father: {fileID: 8323799906908780037}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 30.075, z: 0}
 --- !u!212 &9195549524029299940
@@ -112,7 +112,8 @@ Transform:
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 939383662473134964}
+  - {fileID: 5704280842178801126}
+  - {fileID: 6122936360023663949}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,11 +146,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8439762770080620038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.47000003, y: 0, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 939383662473134964}
+  m_Father: {fileID: 8323799906908780037}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &105649903778680048
@@ -193,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21fb3844d32bc446906d4d20c4a3bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSetUp: 0
 --- !u!114 &3883748137680110139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,36 +229,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &8868816417268655811
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 939383662473134964}
-  m_Layer: 8
-  m_Name: TowerUserLogicFolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &939383662473134964
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8868816417268655811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: 0, z: 0.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5704280842178801126}
-  - {fileID: 6122936360023663949}
-  m_Father: {fileID: 8323799906908780037}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

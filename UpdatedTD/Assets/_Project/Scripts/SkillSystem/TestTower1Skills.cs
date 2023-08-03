@@ -58,7 +58,7 @@ namespace UpdatedTD
         //Stat increase health
         private void TopPathUpgrade3()
         {
-            kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.HitPoints, 100);
+            kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.MaxHitpoints, 100);
             tower.AlterStats(kvpTesting);
         }
 
@@ -81,7 +81,7 @@ namespace UpdatedTD
             Dictionary<Stat, dynamic> testDict = new Dictionary<Stat, dynamic>();
             testDict.Add(Stat.Damage, 120);
             testDict.Add(Stat.AttackRange, 20);
-            testDict.Add(Stat.HitPoints, 200);
+            testDict.Add(Stat.MaxHitpoints, 200);
 
             foreach (var x in testDict)
             {

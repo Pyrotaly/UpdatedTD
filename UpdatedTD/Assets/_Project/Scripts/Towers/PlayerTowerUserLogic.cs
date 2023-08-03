@@ -20,11 +20,5 @@ namespace UpdatedTD
             //TODO : Make some currency back? how would this change if player upgrade the tower?
             Destroy(transform.parent.gameObject);
         }
-
-        public override void Select()
-        {
-            base.Select();
-
-        }
     }
 }
