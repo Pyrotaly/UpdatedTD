@@ -1546,7 +1546,9 @@ Also, when u destroy the player tower, the reference is still like in the thing.
 
 
 
+Okay, if an object is destroyed, need to remove it from all lists some how...
 
+Realizing that this 3d on trigger system and putting the targets in list may not be the best way to handle things...
 
 
 

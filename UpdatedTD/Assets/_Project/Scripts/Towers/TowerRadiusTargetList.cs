@@ -41,5 +41,11 @@ namespace UpdatedTD
                 UpdateList(targetList);
             }
         }
+
+        //Right now, 
+        private void ClearEmpties()
+        {
+
+        }
     }
 }

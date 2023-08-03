@@ -15,7 +15,7 @@ namespace UpdatedTD
                 if (targetList.Count != 0)
                 {
                     nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
-                    //ShootProjectile(TEMPProjectile);
+                    ShootProjectile(TEMPProjectile);
                 }
             }
         }

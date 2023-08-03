@@ -17,7 +17,7 @@ namespace UpdatedTD
                 {
                     if (targetList[0] == null)
                     {
-                        targetList.Clear();
+                        targetList.RemoveAt(0);
                         return;
                     }
 
@@ -30,6 +30,7 @@ namespace UpdatedTD
 
         protected override void Die()
         {
+            Debug.Log("ENemYDIED");
             ObjectPoolHandler.ReturnObjectToPool(gameObject);
         }
 
