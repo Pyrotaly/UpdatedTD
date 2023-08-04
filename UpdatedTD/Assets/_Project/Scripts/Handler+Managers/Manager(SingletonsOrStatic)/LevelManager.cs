@@ -30,7 +30,7 @@ namespace UpdatedTD
 
         private void OnEnemyDeath()
         {
-            //TODO : Idk
+            //TODO : Go to next wave if all enemies are dead
         }
 
         private void Awake()

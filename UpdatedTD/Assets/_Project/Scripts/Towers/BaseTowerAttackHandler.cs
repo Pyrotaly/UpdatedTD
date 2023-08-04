@@ -18,7 +18,7 @@ namespace UpdatedTD
             towerRadius = GetComponent<TowerTargetingSystem>();
         }
 
-        protected virtual void Update()
+        private void Update()
         {
             //TODO : idk if setup check does anything....
             if (!isSetUp) { return; }

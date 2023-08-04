@@ -21287,7 +21287,7 @@ MonoBehaviour:
   m_Follow: {fileID: 325200263}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 6.744
+    OrthographicSize: 7
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -28154,11 +28154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonTemplate: {fileID: 3290662126215611634}
   scrollBarContentHolder: {fileID: 812953052}
-  purchasableTowers:
-  - {fileID: 6656932432745029969, guid: 315941085e8de074f96026b1ae8065bb, type: 3}
-  - {fileID: 5732199487362033775, guid: c94538366393bbc47a364135302f78b6, type: 3}
-  - {fileID: 3696656677640243432, guid: 103303af90fa34f4aa17dfaf7c575324, type: 3}
-  - {fileID: 7746265526272999609, guid: 2a99c13c2faf7a24bb1118c9bc7a7bc8, type: 3}
+  purchasableTowers: []
 --- !u!4 &1539304093
 Transform:
   m_ObjectHideFlags: 0
@@ -36002,7 +35998,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.744
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

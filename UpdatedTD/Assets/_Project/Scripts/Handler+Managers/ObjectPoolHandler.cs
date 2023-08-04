@@ -4,7 +4,6 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-//TODO : Make this an objectpool namespace to reuse
 namespace GenericObjectPooling
 {
     public class ObjectPoolHandler : MonoBehaviour

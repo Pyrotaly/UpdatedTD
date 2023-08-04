@@ -8,10 +8,8 @@ namespace UpdatedTD
     {
         public TowerInfoStruct TowerInfo;
 
-        //TODO : Ask about dynamic...
         public Dictionary<Stat, dynamic> StatsDictionary = new Dictionary<Stat, dynamic>();
 
-        //TODO : Check if this is initialized correctly
         private void OnEnable()
         {
             StatsDictionary.Add(Stat.MaxHitpoints, TowerInfo.HitPoints);
@@ -37,8 +35,6 @@ namespace UpdatedTD
 
     }
 
-    //TODO : Is it important if i just leave this as a struct
-    //Also, can adjust values in insepctor and not through code...
     [System.Serializable]
     public struct TowerInfoStruct
     {

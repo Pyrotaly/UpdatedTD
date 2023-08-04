@@ -11,6 +11,7 @@ namespace UpdatedTD
         {
             if (Time.time > nextAttackTime)
             {
+                //TODO : Add in sound effects 
                 nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
                 ShootProjectile(localStatsDictionary[Stat.Projectile], target);
             }
@@ -20,9 +21,7 @@ namespace UpdatedTD
         private void ShootProjectile(GameObject projectile, Transform target)
         {
             GameObject bullet = ObjectPoolHandler.SpawnObject(projectile, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
-            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
-
-            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
+            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetLayer]);
 
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
