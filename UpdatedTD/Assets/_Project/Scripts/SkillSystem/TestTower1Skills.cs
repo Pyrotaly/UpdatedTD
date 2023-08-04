@@ -8,7 +8,7 @@ namespace UpdatedTD
     //TODO : remove this self note later... this component on tower, UISkillTree will read from this skills to update the UI
     public class TestTower1Skills : MonoBehaviour
     {
-        private BaseTowerCombatHandler tower;
+        private BaseTowerUserLogic tower;
 
         private Dictionary<int, Action> functionTopMap = new Dictionary<int, Action>();
         private Dictionary<int, Action> functionBotMap = new Dictionary<int, Action>();
@@ -19,7 +19,7 @@ namespace UpdatedTD
 
         private void Start()
         {
-            tower = GetComponent<BaseTowerCombatHandler>();
+            tower = GetComponent<BaseTowerUserLogic>();
 
             functionTopMap.Add(1, TopPathUpgrade1);
             functionTopMap.Add(2, TopPathUpgrade2);

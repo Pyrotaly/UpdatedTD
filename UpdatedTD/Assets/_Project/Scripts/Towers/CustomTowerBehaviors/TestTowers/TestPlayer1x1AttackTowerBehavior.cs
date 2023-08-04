@@ -5,31 +5,22 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class TestPlayer1x1AttackTowerBehavior : BaseTowerCombatHandler
+    public class TestPlayer1x1AttackTowerBehavior : BaseTowerAttackHandler
     {
-        public override void Attack()
+        public override void Attack(Transform target)
         {
-            
             if (Time.time > nextAttackTime)
             {
-                if (targetList.Count != 0)
-                {
-                    nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
-                    ShootProjectile(TEMPProjectile);
-                }
+                nextAttackTime = Time.time + localStatsDictionary[Stat.AttackCooldown];
+                ShootProjectile(localStatsDictionary[Stat.Projectile], target);
             }
         }
 
-        protected override void Die()
-        {
-            Destroy(transform.parent.gameObject);
-        }
-
         //TODO : Could make bullets more customizable instead of handling the speed here...
-        private void ShootProjectile(GameObject prefab)
+        private void ShootProjectile(GameObject projectile, Transform target)
         {
-            GameObject bullet = ObjectPoolHandler.SpawnObject(prefab, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
-            //bullet.GetComponent<Projectile>().SetUp(damage, targetTag);
+            GameObject bullet = ObjectPoolHandler.SpawnObject(projectile, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
+            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
 
             bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
 
@@ -37,7 +28,7 @@ namespace UpdatedTD
 
             if (rb != null)
             {
-                Vector3 direction = (targetList[0].transform.position - transform.position).normalized;
+                Vector3 direction = (target.transform.position - transform.position).normalized;
                 rb.AddForce(direction * localStatsDictionary[Stat.ProjectileSpeed], ForceMode.Impulse);
             }
         }

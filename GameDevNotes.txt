@@ -1551,4 +1551,33 @@ Okay, if an object is destroyed, need to remove it from all lists some how...
 Realizing that this 3d on trigger system and putting the targets in list may not be the best way to handle things...
 
 
+========
+8/4/2023	
+--------
+
+Changing collision to overlapsphere,
+Need way to change the targetting to like bloons
+
+What i have to do is, instead of instantiating with code, have to do it in inspector and then the baseuserlogc can handle it
+
+i think, if i have unique towers that have like two shooting positions, i will just need to make a completely unique script for them...
+
+
+or maybe, the targetting and the combat handler together and the userlogic can just use function but thorugh all of them...
+
+
+
+In this game, towers will not have targetting like in bloons or gemcraft thing
+Okay, i will just brute force this and drag in the references in the inspector instead of doing it by code, it is so annoying NVM FIXED IT
+
+need to restrucutre all towers in game to have this object structure
+
+Tower
+-UserLogic
+-AttackHandling
+-Image
+
+THE ENTIRE REASON I REFACTORED WAS BECAUSE WHEN TOWER LEAVES THE ORIGINAL TRIGGER ENTER SYSTEM, IT WOULD LEAD TO MANY ERRORS SINCE DESTRYOING THE TOWER WOULD MEAN THE ORIGINAL TRIGGER ARRAY hAS A MISSING REFERENCE AND CAUSE MANY ERRORS...
+
+
 

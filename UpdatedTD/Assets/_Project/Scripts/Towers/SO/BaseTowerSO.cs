@@ -21,6 +21,7 @@ namespace UpdatedTD
             StatsDictionary.Add(Stat.AttackCooldown, TowerInfo.AttackCooldown);
             StatsDictionary.Add(Stat.Projectile, TowerInfo.TEMPProjectile);
             StatsDictionary.Add(Stat.TargetTag, TowerInfo.targetTag);
+            StatsDictionary.Add(Stat.TargetLayer, TowerInfo.targetLayer);
             //DebugStatsDictionary();
         }
 
@@ -53,6 +54,7 @@ namespace UpdatedTD
         public float AttackCooldown;
         public GameObject TEMPProjectile;
         public string targetTag;
+        public LayerMask targetLayer;
     }
 
     public enum Stat
@@ -63,6 +65,7 @@ namespace UpdatedTD
         AttackRange,
         AttackCooldown,
         Projectile,
-        TargetTag   //TODO : Does target tag have to be on here or when i make projectiles more interesting, put tag there?
+        TargetTag,   //TODO : Does target tag have to be on here or when i make projectiles more interesting, put tag there?
+        TargetLayer
     }
 }

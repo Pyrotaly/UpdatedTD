@@ -22,6 +22,9 @@ MonoBehaviour:
     AttackCooldown: 2
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
     targetTag: Enemy
+    targetLayer:
+      serializedVersion: 2
+      m_Bits: 64
   TowerPrice: 444
   Height: 2
   Width: 2

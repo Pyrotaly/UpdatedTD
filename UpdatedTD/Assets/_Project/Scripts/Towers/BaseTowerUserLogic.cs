@@ -4,58 +4,80 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable
+    public abstract class BaseTowerUserLogic : MonoBehaviour, ISelectable, IDamageable
     {
         [SerializeField] protected BaseTowerSO towerInfo;
 
-        private GameObject towerRadius;
-        private GameObject towerRadiusObject;
-        private BaseTowerCombatHandler towerAttackBehavior;
+        public BaseTowerAttackHandler[] towerAttackBehavior;
+        private List<SpriteRenderer> towerTargetSpriteRenderer = new List<SpriteRenderer>();
+
+        private int currentHP;
+        private Dictionary<Stat, dynamic> localStatsDictionary;
 
         private void Awake()
         {
-            towerRadius = GameAssetsHolderManager.Instance.TowerAttackHandler;
-            towerAttackBehavior = GetComponent<BaseTowerCombatHandler>();
+            towerAttackBehavior = transform.parent.GetComponentsInChildren<BaseTowerAttackHandler>();
+            
+            //TODO : Need to add visual that shows tower target radius with that wiresphere mesh i serached
+            //foreach (BaseTowerAttackHandler attackHandler in towerAttackBehavior)
+            //{
+            //    towerTargetSpriteRenderer.Add(attackHandler.gameObject.GetComponent<SpriteRenderer>());
+            //}
+
+            localStatsDictionary = new Dictionary<Stat, dynamic>(towerInfo.StatsDictionary);
         }
 
-        //CustomInitialize will be called for wave spawners as instantiating objects won't call Start
         private void Start()
         {
             CustomInitialize();
+
+            //Player towers will call OnMouseDown, enemey towers don't call start on instantiation
             OnMouseDown();
         }
 
         public void CustomInitialize()
         {
-            //Spawn tower radius
-            towerRadius.transform.localScale = new Vector3(towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange, towerInfo.TowerInfo.AttackRange);
-            towerRadius.GetComponent<TowerRadiusTargetList>().SetUp(towerInfo.TowerInfo.targetTag);
-            towerRadiusObject = Instantiate(towerRadius, this.gameObject.transform);
-
-            towerAttackBehavior.SetUpTowerCombat(towerInfo, towerRadiusObject);
+            currentHP = localStatsDictionary[Stat.MaxHitpoints];
+            foreach (BaseTowerAttackHandler attackHandler in towerAttackBehavior) { attackHandler.SetUpTowerCombat(localStatsDictionary); }
         }
 
-        protected virtual void Update()
+        //This function called from skill upgrades system
+        //TODO : When adding save system, plan to call AlterStats
+        public void AlterStats(params KeyValuePair<Stat, dynamic>[] pair)
         {
-            towerAttackBehavior.Attack();
+            foreach (KeyValuePair<Stat, dynamic> kvp in pair)
+            {
+                if (localStatsDictionary.ContainsKey(kvp.Key)) { localStatsDictionary[kvp.Key] = kvp.Value; }
 
-            //TODO : Remove this testing
-            KeyValuePair<Stat, dynamic> kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.Damage, 100);
+                //If ugprading tower health, it will also heal it to max
+                if (kvp.Key == Stat.MaxHitpoints) { currentHP = localStatsDictionary[Stat.MaxHitpoints]; }
+            }
+
+            foreach (BaseTowerAttackHandler attackHandler in towerAttackBehavior) { attackHandler.SetUpTowerCombat(localStatsDictionary); }
         }
 
         public virtual void Select()
         {
-            //towerRadiusObject.GetComponent<SpriteRenderer>().enabled = true;
+            //foreach (SpriteRenderer spriteRenderer in towerTargetSpriteRenderer) { spriteRenderer.enabled = true; }
         }
 
         public virtual void Deselect()
         {
-            towerRadiusObject.GetComponent<SpriteRenderer>().enabled = false;
+            //foreach (SpriteRenderer spriteRenderer in towerTargetSpriteRenderer) { spriteRenderer.enabled = false; }
         }
 
         private void RevertTowerLayer()
         {
             gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
+        }
+
+        protected abstract void Die();
+
+        public void AlterCurrentHitPoints(int hitPointAlterAmount)
+        {
+            currentHP += hitPointAlterAmount;
+
+            if (currentHP <= 0) { Die(); }
         }
 
         #region MouseFunctions
@@ -79,7 +101,7 @@ namespace UpdatedTD
             //First time selecting or this is new selection
             else
             {
-                towerRadiusObject.GetComponent<SpriteRenderer>().enabled = true;
+                Select();
             }
         }
         #endregion

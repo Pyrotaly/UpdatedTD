@@ -15,7 +15,7 @@ namespace UpdatedTD
             towerSO = (EnemyTowerInfoSO)towerInfo;
         }
 
-        protected override void Update()
+        protected virtual void Update()
         {
             #region HandleMoving
             if (pathIndex == LevelManager.Instance.GetPath1.Length)
@@ -40,6 +40,11 @@ namespace UpdatedTD
                 collision.GetComponent<IDamageable>().AlterCurrentHitPoints(towerSO.PlayerHealthDamage);
                 ObjectPoolHandler.ReturnObjectToPool(gameObject);
             }
+        }
+
+        protected override void Die()
+        {
+            ObjectPoolHandler.ReturnObjectToPool(gameObject);
         }
     }
 }
