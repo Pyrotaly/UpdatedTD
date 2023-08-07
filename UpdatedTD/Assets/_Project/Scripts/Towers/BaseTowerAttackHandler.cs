@@ -30,6 +30,7 @@ namespace UpdatedTD
         {
             localStatsDictionary = UserLogicDictionary;
             towerRadius.SetUp(localStatsDictionary[Stat.AttackRange], localStatsDictionary[Stat.TargetLayer]);
+
             isSetUp = true;
         }
 

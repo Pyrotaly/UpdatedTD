@@ -7,7 +7,7 @@ namespace UpdatedTD
 {
     public class Projectile : MonoBehaviour
     {
-        private LayerMask targetTag;
+        private string targetTag;
         private int damageAmount;
 
         public void SetUp(int damageSetUp, string targetSetUp)

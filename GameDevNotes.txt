@@ -1580,4 +1580,23 @@ Tower
 THE ENTIRE REASON I REFACTORED WAS BECAUSE WHEN TOWER LEAVES THE ORIGINAL TRIGGER ENTER SYSTEM, IT WOULD LEAD TO MANY ERRORS SINCE DESTRYOING THE TOWER WOULD MEAN THE ORIGINAL TRIGGER ARRAY hAS A MISSING REFERENCE AND CAUSE MANY ERRORS...
 
 
+========
+8/5/2023	
+--------
+https://www.cgtrader.com/free-3d-models/space/planet/sphere-globe-wire-frame
 
+TODO : VERY IMPORTANT HERE THE LINK ABOVE
+Okay need to check if i uh need to crdit this
+
+Okay made it that the wireframe works now, model is a little thick but can change later...
+
+Impleneting first real enemy
+
+Lazer tower
+
+So moving things in this game, might not use rigidbody as that is technically more expensive so i can adjust the movespeed in the EnemyTowerUserLogic with an interface called Islowable or something, maybe other things can be slowed like bullets or idk
+
+
+Need to figure out how lazer tower determines which way it is going in the axis...
+
+Maybe just make it shoot in all 4 directions cause im lazy

@@ -4,18 +4,16 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class EnemyLazerDamageTower : MonoBehaviour
+    public class EnemyLazerDamageTower : BaseTowerAttackHandler
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }   
+        //TODO : the lazer could be on projectile variable in the SO
 
-        // Update is called once per frame
-        void Update()
+
+        public override void Attack(Transform target)
         {
-        
+            //TODO : have a lazer spawn spawn based on direction going....
+            //check how it is moving along the z or x axis and set it accordingly
+
         }
     }
 }

@@ -8,8 +8,8 @@ namespace UpdatedTD
     {
         [SerializeField] protected BaseTowerSO towerInfo;
 
-        public BaseTowerAttackHandler[] towerAttackBehavior;
-        private List<SpriteRenderer> towerTargetSpriteRenderer = new List<SpriteRenderer>();
+        [SerializeField] private BaseTowerAttackHandler[] towerAttackBehavior;
+        [SerializeField] private List<GameObject> towerTargetWireObject = new();
 
         private int currentHP;
         private Dictionary<Stat, dynamic> localStatsDictionary;
@@ -17,12 +17,10 @@ namespace UpdatedTD
         private void Awake()
         {
             towerAttackBehavior = transform.parent.GetComponentsInChildren<BaseTowerAttackHandler>();
-            
+            //WireIndicator
             //TODO : Need to add visual that shows tower target radius with that wiresphere mesh i serached
-            //foreach (BaseTowerAttackHandler attackHandler in towerAttackBehavior)
-            //{
-            //    towerTargetSpriteRenderer.Add(attackHandler.gameObject.GetComponent<SpriteRenderer>());
-            //}
+
+            if (towerTargetWireObject.Count == 0) { Debug.LogError("Need to add in wireReferences in " + gameObject.name); }
 
             localStatsDictionary = new Dictionary<Stat, dynamic>(towerInfo.StatsDictionary);
         }
@@ -58,12 +56,12 @@ namespace UpdatedTD
 
         public virtual void Select()
         {
-            //foreach (SpriteRenderer spriteRenderer in towerTargetSpriteRenderer) { spriteRenderer.enabled = true; }
+            foreach (GameObject wireIndicator in towerTargetWireObject) { wireIndicator.SetActive(true); }
         }
 
         public virtual void Deselect()
         {
-            //foreach (SpriteRenderer spriteRenderer in towerTargetSpriteRenderer) { spriteRenderer.enabled = false; }
+            foreach (GameObject wireIndicator in towerTargetWireObject) { wireIndicator.SetActive(false); }
         }
 
         private void RevertTowerLayer()

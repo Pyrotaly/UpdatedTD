@@ -50,10 +50,10 @@ namespace UpdatedTD
             //inbstead of transform.position, need to pick where to spawn...
             GameObject prefabToSpawn = enemyPrefabs[0];
             GameObject enemySpawn = ObjectPoolHandler.SpawnObject(prefabToSpawn, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Enemies);
-            enemySpawn.GetComponent<BaseTowerUserLogic>().CustomInitialize();
+            enemySpawn.GetComponentInChildren<BaseTowerUserLogic>().CustomInitialize();
 
             //TODO : This is strange here?
-            enemySpawn.GetComponent<BaseTowerUserLogic>().Deselect();
+            enemySpawn.GetComponentInChildren<BaseTowerUserLogic>().Deselect();
         }
 
         private void StartWave()

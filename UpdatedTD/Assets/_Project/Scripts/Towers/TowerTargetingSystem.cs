@@ -9,12 +9,15 @@ namespace UpdatedTD
     {
         [SerializeField] private float detectionRadius;
         [SerializeField] private LayerMask enemyLayer;
+        [SerializeField] private GameObject wireIndicatorObject;
 
         private bool isSetUp;
+
         public void SetUp(float detectionRadius, LayerMask enemyLayer)
         {
             this.detectionRadius = detectionRadius;
             this.enemyLayer = enemyLayer;
+            wireIndicatorObject.transform.localScale = new Vector3(detectionRadius, detectionRadius, detectionRadius);
             isSetUp = true;
         }
 
