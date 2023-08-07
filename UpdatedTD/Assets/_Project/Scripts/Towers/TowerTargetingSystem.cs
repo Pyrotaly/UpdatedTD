@@ -28,19 +28,13 @@ namespace UpdatedTD
             if (!isSetUp) { return null; }
 
             enemyList = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
-            Debug.Log(enemyList.Length);
-
-            //foreach (Collider collisions in colliders)
-            //{
-            //    Debug.Log(collisions.gameObject.transform.parent.name);
-            //}
 
             if (enemyList.Length > 0)
             {
-                return enemyList[0].transform; // Return the first detected collider
+                return enemyList[0].transform;
             }
 
-            return null; // No enemies detected
+            return null;
         }
 
         void OnDrawGizmosSelected()

@@ -68,7 +68,6 @@ namespace UpdatedTD
 
         public void AlterCurrentHitPoints(int hitPointAlterAmount)
         {
-            Debug.Log(gameObject.name + " got hurt");
             currentHP += hitPointAlterAmount;
 
             Debug.Log(currentHP);
