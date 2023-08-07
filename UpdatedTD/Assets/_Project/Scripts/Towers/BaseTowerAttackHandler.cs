@@ -23,7 +23,7 @@ namespace UpdatedTD
             //TODO : idk if setup check does anything....
             if (!isSetUp) { return; }
             Transform target = towerRadius.DetectEnemies();
-            if (target != null) { Attack(target); }
+            Attack(target);
         }
 
         public void SetUpTowerCombat(Dictionary<Stat, dynamic> UserLogicDictionary)

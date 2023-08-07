@@ -32,7 +32,7 @@ namespace UpdatedTD
 
             if (Vector3.Distance(gameObject.transform.parent.position, LevelManager.Instance.GetPath1[pathIndex].position) < 0.01f)
             {
-                pathIndex++;
+                pathIndex++; 
             }
             #endregion
         }
@@ -48,7 +48,7 @@ namespace UpdatedTD
 
         protected override void Die()
         {
-            ObjectPoolHandler.ReturnObjectToPool(gameObject);
+            ObjectPoolHandler.ReturnObjectToPool(transform.parent.gameObject);
         }
     }
 }

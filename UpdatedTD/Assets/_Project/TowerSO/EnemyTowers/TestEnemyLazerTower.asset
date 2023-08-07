@@ -15,7 +15,7 @@ MonoBehaviour:
   TowerInfo:
     TowerName: LazerTower
     ItemID: 1
-    HitPoints: 100
+    HitPoints: 1
     Damage: 5
     ProjectileSpeed: 0
     AttackRange: 0

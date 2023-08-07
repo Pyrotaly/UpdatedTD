@@ -8,7 +8,7 @@ namespace UpdatedTD
     {
         public void DestroyPlayerTower()
         {
-            if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject != null)
+            if (SelectionManager<PlayerTowerUserLogic>.previousSelectedObject != null)
             {
                 GameObject.Find("Handlers").GetComponent<BuildingStructureHandler>().DestroyTower(SelectionManager<PlayerTowerUserLogic>.previousSelectedObject.gameObject);
                 SelectionManager<PlayerTowerUserLogic>.previousSelectedObject.ManualDestroyTower();

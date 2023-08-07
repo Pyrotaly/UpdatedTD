@@ -11,6 +11,8 @@ namespace UpdatedTD
         [SerializeField] private LayerMask enemyLayer;
         [SerializeField] private GameObject wireIndicatorObject;
 
+        public Collider[] enemyList;
+
         private bool isSetUp;
 
         public void SetUp(float detectionRadius, LayerMask enemyLayer)
@@ -25,11 +27,17 @@ namespace UpdatedTD
         {
             if (!isSetUp) { return null; }
 
-            Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
+            enemyList = Physics.OverlapSphere(transform.position, detectionRadius, enemyLayer);
+            Debug.Log(enemyList.Length);
 
-            if (colliders.Length > 0)
+            //foreach (Collider collisions in colliders)
+            //{
+            //    Debug.Log(collisions.gameObject.transform.parent.name);
+            //}
+
+            if (enemyList.Length > 0)
             {
-                return colliders[0].transform; // Return the first detected collider
+                return enemyList[0].transform; // Return the first detected collider
             }
 
             return null; // No enemies detected

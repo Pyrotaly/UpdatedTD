@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6377168502999751458}
   - component: {fileID: 7995732186160160902}
   - component: {fileID: 968881631711861557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UserLogic
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,9 +80,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6036238170752742343}
   - component: {fileID: 2009438867966150422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,9 +163,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3299980125929531943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestEnemyLazer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,9 +200,9 @@ GameObject:
   - component: {fileID: 8937460345536374862}
   - component: {fileID: 752484941731432125}
   - component: {fileID: 2176172202819662402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackHandling
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a571310d249c9554f9f18098fb9ed25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temporaryLine: {fileID: 0}
 --- !u!114 &752484941731432125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,8 +413,20 @@ PrefabInstance:
       value: WireIndicator
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

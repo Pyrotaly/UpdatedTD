@@ -30,7 +30,7 @@ namespace UpdatedTD
             CustomInitialize();
 
             //Player towers will call OnMouseDown, enemey towers don't call start on instantiation
-            OnMouseDown();
+            Select();
         }
 
         public void CustomInitialize()
@@ -56,7 +56,7 @@ namespace UpdatedTD
 
         public virtual void Select()
         {
-            foreach (GameObject wireIndicator in towerTargetWireObject) { wireIndicator.SetActive(true); }
+            //foreach (GameObject wireIndicator in towerTargetWireObject) { wireIndicator.SetActive(true); }
         }
 
         public virtual void Deselect()
@@ -64,44 +64,15 @@ namespace UpdatedTD
             foreach (GameObject wireIndicator in towerTargetWireObject) { wireIndicator.SetActive(false); }
         }
 
-        private void RevertTowerLayer()
-        {
-            gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
-        }
-
         protected abstract void Die();
 
         public void AlterCurrentHitPoints(int hitPointAlterAmount)
         {
+            Debug.Log(gameObject.name + " got hurt");
             currentHP += hitPointAlterAmount;
 
-            if (currentHP <= 0) { Die(); }
+            Debug.Log(currentHP);
+            if (currentHP < 0) { Die(); }
         }
-
-        #region MouseFunctions
-        //TODO : Do enemies need this features as well?
-        private void OnMouseEnter()
-        {
-            Invoke("RevertTowerLayer", 0.5f);
-            if (GameManager.Instance.State == GameManager.GameState.Building)
-            {
-                gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-            }
-            
-        }
-
-        private void OnMouseDown()
-        {
-            //If clicked on same object
-            if (SelectionManager<BaseTowerUserLogic>.SelectedSameObject(this))
-            {
-            }
-            //First time selecting or this is new selection
-            else
-            {
-                Select();
-            }
-        }
-        #endregion
     }
 }

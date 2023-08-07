@@ -9,6 +9,8 @@ namespace UpdatedTD
     {
         public override void Attack(Transform target)
         {
+            if (target == null) { return; }
+
             if (Time.time > nextAttackTime)
             {
                 //TODO : Add in sound effects 
@@ -21,7 +23,7 @@ namespace UpdatedTD
         private void ShootProjectile(GameObject projectile, Transform target)
         {
             GameObject bullet = ObjectPoolHandler.SpawnObject(projectile, transform.position, transform.rotation, ObjectPoolHandler.PoolType.PlayerProjectiles);
-            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetLayer]);
+            bullet.GetComponent<Projectile>().SetUp(localStatsDictionary[Stat.Damage], localStatsDictionary[Stat.TargetTag]);
 
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
 

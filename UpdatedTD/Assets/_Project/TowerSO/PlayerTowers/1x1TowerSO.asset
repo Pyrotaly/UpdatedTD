@@ -18,8 +18,8 @@ MonoBehaviour:
     HitPoints: 1000
     Damage: 300
     ProjectileSpeed: 10
-    AttackRange: 10
-    AttackCooldown: 2
+    AttackRange: 20
+    AttackCooldown: 0.2
     TEMPProjectile: {fileID: 1022416410979871570, guid: 38d3587936570a64a8a1712fbf5d2042, type: 3}
     targetTag: Enemy
     targetLayer:
