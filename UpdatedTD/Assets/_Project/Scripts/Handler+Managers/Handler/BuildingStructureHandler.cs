@@ -135,6 +135,7 @@ namespace UpdatedTD
 
                     tower.GetComponentInChildren<PlayerTowerUserLogic>().Initiazlied = true;
                     tower.GetComponentInChildren<PlayerTowerUserLogic>().towerDir = towerDir;
+                    tower.GetComponentInChildren<PlayerTowerUserLogic>().CoordinatesTowerTakesUp = tileCoordinatesToCheck;
 
                     TowerToBePlaced = null;
                     towerDir = PlayerTowerSO.Directions.Down;
@@ -150,9 +151,11 @@ namespace UpdatedTD
             towerDir = towerToBeDestroyed.GetComponent<PlayerTowerUserLogic>().towerDir;
             Debug.Log(towerDir);
 
-            List<Vector3Int> tileCoordinatesToCheck =
-                    towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)towerToBeDestroyed.transform.position.x, 
-                    (int)towerToBeDestroyed.transform.position.y - 1, (int)towerToBeDestroyed.transform.position.z), towerDir);
+            //List<Vector3Int> tileCoordinatesToCheck =
+            //        towerSO.CoordinatesTowerTakesUp(new Vector3Int((int)towerToBeDestroyed.transform.position.x, 
+            //        (int)towerToBeDestroyed.transform.position.y - 1, (int)towerToBeDestroyed.transform.position.z), towerDir);
+
+            List<Vector3Int> tileCoordinatesToCheck = towerToBeDestroyed.GetComponent<PlayerTowerUserLogic>().CoordinatesTowerTakesUp;
 
             foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
             {
@@ -163,7 +166,7 @@ namespace UpdatedTD
                 {
                     Debug.Log(cooridnate + " tile is missing");
                 }
-                else
+                else 
                 {
                     buildingTile.SetBuildable(true);
                 }

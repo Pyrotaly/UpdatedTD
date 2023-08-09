@@ -19,11 +19,11 @@ MonoBehaviour:
     Damage: 5
     ProjectileSpeed: 0
     AttackRange: 0
-    AttackCooldown: 5
+    AttackCooldown: 0.5
     TEMPProjectile: {fileID: 0}
     targetTag: Player
     targetLayer:
       serializedVersion: 2
       m_Bits: 256
-  moveSpeed: 0
+  moveSpeed: 2
   PlayerHealthDamage: 10

@@ -1600,3 +1600,25 @@ So moving things in this game, might not use rigidbody as that is technically mo
 Need to figure out how lazer tower determines which way it is going in the axis...
 
 Maybe just make it shoot in all 4 directions cause im lazy
+
+========
+8/6/2023	
+--------
+I am pretty sure i did stuff just forgot to record it
+
+========
+8/7/2023	
+--------
+I think i do not understand coroutines, tryna make lazer tower...
+
+I think tryna do the lazer system now is gonna require multithreading which i do not know yet...
+
+instead have a running loop of damage all idmageable in an array and the lazers just add or remove stuff  from that list...
+
+Then add in enemy circle tower
+
+then add in just simple towers
+
+i now need to polish the game play, make start from level 0 and then makethe spawn waves actually spawn stuff in waves, start with a certain amount of moneyyy, 
+
+then UI, need to build and see if settings can change correclty...

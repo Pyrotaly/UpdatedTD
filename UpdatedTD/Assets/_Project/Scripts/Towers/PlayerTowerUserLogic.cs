@@ -9,6 +9,8 @@ namespace UpdatedTD
         public bool Initiazlied = false;
         public PlayerTowerSO.Directions towerDir = PlayerTowerSO.Directions.Down;
 
+        public List<Vector3Int> CoordinatesTowerTakesUp = new();
+
         //TODO : Check if it i put in a PlayerTowerSO or tell me if i messed up
         public PlayerTowerSO GetTowerInfo()
         {
@@ -25,6 +27,7 @@ namespace UpdatedTD
         protected override void Die()
         {
             Destroy(transform.parent.gameObject);
+
         }
 
         public override void Select()
