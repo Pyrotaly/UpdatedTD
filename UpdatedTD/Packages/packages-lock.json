@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.mypackages.save-system": {
-      "version": "file:E:/UnityStuff/GitHub/UpdatedTD/save-system",
+      "version": "file:C:/_Unity/GitHub/UpdatedTD/save-system",
       "depth": 0,
       "source": "local",
       "dependencies": {}

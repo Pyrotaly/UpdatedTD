@@ -1630,3 +1630,24 @@ Worked on wave spawner
 
 polishing game to actually behave like a game, make level 2 first then make tutorial
 Need to make waves and make it like bloons where waves will have same enemies...
+
+
+========
+8/9/2023	
+--------
+Make enemy spawn like pvz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
