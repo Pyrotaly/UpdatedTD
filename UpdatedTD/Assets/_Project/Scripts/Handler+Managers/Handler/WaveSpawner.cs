@@ -23,6 +23,22 @@ namespace UpdatedTD
         private int enemiesLeftToSpawn;
         private bool isSpawning = false;
 
+        private void OnEnable()
+        {
+            ActionsHolder.OnEnemyKilled += OnEnemyDeath;
+        }
+
+        private void OnDisable()
+        {
+            ActionsHolder.OnEnemyKilled -= OnEnemyDeath;
+        }
+
+        private void OnEnemyDeath()
+        {
+            enemiesAlive--;
+            if (enemiesAlive == 0 && enemiesLeftToSpawn == 0) { StartWave(); }
+        }
+
         //TODO : Start wave if player does somthing
         private void Start()
         {
@@ -60,6 +76,7 @@ namespace UpdatedTD
         {
             isSpawning = true;
             enemiesLeftToSpawn = EnemiesPerWave();
+            currentWave++;
         }
 
         private int EnemiesPerWave()
