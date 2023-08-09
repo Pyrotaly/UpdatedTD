@@ -18,8 +18,8 @@ namespace UpdatedTD
         public void SetUp(float detectionRadius, LayerMask enemyLayer)
         {
             this.detectionRadius = detectionRadius;
-            this.enemyLayer = enemyLayer;
-            wireIndicatorObject.transform.localScale = new Vector3(detectionRadius, detectionRadius, detectionRadius);
+            this.enemyLayer = enemyLayer;                               //TODO : This '1' here could change...
+            wireIndicatorObject.transform.localScale = new Vector3(detectionRadius, 1, detectionRadius);
             isSetUp = true;
         }
 

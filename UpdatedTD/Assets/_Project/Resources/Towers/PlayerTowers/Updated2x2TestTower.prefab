@@ -165,6 +165,7 @@ MonoBehaviour:
   - {fileID: 8617159117968525150}
   Initiazlied: 0
   towerDir: 0
+  CoordinatesTowerTakesUp: []
 --- !u!65 &876123264863055036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -271,6 +272,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   wireIndicatorObject: {fileID: 8617159117968525150}
+  enemyList: []
 --- !u!114 &5407698883877888449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
       propertyPath: m_LocalPosition.z
@@ -353,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 39e879fbc8f29584facdcc9f67d7a267, type: 3}
       propertyPath: m_TagString

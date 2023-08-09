@@ -48,6 +48,7 @@ namespace UpdatedTD
 
         protected override void Die()
         {
+            CurrencyManager.Instance.AlterCurrencyValue(+towerSO.GoldOnDeath);
             ObjectPoolHandler.ReturnObjectToPool(transform.parent.gameObject);
         }
     }

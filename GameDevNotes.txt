@@ -1622,3 +1622,10 @@ then add in just simple towers
 i now need to polish the game play, make start from level 0 and then makethe spawn waves actually spawn stuff in waves, start with a certain amount of moneyyy, 
 
 then UI, need to build and see if settings can change correclty...
+
+========
+8/8/2023	
+--------
+Worked on wave spawner
+
+polishing game to actually behave like a game, make level 2 first then make tutorial

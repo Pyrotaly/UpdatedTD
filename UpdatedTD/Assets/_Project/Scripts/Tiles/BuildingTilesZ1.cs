@@ -69,7 +69,8 @@ namespace UpdatedTD
 
         private void OnMouseUp()
         {
-            cubeRenderer.material.color = hoverColor;
+            //cubeRenderer.material.color = hoverColor;
+            cubeRenderer.material.color = originalColor;
         }
         #endregion
     }
