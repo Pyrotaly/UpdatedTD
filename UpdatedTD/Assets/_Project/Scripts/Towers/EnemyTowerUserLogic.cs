@@ -5,17 +5,20 @@ using UnityEngine;
 
 namespace UpdatedTD
 {
-    public class EnemyTowerUserLogic : BaseTowerUserLogic
+    public class EnemyTowerUserLogic : BaseTowerUserLogic, ISlowable
     {
         private EnemyTowerInfoSO towerSO;
         private int pathIndex = 0;
 
+        public float SpeedPercentageChange { get; set; }
+
         private void Start()
         {
+            SpeedPercentageChange = 1f;
             towerSO = (EnemyTowerInfoSO)towerInfo;
         }
 
-        protected override void Update()
+        protected virtual void Update()
         {
             #region HandleMoving
             if (pathIndex == LevelManager.Instance.GetPath1.Length)
@@ -24,11 +27,12 @@ namespace UpdatedTD
                 return;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, LevelManager.Instance.GetPath1[pathIndex].position, towerSO.moveSpeed * Time.deltaTime);
+            gameObject.transform.parent.position = Vector3.MoveTowards(gameObject.transform.parent.position, LevelManager.Instance.GetPath1[pathIndex].position, 
+                (towerSO.moveSpeed * SpeedPercentageChange) * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, LevelManager.Instance.GetPath1[pathIndex].position) < 0.01f)
+            if (Vector3.Distance(gameObject.transform.parent.position, LevelManager.Instance.GetPath1[pathIndex].position) < 0.01f)
             {
-                pathIndex++;
+                pathIndex++; 
             }
             #endregion
         }
@@ -40,6 +44,11 @@ namespace UpdatedTD
                 collision.GetComponent<IDamageable>().AlterCurrentHitPoints(towerSO.PlayerHealthDamage);
                 ObjectPoolHandler.ReturnObjectToPool(gameObject);
             }
+        }
+
+        protected override void Die()
+        {
+            ObjectPoolHandler.ReturnObjectToPool(transform.parent.gameObject);
         }
     }
 }

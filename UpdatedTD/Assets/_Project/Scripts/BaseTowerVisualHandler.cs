@@ -21,6 +21,7 @@ namespace UpdatedTD
             sprite = new Color(255f, 255f, 255f);
         }
 
+        //TODO : ADD IN SPRITES
         public void DirectionChangeVisual(PlayerTowerSO.Directions newTowerDir)
         {
             switch (newTowerDir)

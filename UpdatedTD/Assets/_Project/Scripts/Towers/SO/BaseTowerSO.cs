@@ -8,10 +8,8 @@ namespace UpdatedTD
     {
         public TowerInfoStruct TowerInfo;
 
-        //TODO : Ask about dynamic...
         public Dictionary<Stat, dynamic> StatsDictionary = new Dictionary<Stat, dynamic>();
 
-        //TODO : Check if this is initialized correctly
         private void OnEnable()
         {
             StatsDictionary.Add(Stat.MaxHitpoints, TowerInfo.HitPoints);
@@ -21,6 +19,7 @@ namespace UpdatedTD
             StatsDictionary.Add(Stat.AttackCooldown, TowerInfo.AttackCooldown);
             StatsDictionary.Add(Stat.Projectile, TowerInfo.TEMPProjectile);
             StatsDictionary.Add(Stat.TargetTag, TowerInfo.targetTag);
+            StatsDictionary.Add(Stat.TargetLayer, TowerInfo.targetLayer);
             //DebugStatsDictionary();
         }
 
@@ -36,8 +35,6 @@ namespace UpdatedTD
 
     }
 
-    //TODO : Is it important if i just leave this as a struct
-    //Also, can adjust values in insepctor and not through code...
     [System.Serializable]
     public struct TowerInfoStruct
     {
@@ -53,6 +50,7 @@ namespace UpdatedTD
         public float AttackCooldown;
         public GameObject TEMPProjectile;
         public string targetTag;
+        public LayerMask targetLayer;
     }
 
     public enum Stat
@@ -63,6 +61,7 @@ namespace UpdatedTD
         AttackRange,
         AttackCooldown,
         Projectile,
-        TargetTag   //TODO : Does target tag have to be on here or when i make projectiles more interesting, put tag there?
+        TargetTag,   //TODO : Does target tag have to be on here or when i make projectiles more interesting, put tag there?
+        TargetLayer
     }
 }

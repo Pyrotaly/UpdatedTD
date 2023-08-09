@@ -14,7 +14,7 @@ namespace UpdatedTD
         {
             //TODO : Set up rotation due to new art rotation, delete this entire script later...
             GameObject enemySpawn = ObjectPoolHandler.SpawnObject(TestTower, transform.position, transform.rotation, ObjectPoolHandler.PoolType.Enemies);
-            enemySpawn.GetComponent<BaseTowerUserLogic>().CustomInitialize();
+            enemySpawn.GetComponentInChildren<BaseTowerUserLogic>().CustomInitialize();
         }
     }
 }

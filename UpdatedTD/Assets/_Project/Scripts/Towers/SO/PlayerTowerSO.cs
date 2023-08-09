@@ -30,6 +30,8 @@ namespace UpdatedTD
                 }
 
                 dir = Directions.Down;
+
+                return coordinatesTowerTakesUp;
             }
 
             switch (dir)

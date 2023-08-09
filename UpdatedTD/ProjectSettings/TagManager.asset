@@ -9,6 +9,7 @@ TagManager:
   - Cube
   - PlayerHealth
   - NoTag
+  - WireIndicator
   layers:
   - Default
   - TransparentFX
