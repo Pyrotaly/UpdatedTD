@@ -1639,15 +1639,21 @@ Make enemy spawn like pvz
 
 
 
+WISDOM TOOTH BREAK DEATH
 
 
+========
+8/15/2023	
+--------
+So enemy lazer shoots correctly now.. idk why
+
+Okay so when building, i n player settings underneat the other options, there is optino for ICCLPD2 or whatever, i changed it to mono and then building it wor...
+
+THE BUILD WORKS!
 
 
+Now, need to work on the boring stuff, the pause, game speed, pause UI, stuff like that
 
-
-
-
-
-
+Since there will just be one game scene per level and to change to the next level it will return to main menu or prompt to go to next level, each level will have their own unique UI prefab, no need to add it through scene addition
 
 

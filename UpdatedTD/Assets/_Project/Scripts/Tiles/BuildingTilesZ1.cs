@@ -62,16 +62,16 @@ namespace UpdatedTD
             BuildingStructureHandler.SelectedTile = null;
         }
 
-        private void OnMouseDown()
-        {
-            cubeRenderer.material.color = clickColor;
-        }
+        //private void OnMouseDown()
+        //{
+        //    cubeRenderer.material.color = clickColor;
+        //}
 
-        private void OnMouseUp()
-        {
-            //cubeRenderer.material.color = hoverColor;
-            cubeRenderer.material.color = originalColor;
-        }
+        //private void OnMouseUp()
+        //{
+        //    //cubeRenderer.material.color = hoverColor;
+        //    cubeRenderer.material.color = originalColor;
+        //}
         #endregion
     }
 }

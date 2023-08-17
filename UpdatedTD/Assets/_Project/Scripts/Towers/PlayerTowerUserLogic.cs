@@ -20,14 +20,17 @@ namespace UpdatedTD
         public void ManualDestroyTower()
         {
             //TODO : Make some currency back? how would this change if player upgrade the tower?
-            Debug.Log("SDFSD");
             Destroy(transform.parent.gameObject);
         }
 
         protected override void Die()
         {
-            Destroy(transform.parent.gameObject);
-
+            if (SelectionManager<PlayerTowerUserLogic>.previousSelectedObject != null)
+            {
+                GameObject.Find("Handlers").GetComponent<BuildingStructureHandler>().DestroyTower(SelectionManager<PlayerTowerUserLogic>.previousSelectedObject.gameObject);
+                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject.ManualDestroyTower();
+                SelectionManager<PlayerTowerUserLogic>.previousSelectedObject = null;
+            }
         }
 
         public override void Select()

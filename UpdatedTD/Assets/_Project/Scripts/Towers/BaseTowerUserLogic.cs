@@ -70,7 +70,6 @@ namespace UpdatedTD
         {
             currentHP += hitPointAlterAmount;
 
-            Debug.Log(currentHP);
             if (currentHP < 0) { Die(); }
         }
     }

@@ -159,7 +159,6 @@ namespace UpdatedTD
 
             foreach (Vector3Int cooridnate in tileCoordinatesToCheck)
             {
-                Debug.Log(cooridnate);
                 BuildingTilesZ1 buildingTile = gridHandler.GetTileAtPosition(cooridnate);
 
                 if (buildingTile == null)
