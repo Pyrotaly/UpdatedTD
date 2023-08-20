@@ -8,7 +8,7 @@ namespace UpdatedTD
     {
         private enum GameSpeed
         {
-            Pause,
+            //Pause,
             Normal,
             Fast,
             Extreme
@@ -25,9 +25,28 @@ namespace UpdatedTD
         public void PauseGame()
         {
             GameManager.Instance.UpdateGameState(GameManager.GameState.Pause);
-            Debug.Log("PPause");
-            currentGameSpeed = GameSpeed.Pause;
+            //currentGameSpeed = GameSpeed.Pause;
             Time.timeScale = 0f;
+        }
+
+        public void ResumeGame()
+        {
+            GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
+
+            Debug.Log(currentGameSpeed);
+
+            switch (currentGameSpeed)
+            {
+                case GameSpeed.Normal:
+                    Time.timeScale = 1f;
+                    break;
+                case GameSpeed.Fast:
+                    Time.timeScale = 1.5f;
+                    break;
+                case GameSpeed.Extreme:
+                    Time.timeScale = 2f;
+                    break;
+            }
         }
 
         public void ChangeGameSpeed()
@@ -35,11 +54,11 @@ namespace UpdatedTD
             //If clicked while game is paused, set time to 1 and then...
             switch (currentGameSpeed)
             {
-                case GameSpeed.Pause:
-                    Debug.Log("Normal");
-                    Time.timeScale = 1f;
-                    currentGameSpeed = GameSpeed.Normal;
-                    break;
+                //case GameSpeed.Pause:
+                //    Debug.Log("Normal");
+                //    Time.timeScale = 1f;
+                //    currentGameSpeed = GameSpeed.Normal;
+                //    break;
                 case GameSpeed.Normal:
                     Debug.Log("Fast");
                     Time.timeScale = 1.5f;

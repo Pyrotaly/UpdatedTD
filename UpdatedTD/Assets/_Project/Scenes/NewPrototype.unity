@@ -18846,7 +18846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d923a6d0de9f4489eac22dc7f49838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 0}
+  pauseScreen: {fileID: 4460412060837072061}
+  optionsScreen: {fileID: 4460412060837072060}
   shopUI: {fileID: 4502776729767885123}
   moreInfoUI: {fileID: 1534400877829846529}
   otherNotPauseButtonsUI:
@@ -39057,6 +39058,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1121539301656151482, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968806413689534438, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1063438513}
+    - target: {fileID: 1968806413689534438, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968806413689534438, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpdatedTD.GameSpeedHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2315663368756842498, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -39105,15 +39122,37 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1063438513}
+    - target: {fileID: 6072549893345638948, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4460412060837072061}
+    - target: {fileID: 6072549893345638948, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 6308281779526149883, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000734158894092869, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+--- !u!1 &4460412060837072060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1121539301656151482, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+  m_PrefabInstance: {fileID: 4460412060837072059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4460412060837072061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9000734158894092869, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+  m_PrefabInstance: {fileID: 4460412060837072059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4502776729767885123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1503732930924153684, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}

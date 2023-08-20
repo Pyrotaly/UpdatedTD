@@ -1657,3 +1657,40 @@ Now, need to work on the boring stuff, the pause, game speed, pause UI, stuff li
 Since there will just be one game scene per level and to change to the next level it will return to main menu or prompt to go to next level, each level will have their own unique UI prefab, no need to add it through scene addition
 
 
+
+}
+
+MOVING INTO COLLEGE
+
+}
+
+========
+8/20/2023	
+--------
+
+Back to it again...
+Now, need to work on the boring stuff, the pause, game speed, pause UI, stuff like that
+
+Since there will just be one game scene per level and to change to the next level it will return to main menu or prompt to go to next level, each level will have their own unique UI prefab, no need to add it through scene addition
+
+
+
+
+Let just make boring stuff work
+
+Pause menu works and game speed
+
+
+Make it so that if click on nothing it will deselect
+
+
+
+
+
+
+
+
+
+
+
+
