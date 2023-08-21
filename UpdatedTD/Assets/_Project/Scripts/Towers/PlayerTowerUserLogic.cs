@@ -42,7 +42,6 @@ namespace UpdatedTD
                 //If clicked on same object
                 if (SelectionManager<PlayerTowerUserLogic>.SelectedSameObject(this))
                 {
-                    GameObject.Find("Handlers").GetComponent<MenusHandler>().EnableMoreInfoUI();
                     HelperFunctions.SetDescriptionText("Clicked on me again");
                 }
                 //First time selecting or this is new selection
@@ -52,6 +51,13 @@ namespace UpdatedTD
                     HelperFunctions.SetDescriptionText("First clicked");
                 }
             }
+        }
+
+        public override void Deselect()
+        {
+            base.Deselect();
+
+            GameObject.Find("Handlers").GetComponent<MenusHandler>().DisableMoreInfoUI();
         }
 
         private void RevertTowerLayer()

@@ -6157,6 +6157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 325200263}
   - component: {fileID: 325200264}
+  - component: {fileID: 325200265}
   m_Layer: 0
   m_Name: CameraSystem
   m_TagString: Untagged
@@ -6200,6 +6201,19 @@ MonoBehaviour:
   targetOrthographicSize: 7
   orthographicSizeMin: 2
   orthographicSizeMax: 7
+--- !u!114 &325200265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325200262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8baf622d593898c4998b072420df8bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 1990069900}
 --- !u!4 &325300528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1994759511406673099, guid: bb9b793082bb6ef40abe811cd84a592b, type: 3}

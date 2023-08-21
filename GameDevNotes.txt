@@ -1681,8 +1681,7 @@ Let just make boring stuff work
 Pause menu works and game speed
 
 
-Make it so that if click on nothing it will deselect
-
+Make it so that if click on nothing it will deselect, OK DONE BUT IDK if i need to make the shop go away as well...
 
 
 

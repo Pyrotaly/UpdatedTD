@@ -56,7 +56,7 @@ namespace UpdatedTD
 
         public virtual void Select()
         {
-            //foreach (GameObject wireIndicator in towerTargetWireObject) { wireIndicator.SetActive(true); }
+            foreach (GameObject wireIndicator in towerTargetWireObject) { wireIndicator.SetActive(true); }
         }
 
         public virtual void Deselect()

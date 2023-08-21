@@ -32,6 +32,11 @@ namespace UpdatedTD
             moreInfoUI.SetActive(true);
         }
 
+        public void DisableMoreInfoUI()
+        {
+            moreInfoUI.SetActive(false);
+        }
+
         private void GameManager_OnGameStateChanged(GameManager.GameState state)
         {
             //pauseScreen.SetActive(state == GameManager.GameState.Pause);
