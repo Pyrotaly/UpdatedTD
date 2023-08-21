@@ -25,14 +25,14 @@ namespace UpdatedTD
             // create a new game which will initialize our game data
             DataPersistenceManager.instance.NewGame();
             // load gameplay scene, in turn save game because of OnSceneUnloaded() in persistencemanager
-            SceneManager.LoadSceneAsync("NewPrototype");
+            SceneManager.LoadSceneAsync("NewPrototype"); //TODO : Change this string to the be the correct scene in final build
         }
 
         public void ContinueGame()
         {
             DisableMenuButtons();
             //Load next scene - in turn load game because of OnSceneLoaded() in DPM
-            SceneManager.LoadSceneAsync("NewPrototype");
+            SceneManager.LoadSceneAsync("NewPrototype"); //TODO: Change this string to the be the correct scene in final build
         }
 
         private void DisableMenuButtons()

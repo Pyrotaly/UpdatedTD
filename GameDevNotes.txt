@@ -1684,7 +1684,13 @@ Pause menu works and game speed
 Make it so that if click on nothing it will deselect, OK DONE BUT IDK if i need to make the shop go away as well...
 
 
+I think the in game boring stuff works except for the options stuff that i dont know
+UI can be effect by light, that is kind of cool
 
+//TODO : NEED TO MAKE UI VISIBLE EVEN WITH THE LIGHT
+
+
+Need to add end of world hitbox death things
 
 
 
