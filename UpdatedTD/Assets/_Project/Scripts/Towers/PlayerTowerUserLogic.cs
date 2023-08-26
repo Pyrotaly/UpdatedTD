@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,10 @@ namespace UpdatedTD
         public void ManualDestroyTower()
         {
             //TODO : Make some currency back? how would this change if player upgrade the tower?
+
+            int v = Convert.ToInt32(Math.Floor(GetTowerInfo().TowerPrice * 0.70f));
+
+            CurrencyManager.Instance.AlterCurrencyValue(v);
             Destroy(transform.parent.gameObject);
         }
 
@@ -59,6 +64,7 @@ namespace UpdatedTD
             gameObject.layer = LayerMask.NameToLayer("PlayerTowers");
 
         }
+
         private void OnMouseEnter()
         {
             if (GameManager.Instance.State == GameManager.GameState.Building)
@@ -67,9 +73,9 @@ namespace UpdatedTD
                 gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             }
         }
+
         #region MouseFunctions
         //TODO : Do enemies need this features as well?
-
 
         private void OnMouseDown()
         {
