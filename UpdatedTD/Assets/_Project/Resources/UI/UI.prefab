@@ -2239,7 +2239,7 @@ GameObject:
   - component: {fileID: 2802390368685801403}
   - component: {fileID: 5139039994691022800}
   m_Layer: 5
-  m_Name: DeleteButton
+  m_Name: Buy Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4175,7 +4175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4115368627141805001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8437,7 +8437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 594046410605423220, guid: bf19bacf5cc2d9440bcb475b62be3722, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 783140936822342482, guid: bf19bacf5cc2d9440bcb475b62be3722, type: 3}
       propertyPath: m_Pivot.x

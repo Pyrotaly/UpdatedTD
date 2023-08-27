@@ -5,7 +5,7 @@ using CodeMonkey.Utils;
 
 namespace UpdatedTD
 {
-    public class UISkillTreeTestTower1 : MonoBehaviour
+    public class UISkillTree : MonoBehaviour
     {
         //TODO : Make this into node system (i think is the ideal version in sequal)
         private void Awake()
@@ -18,20 +18,29 @@ namespace UpdatedTD
             transform.Find("SkillButton6").GetComponent<Button_UI>().ClickFunc = () => { UpgradeTowerBot(); };
         }
 
-        private void UpgradeTowerTop()
+        private void OnEnable()
         {
-            if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject != null)
+            if (SelectionManager<PlayerTowerUserLogic>.previousSelectedObject != null)
             {
-                var tower = SelectionManager<BaseTowerUserLogic>.previousSelectedObject.GetComponent<TestTower1Skills>();
+                var tower = SelectionManager<PlayerTowerUserLogic>.previousSelectedObject.GetComponent<TestTower1Skills>();
                 tower.UpgradeTopPath();
             }
-
         }
+
+        private void UpgradeTowerTop()
+        {
+            if (SelectionManager<PlayerTowerUserLogic>.previousSelectedObject != null)
+            {
+                var tower = SelectionManager<PlayerTowerUserLogic>.previousSelectedObject.GetComponent<TestTower1Skills>();
+                tower.UpgradeTopPath();
+            }
+        }
+
         private void UpgradeTowerBot()
         {
-            if (SelectionManager<BaseTowerUserLogic>.previousSelectedObject != null)
+            if (SelectionManager<PlayerTowerUserLogic>.previousSelectedObject != null)
             {
-                var tower = SelectionManager<BaseTowerUserLogic>.previousSelectedObject.GetComponent<TestTower1Skills>();
+                var tower = SelectionManager<PlayerTowerUserLogic>.previousSelectedObject.GetComponent<TestTower1Skills>();
                 tower.UpgradeBotPath();
             }
         }

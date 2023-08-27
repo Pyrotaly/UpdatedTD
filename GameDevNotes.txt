@@ -1712,10 +1712,14 @@ Does my upgrade system even work?...
 In more INFO UI, need to make the TowerTabFolder active in scene, when clicking on tower, make sure that is active so clicking on new tower, change from upgrade to towertab if needed...
 
 
+========
+8/26/2023	
+--------
+Polish skill tree
 
+K it functionally works but need to change color based on what tower player clicked on, should be ez just read the top counter value and do a loop with that information...
 
-
-
+Try the other upgrade function, where it replaces tower..., the new tower gameobject or something....
 
 
 

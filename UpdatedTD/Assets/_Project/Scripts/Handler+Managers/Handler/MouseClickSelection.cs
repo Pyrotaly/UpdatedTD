@@ -20,7 +20,6 @@ namespace UpdatedTD
                 // Check if the mouse is over a UI element
                 if (EventSystem.current.IsPointerOverGameObject())
                 {
-                    Debug.Log("Clicked on UI element");
                     return;
                 }
 
@@ -28,20 +27,17 @@ namespace UpdatedTD
                 {
                     if (hit.collider.GetComponent<PlayerTowerUserLogic>() == null)
                     {
-                        Debug.Log("Did not click on a selectable");
                         SelectionManager<PlayerTowerUserLogic>.SelectedSameObject(null);
                         GameObject.Find("Handlers").GetComponent<MenusHandler>().DisableMoreInfoUI();
                     }
                     else
                     {
-                        Debug.Log("clicked on a tower");
                         return;
                     }
                 }
                 //If player clicked absolutely nothing
                 else
                 {
-                    Debug.Log("Did not click on a selectable");
                     SelectionManager<PlayerTowerUserLogic>.SelectedSameObject(null);
                     GameObject.Find("Handlers").GetComponent<MenusHandler>().DisableMoreInfoUI();
                 }

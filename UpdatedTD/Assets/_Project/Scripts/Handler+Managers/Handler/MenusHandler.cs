@@ -11,6 +11,10 @@ namespace UpdatedTD
         [SerializeField] private GameObject optionsScreen; 
         [SerializeField] private GameObject shopUI;
         [SerializeField] private GameObject moreInfoUI;
+        [SerializeField] private GameObject upgradeUI;
+        [SerializeField] private GameObject informationUI;
+
+        //Not sure what this is below
         [SerializeField] private GameObject[] otherNotPauseButtonsUI;
 
         [Header("End Game UI")]
@@ -35,6 +39,8 @@ namespace UpdatedTD
         public void DisableMoreInfoUI()
         {
             moreInfoUI.SetActive(false);
+            upgradeUI.SetActive(false);
+            informationUI.SetActive(true);
         }
 
         private void GameManager_OnGameStateChanged(GameManager.GameState state)

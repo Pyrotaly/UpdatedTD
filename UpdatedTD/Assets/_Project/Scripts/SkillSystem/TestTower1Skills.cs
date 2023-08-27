@@ -8,7 +8,7 @@ namespace UpdatedTD
     //TODO : remove this self note later... this component on tower, UISkillTree will read from this skills to update the UI
     public class TestTower1Skills : MonoBehaviour
     {
-        private BaseTowerUserLogic tower;
+        private PlayerTowerUserLogic tower;
 
         private Dictionary<int, Action> functionTopMap = new Dictionary<int, Action>();
         private Dictionary<int, Action> functionBotMap = new Dictionary<int, Action>();
@@ -19,7 +19,7 @@ namespace UpdatedTD
 
         private void Start()
         {
-            tower = GetComponent<BaseTowerUserLogic>();
+            tower = GetComponent<PlayerTowerUserLogic>();
 
             functionTopMap.Add(1, TopPathUpgrade1);
             functionTopMap.Add(2, TopPathUpgrade2);
@@ -32,13 +32,26 @@ namespace UpdatedTD
 
         public void UpgradeTopPath()
         {
-            Debug.Log(topCounter);
+            if (topCounter >= 3)
+            {
+                //TODO : Need to do something
+                Debug.Log("No more upgrades available");
+                return;
+            }
+
             topCounter++;
             if (functionTopMap.TryGetValue(topCounter, out Action function)) { function.Invoke(); }
         }
 
         public void UpgradeBotPath()
         {
+            if (botCounter >= 3)
+            {
+                //TODO : Need to do something
+                Debug.Log("No more upgrades available");
+                return;
+            }
+
             botCounter++;
             if (functionBotMap.TryGetValue(botCounter, out Action function)) { function.Invoke(); }
         }
