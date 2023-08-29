@@ -1764,8 +1764,10 @@ Now i am working on the bill boarding issue with Unity,
 
 
 
-
-
+========
+8/28/2023	
+--------
+So had to export scene into a package and open it in a new project and now the sprites no longer have a rendering issue...
 
 
 
