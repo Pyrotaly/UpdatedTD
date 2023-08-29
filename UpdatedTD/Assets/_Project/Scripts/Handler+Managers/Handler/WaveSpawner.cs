@@ -49,6 +49,8 @@ namespace UpdatedTD
         {
             if (!isSpawning) return;
 
+            //Invoke("StartWave", 10f);
+
             timeSinceLastSpawn += Time.deltaTime;
 
             if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)

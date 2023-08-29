@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ namespace UpdatedTD
         [SerializeField] private List<GameObject> towerTargetWireObject = new();
 
         private int currentHP;
-        private Dictionary<Stat, dynamic> localStatsDictionary;
+        private Dictionary<Stat, dynamic> localStatsDictionary = new Dictionary<Stat, dynamic>();
 
         private void Awake()
         {

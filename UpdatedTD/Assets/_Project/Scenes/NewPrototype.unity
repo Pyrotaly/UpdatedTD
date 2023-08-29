@@ -7207,6 +7207,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb9b793082bb6ef40abe811cd84a592b, type: 3}
+--- !u!1 &399999209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3844498645914189474, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+  m_PrefabInstance: {fileID: 4460412060837072059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &402291256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17298,6 +17303,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb9b793082bb6ef40abe811cd84a592b, type: 3}
+--- !u!1 &1004707769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7465146456835548935, guid: ea48e0be64880034c843ad4f3f8c2292, type: 3}
+  m_PrefabInstance: {fileID: 4460412060837072059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1008726666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1994759511406673099, guid: bb9b793082bb6ef40abe811cd84a592b, type: 3}
@@ -18867,6 +18877,8 @@ MonoBehaviour:
   optionsScreen: {fileID: 4460412060837072060}
   shopUI: {fileID: 4502776729767885123}
   moreInfoUI: {fileID: 1534400877829846529}
+  upgradeUI: {fileID: 1004707769}
+  informationUI: {fileID: 399999209}
   otherNotPauseButtonsUI:
   - {fileID: 1563762701827885007}
   - {fileID: 3161154032070689562}
@@ -28188,6 +28200,9 @@ MonoBehaviour:
   buttonTemplate: {fileID: 3290662126215611634}
   scrollBarContentHolder: {fileID: 812953052}
   purchasableTowers:
+  - {fileID: 7746265526272999609, guid: 2a99c13c2faf7a24bb1118c9bc7a7bc8, type: 3}
+  - {fileID: 7746265526272999609, guid: 2a99c13c2faf7a24bb1118c9bc7a7bc8, type: 3}
+  - {fileID: 7746265526272999609, guid: 2a99c13c2faf7a24bb1118c9bc7a7bc8, type: 3}
   - {fileID: 7746265526272999609, guid: 2a99c13c2faf7a24bb1118c9bc7a7bc8, type: 3}
 --- !u!4 &1539304093
 Transform:

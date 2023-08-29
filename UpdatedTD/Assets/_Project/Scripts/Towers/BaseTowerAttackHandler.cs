@@ -23,6 +23,8 @@ namespace UpdatedTD
             //TODO : idk if setup check does anything....
             if (!isSetUp) { return; }
             Transform target = towerRadius.DetectEnemies();
+
+            if (target == null) { return; }
             Attack(target);
         }
 

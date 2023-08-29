@@ -65,6 +65,7 @@ namespace UpdatedTD
             {
                 shopUI.SetActive(false);
                 moreInfoUI.SetActive(false);
+                SelectionManager<PlayerTowerUserLogic>.CallDeslectOnPreviousObject();
                 foreach (GameObject buttonUI in otherNotPauseButtonsUI) { buttonUI.SetActive(false); }
             }
 

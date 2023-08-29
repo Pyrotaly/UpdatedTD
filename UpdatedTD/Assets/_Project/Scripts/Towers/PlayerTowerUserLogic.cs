@@ -22,7 +22,7 @@ namespace UpdatedTD
         {
             //TODO : Make some currency back? how would this change if player upgrade the tower?
 
-            int v = Convert.ToInt32(Math.Floor(GetTowerInfo().TowerPrice * 0.70f));
+            int v = Convert.ToInt32(Math.Floor(GetTowerInfo().TowerPrice * 0.70));
 
             CurrencyManager.Instance.AlterCurrencyValue(v);
             Destroy(transform.parent.gameObject);

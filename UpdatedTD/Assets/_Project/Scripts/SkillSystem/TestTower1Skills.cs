@@ -84,9 +84,10 @@ namespace UpdatedTD
         //Projectile Change
         private void BotPathUpgrade2()
         {
-            var newProjectile = new GameObject();
-            kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.Projectile, newProjectile);
-            tower.AlterStats(kvpTesting);
+            //TODO : Need to change this projectile to actually be a projectile not just a gameobject...
+            //var newProjectile = new GameObject();
+            //kvpTesting = new KeyValuePair<Stat, dynamic>(Stat.Projectile, newProjectile);
+            //tower.AlterStats(kvpTesting);
         }
         //Stat
         private void BotPathUpgrade3()

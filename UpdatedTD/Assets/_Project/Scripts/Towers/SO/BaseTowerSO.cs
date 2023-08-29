@@ -32,7 +32,6 @@ namespace UpdatedTD
                 Debug.Log($"{statName}: {statValue}");
             }
         }
-
     }
 
     [System.Serializable]

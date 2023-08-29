@@ -66,7 +66,7 @@ namespace UpdatedTD
                     break;
                 case GameSpeed.Fast:
                     Debug.Log("Extreme");
-                    Time.timeScale = 2f;
+                    Time.timeScale = 3f;
                     currentGameSpeed = GameSpeed.Extreme;
                     break;
                 case GameSpeed.Extreme:

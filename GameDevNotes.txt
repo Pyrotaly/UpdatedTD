@@ -1721,6 +1721,70 @@ K it functionally works but need to change color based on what tower player clic
 
 Try the other upgrade function, where it replaces tower..., the new tower gameobject or something....
 
+Testing upgrades had issue because I made an upgrade not actually do the thing it was supposed to do...
+
+
+
+Other boring things to do:
+-Wave system
+-Save system
+
+Finally game design:
+-Player spend money to heal?
+-Should enemies show if they low on health? = just make it like bloons
+
+
+Art
+-Upgrade Ui
+
+Make background environment have own kinda of story
+
+
+
+========
+8/27/2023	
+--------
+What kind of towers to have in my demo
+Player: Basic tower
+	bomb aoe tower
+	long long range tower
+
+Enemies:
+	Tower that shoot in straight light
+	Shoot in a circle
+	Tower that spawns more towers
+	Flying tower?
+	Big health tower is like skyscraper that break down into layers
+	Fast towers
+	
+Upgrades for the moment
+
+
+Now i am working on the bill boarding issue with Unity, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

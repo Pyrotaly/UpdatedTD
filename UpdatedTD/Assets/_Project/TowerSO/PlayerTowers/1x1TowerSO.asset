@@ -16,7 +16,7 @@ MonoBehaviour:
     TowerName: 1x1
     ItemID: 0
     HitPoints: 1000
-    Damage: 10
+    Damage: 0
     ProjectileSpeed: 10
     AttackRange: 7.5
     AttackCooldown: 0.2
@@ -28,4 +28,4 @@ MonoBehaviour:
   TowerPrice: 444
   Height: 2
   Width: 2
-  TowerDescription: asdfasdfasdfasdfsadfsdfasdfasdfasdfasdfsadfasdfasdfasdfasdfsadfasdfasdfasdfasdfsadfasdfasdfasdfasdfsadf
+  TowerDescription: This tower is about idk
