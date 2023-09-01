@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.mypackages.save-system": "file:D:/Unity/GitHub/UpdatedTD/save-system",
+    "com.mypackages.save-system": "file:C:/_Unity/GitHub/UpdatedTD/save-system",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.ide.rider": "3.0.24",
